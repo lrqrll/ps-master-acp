@@ -3046,6 +3046,672 @@ select {
     width: 33px;
   }
 }
+.beginner-entry-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.concept-heading-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 18px;
+}
+.concept-heading-actions button {
+  flex: none;
+}
+.concept-subtitle {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 10px;
+  line-height: 1.8;
+}
+.concept-layout {
+  display: grid;
+  grid-template-columns: 245px minmax(0, 1fr);
+  gap: 42px;
+  max-width: 1320px;
+  margin: auto;
+}
+.concept-directory {
+  min-width: 0;
+  border-right: 1px solid var(--line);
+  padding: 26px 22px 24px 0;
+}
+.concept-directory > label {
+  display: block;
+  margin: 0 0 8px;
+}
+.concept-directory > input,
+.concept-directory > select {
+  margin-bottom: 16px;
+}
+.concept-list-count {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 10px 0;
+}
+#conceptTopicList > button {
+  width: 100%;
+  border: 1px solid transparent;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  background: transparent;
+  padding: 12px 6px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+#conceptTopicList > button[aria-current='page'] {
+  background: #303e35;
+  border-color: #526e5b;
+}
+#conceptTopicList > button > span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+#conceptTopicList small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 4px;
+}
+#conceptMenuToggle {
+  display: none;
+}
+.concept-article {
+  min-width: 0;
+  max-width: 920px;
+  padding: 30px 0 40px;
+}
+.concept-topic-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 20px;
+}
+.concept-topic-heading h3 {
+  font-size: 25px;
+  line-height: 1.5;
+  margin: 7px 0 12px;
+  overflow-wrap: anywhere;
+}
+.concept-topic-heading p {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.9;
+}
+.concept-definition {
+  border-block: 1px solid #4e6657;
+  padding-block: 22px;
+}
+.concept-definition > span {
+  color: #9bc5ab;
+  font-size: 11px;
+}
+.concept-definition > p {
+  font-size: 20px;
+  line-height: 1.8;
+  margin-top: 9px;
+}
+.concept-analogy {
+  margin: 26px 0;
+}
+.concept-analogy h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #d9c796;
+  margin: 0 0 12px;
+}
+.concept-analogy svg {
+  width: 17px;
+  height: 17px;
+}
+.concept-analogy p {
+  line-height: 1.95;
+  font-size: 15px;
+}
+.concept-experiment {
+  padding: 18px;
+  border: 1px solid #4c5350;
+  border-radius: 4px;
+  background: #272c2a;
+}
+.concept-experiment .section-title {
+  margin: 0 0 18px;
+}
+.concept-experiment h4 {
+  font-size: 13px;
+}
+.concept-experiment h5 {
+  font-size: 12px;
+  margin: 0 0 12px;
+  color: #d1ddd5;
+  font-weight: 500;
+}
+.concept-demo-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.concept-demo-pane {
+  min-width: 0;
+}
+.concept-experiment canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.concept-experiment canvas + canvas {
+  margin-top: 14px;
+}
+.concept-range {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr) 42px;
+  gap: 12px;
+  align-items: center;
+  margin: 18px 0;
+  color: #c2d0c7;
+}
+.concept-range input {
+  width: 100%;
+}
+.concept-range output {
+  text-align: right;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.concept-select {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+  color: #c2d0c7;
+  line-height: 1.8;
+}
+.concept-select select {
+  max-width: 330px;
+}
+.concept-select input {
+  max-width: 140px;
+}
+.concept-photo-stage {
+  position: relative;
+  height: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e3ebe5;
+  overflow: hidden;
+  isolation: isolate;
+}
+.concept-photo-stage img {
+  width: 210px;
+  height: 210px;
+  max-width: 100%;
+  object-fit: contain;
+  flex: none;
+}
+.concept-photo-stage.transparency-stage {
+  background-color: #d1d5d2;
+  background-image: conic-gradient(#a8afaa 25%, transparent 0 50%, #a8afaa 0 75%, transparent 0);
+  background-size: 20px 20px;
+}
+.concept-demo-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 15px;
+}
+.concept-demo-toggles label,
+.concept-check-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  line-height: 1.8;
+}
+.concept-check-control {
+  margin-top: 16px;
+}
+.layer-stage img {
+  position: relative;
+}
+.layer-stage strong {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  font-size: 25px;
+  color: #204e37;
+}
+.demo-note {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.85;
+  margin-top: 16px;
+}
+.demo-result {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #bcd6c5;
+  min-height: 50px;
+  padding-top: 14px;
+}
+.ppi-result {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  padding: 24px 0;
+}
+.ppi-result > div {
+  min-width: 0;
+}
+.ppi-result span {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 15px;
+}
+.ppi-result b,
+.ppi-result output {
+  display: block;
+  font-size: 21px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: #c4e1ce;
+  overflow-wrap: anywhere;
+}
+.rgb-experiment {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+}
+.rgb-swatch {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #bac6bf;
+}
+.rgb-experiment .concept-range {
+  grid-template-columns: 20px minmax(0, 1fr) 35px;
+}
+.rgb-experiment > div {
+  min-width: 0;
+}
+.rgb-experiment output {
+  font-size: 12px;
+}
+.blend-swatches {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.blend-swatches > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  font-size: 11px;
+}
+.blend-swatches > div > div {
+  height: 110px;
+  border: 1px solid #8a958e;
+}
+.blend-swatches small,
+.blend-swatches output {
+  font-size: 11px;
+  min-height: 18px;
+}
+.selection-stage img:first-child {
+  position: absolute;
+}
+.selection-stage #selectionOverlay {
+  filter: grayscale(1);
+  background: #e3ebe5;
+}
+.mask-value-swatch {
+  height: 180px;
+  border: 1px solid #91a299;
+  margin-bottom: 14px;
+}
+.mask-value-swatch + output {
+  font-size: 12px;
+}
+.histogram-axis {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--muted);
+  padding: 10px 0;
+}
+#histogramSummary {
+  display: block;
+  min-height: 22px;
+  font-size: 12px;
+  color: #c4ddce;
+}
+.transform-stage {
+  background: #383f3b;
+}
+.transform-stage::before {
+  content: '';
+  position: absolute;
+  inset: 15px 20%;
+  background: #e3ebe5;
+  border: 1px solid #9bb5a5;
+}
+.transform-stage.canvas-expanded::before {
+  inset-inline: 5%;
+}
+.transform-stage.crop-frame::before {
+  inset: 45px 25%;
+}
+.transform-stage img {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+.typography-example {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  align-items: center;
+  gap: 12px;
+  background: #e3ebe5;
+  color: #244b37;
+  padding: 22px;
+  min-height: 230px;
+}
+.typography-example img {
+  width: 190px;
+  height: 190px;
+  object-fit: contain;
+  max-width: 100%;
+}
+.typography-example h5 {
+  font-size: 23px;
+  color: #244b37;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.typography-example p {
+  line-height: 1.85;
+}
+.typography-example .type-subtitle {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.typography-example .type-body {
+  font-size: 12px;
+}
+.typography-example .same-hierarchy > * {
+  font-size: 16px;
+  font-weight: 400;
+}
+.concept-process {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 25px;
+  align-items: center;
+}
+.concept-process img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  background: #e3ebe5;
+}
+.concept-process ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.concept-process li {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+  line-height: 1.7;
+  font-size: 13px;
+}
+.concept-process li span {
+  color: #a5c6b1;
+  font-size: 11px;
+  flex: none;
+}
+.concept-reasons {
+  margin: 26px 0;
+}
+.concept-reasons > div {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 16px;
+  margin: 18px 0;
+}
+.concept-reasons dt {
+  font-size: 13px;
+  color: #a6ccb4;
+  line-height: 1.9;
+}
+.concept-reasons dd {
+  margin: 0;
+  line-height: 1.9;
+}
+.concept-comparison {
+  margin: 30px 0;
+}
+.concept-comparison h4 {
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+.concept-comparison dl {
+  margin: 0;
+}
+.concept-comparison dl > div {
+  display: grid;
+  grid-template-columns: 155px minmax(0, 1fr);
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.concept-comparison dt {
+  color: #bdcfc4;
+  font-weight: 500;
+  line-height: 1.8;
+}
+.concept-comparison dd {
+  margin: 0;
+  color: #d0d6d2;
+  line-height: 1.9;
+}
+.concept-next-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+.concept-doc-reference {
+  font-size: 11px;
+  color: var(--muted);
+  padding: 18px 0;
+  border-block: 1px solid var(--line);
+}
+.concept-doc-reference summary {
+  cursor: pointer;
+  padding: 6px 0;
+}
+.concept-doc-reference ul {
+  padding-left: 18px;
+}
+.concept-doc-reference li {
+  line-height: 1.9;
+  margin-bottom: 7px;
+}
+.concept-doc-reference p {
+  line-height: 1.9;
+}
+@media (max-width: 1100px) {
+  .concept-layout {
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 26px;
+  }
+  .rgb-experiment {
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 18px;
+  }
+  .rgb-swatch {
+    width: 110px;
+    height: 110px;
+  }
+  .typography-example {
+    grid-template-columns: minmax(0, 1fr) 140px;
+    padding: 18px;
+  }
+  .typography-example img {
+    width: 140px;
+    height: 140px;
+  }
+}
+@media (max-width: 780px) {
+  .concept-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .concept-directory {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 20px 0;
+  }
+  #conceptMenuToggle {
+    display: inline-flex;
+  }
+  #conceptTopicList {
+    display: none;
+  }
+  #conceptTopicList.expanded {
+    display: block;
+  }
+  .concept-heading-actions {
+    gap: 12px;
+  }
+  .beginner-heading:has(.concept-heading-actions) {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .concept-heading-actions .course-progress {
+    width: 160px;
+  }
+  .concept-topic-heading h3 {
+    font-size: 23px;
+  }
+  .concept-definition > p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 480px) {
+  .concept-article {
+    padding-top: 25px;
+  }
+  .concept-experiment {
+    padding: 12px;
+  }
+  .concept-demo-pair {
+    gap: 10px;
+  }
+  .concept-photo-stage {
+    height: 190px;
+  }
+  .concept-photo-stage img {
+    height: 175px;
+    width: 175px;
+  }
+  .concept-demo-pair .concept-photo-stage {
+    height: 165px;
+  }
+  .concept-demo-pair .concept-photo-stage img {
+    height: 145px;
+    width: 145px;
+  }
+  .concept-range {
+    grid-template-columns: 100px minmax(0, 1fr) 30px;
+    gap: 8px;
+    font-size: 11px;
+  }
+  .concept-select {
+    display: grid;
+    gap: 8px;
+    font-size: 11px;
+  }
+  .concept-select select {
+    max-width: 100%;
+  }
+  .ppi-result {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+  }
+  .ppi-result b,
+  .ppi-result output {
+    font-size: 20px;
+  }
+  .blend-swatches {
+    gap: 12px;
+  }
+  .blend-swatches > div > div {
+    height: 85px;
+  }
+  .blend-swatches small,
+  .blend-swatches output {
+    font-size: 9px;
+    overflow-wrap: anywhere;
+  }
+  .mask-value-swatch {
+    height: 130px;
+  }
+  .concept-reasons > div,
+  .concept-comparison dl > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+  }
+  .typography-example {
+    grid-template-columns: minmax(0, 1fr) 100px;
+    padding: 12px;
+  }
+  .typography-example img {
+    width: 100px;
+    height: 130px;
+  }
+  .typography-example h5 {
+    font-size: 19px;
+  }
+  .typography-example .type-subtitle {
+    font-size: 13px;
+  }
+  .typography-example .type-body {
+    font-size: 11px;
+  }
+  .concept-process {
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 15px;
+  }
+  .concept-process img {
+    width: 100px;
+    height: 130px;
+  }
+  .concept-process li {
+    font-size: 12px;
+    padding: 12px 0;
+    gap: 10px;
+  }
+  .layer-stage strong {
+    font-size: 21px;
+    left: 12px;
+  }
+  .concept-next-actions button {
+    width: 100%;
+  }
+}
 </style>
 </head>
 <body>
@@ -3083,6 +3749,7 @@ select {
     <main>
       <section class="dashboard-surface" id="dashboardSurface" hidden></section>
       <section class="beginner-surface" id="beginnerSurface" aria-label="零基礎入門課程" hidden></section>
+      <section class="concepts-surface beginner-surface" id="conceptsSurface" aria-label="觀念教室" hidden></section>
       <section class="library-surface" id="librarySurface" hidden></section>
       <section class="task-band" id="taskBand" hidden>
         <div class="task-copy"><div class="task-meta" id="taskMeta"></div><h2 id="taskTitle"></h2><p id="taskGoal"></p></div>
@@ -6784,7 +7451,7 @@ class BeginnerCourse {
     byId('beginnerSurface').hidden = false;
     byId('editor').hidden = this.mode !== 'practice' || !lesson.lab;
     byId('beginnerSurface').innerHTML = `
-      <header class="beginner-heading"><div><span class="eyebrow">一步一步，從零開始</span><h2>零基礎入門</h2></div><div class="course-progress"><label for="beginnerProgress">已完成 ${state.completed.length} / ${BEGINNER_LESSONS.length} 課</label><progress id="beginnerProgress" value="${state.completed.length}" max="${BEGINNER_LESSONS.length}"></progress></div></header>
+      <header class="beginner-heading"><div><span class="eyebrow">一步一步，從零開始</span><h2>零基礎入門</h2></div><div class="concept-heading-actions"><button id="beginnerConcepts" class="secondary">${icon('lightbulb')}觀念教室</button><div class="course-progress"><label for="beginnerProgress">已完成 ${state.completed.length} / ${BEGINNER_LESSONS.length} 課</label><progress id="beginnerProgress" value="${state.completed.length}" max="${BEGINNER_LESSONS.length}"></progress></div></div></header>
       <div class="beginner-layout ${this.mode === 'practice' ? 'practicing' : ''}"><aside class="course-outline ${this.outlineOpen ? 'expanded' : ''}" aria-label="入門課程目錄"><h3>學習路線</h3><button class="course-toggle" id="beginnerToggleOutline" aria-expanded="${this.outlineOpen}">${icon('list')}課程目錄 · 第 ${index + 1} 課${icon(this.outlineOpen ? 'chevron-up' : 'chevron-down')}</button>${['先看懂', '動手做', '完成作品'].map((phase) => `<h4>${phase}</h4><ol>${BEGINNER_LESSONS.map((l, i) => (l.phase === phase ? `<li><button data-beginner-lesson="${l.id}" class="${l.id === lesson.id ? 'active' : ''}" ${l.id === lesson.id ? 'aria-current="step"' : ''}><span class="lesson-number">${state.completed.includes(l.id) ? icon('check') : String(i + 1).padStart(2, '0')}</span><span>${l.title}<small>約 ${l.minutes} 分鐘${state.completed.includes(l.id) ? ' · 已完成' : ''}</small></span></button></li>` : '')).join('')}</ol>`).join('')}</aside>
       <article class="lesson-article"><div class="lesson-heading"><div><span class="eyebrow">第 ${index + 1} 課 / ${BEGINNER_LESSONS.length} · ${lesson.phase}</span><h3 id="beginnerLessonTitle" tabindex="-1">${lesson.title}</h3><p>${lesson.goal}</p></div><div class="lesson-modes" role="group" aria-label="課程內容"><button data-lesson-mode="read" aria-pressed="${this.mode === 'read'}">${icon('book-open')}先看懂</button>${lesson.lab ? `<button data-lesson-mode="practice" aria-pressed="${this.mode === 'practice'}">${icon('mouse-pointer-2')}跟著做</button>` : ''}</div></div>
       ${this.mode === 'read' ? this.reading(lesson) : '<div id="beginnerPractice"></div>'}
@@ -6792,6 +7459,7 @@ class BeginnerCourse {
     byId('beginnerSurface')
       .querySelectorAll('[data-beginner-lesson]')
       .forEach((b) => (b.onclick = () => this.open(b.dataset.beginnerLesson)));
+    byId('beginnerConcepts').onclick = () => showView('concepts');
     byId('beginnerToggleOutline').onclick = () => {
       this.outlineOpen = !this.outlineOpen;
       this.render();
@@ -7002,6 +7670,1198 @@ class BeginnerCourse {
     toast(`第 ${BEGINNER_LESSONS.indexOf(lesson) + 1} 課完成了，按自己的步調繼續。`);
   }
 }
+</script><script>const CONCEPT_SOURCES = {
+  size: 'https://helpx.adobe.com/photoshop/desktop/crop-resize-transform/resize-adjust-resolution/image-size-resolution-and-resampling.html',
+  color:
+    'https://helpx.adobe.com/photoshop/desktop/adjust-color/choose-colors/color-modes-in-photoshop.html',
+  depth: 'https://helpx.adobe.com/ie/photoshop/using/bit-depth.html',
+  layers: BEGINNER_HELP.layers,
+  blend:
+    'https://helpx.adobe.com/photoshop/desktop/create-manage-layers/apply-layer-effects/set-layer-opacity-and-blending-modes.html',
+  masks: BEGINNER_HELP.masks,
+  clipping: 'https://helpx.adobe.com/photoshop/using/revealing-layers-clipping-masks.html',
+  smart:
+    'https://helpx.adobe.com/photoshop/desktop/create-manage-layers/smart-objects/smart-objects-overview-and-benefits.html',
+  adjust:
+    'https://helpx.adobe.com/photoshop/desktop/adjust-color/color-corrections/apply-color-adjustments-with-adjustments-panel.html',
+  histogram:
+    'https://helpx.adobe.com/photoshop/desktop/adjust-color/color-corrections/adjust-levels-in-an-image.html',
+  healing:
+    'https://helpx.adobe.com/au/photoshop/desktop/repair-retouch/clean-restore-images/healing-brush-tool.html',
+  nondestructive: 'https://helpx.adobe.com/sg/photoshop/using/nondestructive-editing.html',
+  type: 'https://helpx.adobe.com/photoshop/desktop/text-typography/type-layers-creation/type-layers-in-photoshop.html',
+  output: BEGINNER_HELP.output,
+  ai: 'https://helpx.adobe.com/photoshop/kb/troubleshoot-generative-ai-features.html',
+  objectives: 'https://certifiedprofessional.adobe.com/photoshop',
+};
+const CONCEPT_TOPICS = [
+  {
+    id: 'raster',
+    title: '照片為什麼放大會糊？',
+    group: '影像基礎',
+    terms: '點陣圖 Raster Bitmap 向量圖 Vector 像素',
+    one: '點陣圖保存一格一格的色點；向量內容保存形狀的描述。',
+    analogy: '點陣圖像馬賽克拼圖：越靠近越看得到格子。向量像圓規畫圓的規則，換大小時可以重新畫。',
+    why: '選對素材類型，才知道放大時能期待什麼。照片通常是點陣資料，不能只靠放大恢復不存在的細節。',
+    when: '修照片用像素思考；需要反覆變尺寸的標誌或圖形，優先保留可用的向量來源。',
+    compare: [
+      ['點陣', '以像素記錄色彩，適合照片。'],
+      ['向量', '以路徑和幾何描述形狀，適合可縮放圖形。'],
+      ['轉成 JPG', '輸出成點陣後，仍受輸出像素數限制。'],
+    ],
+    mistake: '向量可以按新尺寸重新繪製，不等於任何輸出的 JPG 都能無限放大。',
+    question: '只有一張 100 × 100 px 的小照片，放大到 2000 × 2000 就一定有更多真實細節嗎？',
+    answers: [
+      [
+        '不一定，新增像素不等於新增原本不存在的細節',
+        '對。軟體可以估算新像素，但不能保證還原真實細節。',
+      ],
+      [
+        '一定，像素數越多就代表拍到更多細節',
+        '像素可以用計算補出來，但拍攝時沒有記錄的內容不會因此變成真實資料。',
+      ],
+      ['改副檔名成 SVG 就可以', '改名稱不會把照片內容轉換成向量描述。'],
+    ],
+    demo: 'raster',
+    source: 'size',
+    ids: [1, 2, 3, 4, 5],
+    lesson: 'document',
+  },
+  {
+    id: 'resolution',
+    title: '像素、PPI 和列印尺寸',
+    group: '影像基礎',
+    terms: '解析度 Resolution PPI DPI 列印 螢幕',
+    one: '像素數是圖片有多少資料；PPI 是列印時每英吋放多少像素。',
+    analogy: '同樣 1200 顆珠子，排得密，整排就短；排得疏，整排就長。珠子的總數沒有增加。',
+    why: '先分清螢幕輸出與紙張輸出，才不會只改一個 PPI 數字，就以為模糊照片變清楚了。',
+    when: '網頁先確認像素尺寸；列印再確認公分大小、解析度和印廠規格。',
+    compare: [
+      ['1200 × 800 px', '固定有 96 萬個像素。'],
+      ['不重新取樣', '改 PPI 只會改變計算出的列印尺寸。'],
+      ['PPI 與 DPI', 'PPI 描述影像像素密度；DPI 常用於描述輸出裝置的點密度，不要直接混為一談。'],
+    ],
+    mistake: '螢幕圖片不是一定要 72 PPI 才清楚，也不是設 300 PPI 就能保證印刷品質。',
+    question: '不重新取樣，把同一張 1200 px 寬的圖片從 72 PPI 改成 300 PPI，什麼會變？',
+    answers: [
+      ['計算出的列印寬度變小，像素寬度仍是 1200', '正確，同樣的像素放得更密，實際列印尺寸就變小。'],
+      ['像素寬度自動變成 5000', '題目已說不重新取樣，像素數不會因此改變。'],
+      ['原本模糊的細節全部恢復', 'PPI 是密度設定，不是重新拍攝或修復原始細節。'],
+    ],
+    demo: 'ppi',
+    source: 'size',
+    ids: [8, 9, 10, 11, 15],
+    lesson: 'document',
+  },
+  {
+    id: 'resample',
+    title: '改影像大小，還是改畫布？',
+    group: '影像基礎',
+    terms: 'Resize Resample 重新取樣 Canvas Size Image Size',
+    one: '重新取樣改像素數；改畫布則改作品邊界，不是把所有物件一起縮放。',
+    analogy: '重新取樣像重排整幅馬賽克；改畫布像換一張更大的裱畫紙，畫裡的物件不一定跟著變大。',
+    why: '想留白、想縮小整張圖、想換列印尺寸，應該使用不同方法。',
+    when: '要輸出較小像素圖，用影像尺寸與重新取樣；只想加邊界留白，用畫布尺寸。',
+    compare: [
+      ['Image Size＋Resample', '增加或移除影像像素。'],
+      ['Image Size，不 Resample', '調整 PPI 與列印尺寸關係，像素數不變。'],
+      ['Canvas Size', '改文件邊界，可加空間或裁掉可見範圍。'],
+    ],
+    mistake: '把畫布加大，不代表植物照片也會自動放大。',
+    question: '照片大小剛好，只想在四周增加留白，優先用什麼？',
+    answers: [
+      ['Canvas Size 畫布尺寸', '對，目標是增加作品的邊界空間，不是重算照片像素。'],
+      ['把 PPI 改成兩倍', 'PPI 不會替畫面新增四周留白。'],
+      ['把整張照片重新取樣放大', '這會改變影像資料與物件尺寸，不符合只加留白的目標。'],
+    ],
+    demo: 'transform',
+    source: 'size',
+    ids: [16, 17, 18, 19, 404],
+    lesson: 'document',
+  },
+  {
+    id: 'color',
+    title: 'RGB、CMYK 與色彩描述檔',
+    group: '影像基礎',
+    terms: 'RGB CMYK ICC sRGB Adobe RGB 色域 Gamut Color Profile',
+    one: 'RGB 與 CMYK 是描述顏色的方法；色彩描述檔則幫助解讀這些數值代表的顏色。',
+    analogy: 'RGB 像調整紅、綠、藍三盞燈；CMYK 像調配印刷墨水。描述檔則像附上的色彩對照規則。',
+    why: '螢幕與紙張呈現顏色的方法不同，不能期待每個鮮豔顏色都完全一致。',
+    when: '螢幕作品通常以 RGB 製作；印刷依交付規格處理模式與描述檔，別隨意反覆轉換。',
+    compare: [
+      ['RGB', '以紅、綠、藍光的數值描述色彩。'],
+      ['CMYK', '以青、洋紅、黃、黑的印刷色版描述色彩。'],
+      ['描述檔與色域', '描述檔提供色彩解讀；色域是可表現的顏色範圍。'],
+    ],
+    mistake: '轉 CMYK 不是讓畫面「更專業」的按鈕；也不保證螢幕與成品完全相同。',
+    question: '要準備螢幕用圖片，為什麼通常先用 RGB？',
+    answers: [
+      [
+        '螢幕以光呈現顏色，RGB 符合這類輸出用途',
+        '對。仍要留意描述檔與交付需求，而不是只背模式名稱。',
+      ],
+      ['因為 RGB 保證所有裝置顏色都一樣', '不同裝置、描述檔與觀看條件仍可能產生差異。'],
+      [
+        '因為 CMYK 一定能顯示更多鮮豔顏色',
+        '兩種模式及其色彩空間的範圍不同，不能把 CMYK 當成一律更鮮豔。',
+      ],
+    ],
+    demo: 'rgb',
+    source: 'color',
+    ids: [29, 30, 31, 32, 55, 59],
+    lesson: 'document',
+  },
+  {
+    id: 'tone',
+    title: '色相、飽和度、亮度與對比',
+    group: '影像基礎',
+    terms: 'Hue Saturation Brightness Contrast HSB 色調',
+    one: '色相問「什麼顏色」；飽和度問「多鮮豔」；亮度問「多明亮」；對比問「差異多大」。',
+    analogy:
+      '同一件綠色衣服，可以偏藍綠、變成灰綠、看起來更亮，或與背景更有差別。這些不是同一件事。',
+    why: '先說清楚想改什麼，才不會只想提亮，卻把綠葉調得過度鮮豔。',
+    when: '顏色偏掉看色相；太灰看飽和度；太暗看明暗；畫面平淡時再判斷對比。',
+    compare: [
+      ['色相', '改變紅、綠、藍等顏色類別。'],
+      ['飽和度', '改變色彩的鮮豔程度。'],
+      ['亮度／對比', '前者偏明暗，後者偏亮暗或色彩之間的差異。'],
+    ],
+    mistake: '飽和度調到 0 是去掉色彩，不是去掉背景。',
+    question: '綠葉顏色太鮮豔，但你不想改成別種顏色，先調什麼？',
+    answers: [
+      ['降低飽和度', '對，降低鮮豔程度，不需要先改變綠色所屬的色相。'],
+      ['只改色相', '色相可能把綠色改成另一種顏色，和降低鮮豔程度不同。'],
+      ['刪除背景圖層', '刪除背景不會直接控制葉片本身的色彩鮮豔程度。'],
+    ],
+    demo: 'tone',
+    source: 'adjust',
+    ids: [44, 45, 46, 47],
+    lesson: 'adjustment',
+  },
+  {
+    id: 'depth',
+    title: '8-bit 是只有 8 種顏色嗎？',
+    group: '影像基礎',
+    terms: 'Bit Depth 位元深度 色階 漸層 8-bit 16-bit 通道',
+    one: '位元深度描述每個通道能記錄多少階數，不是像素的寬高。',
+    analogy: '像調光器只有幾個檔位，或有很多細小檔位。檔位越多，能記錄的明暗過渡越細。',
+    why: '大幅調色與漸層需要足夠階數；但把低品質檔案升成高位元，不會還原已丟失的資料。',
+    when: '一般交付要配合格式支援；需要更多調整空間時，保留合適的高位元來源。',
+    compare: [
+      ['8-bit／通道', '每通道有 256 階；RGB 有三個色彩通道，不是整張圖只有 256 色。'],
+      ['16-bit／通道', '可保留更多明暗階數，但檔案及功能支援需要一併考量。'],
+      ['像素尺寸', '決定橫向與直向的像素數，與階數是不同屬性。'],
+    ],
+    mistake: '16-bit 不是把 800 px 寬自動變成 1600 px 寬。',
+    question: 'RGB 圖片顯示 8-bit／通道，代表什麼？',
+    answers: [
+      ['每個色彩通道有 256 個可能階數', '正確，RGB 三個色彩通道的組合，不只是總共 256 種顏色。'],
+      ['整張圖片只能有 8 種顏色', '8 是記錄階數的位元數，不是總顏色數。'],
+      ['圖片寬度固定是 8 個像素', '寬高是像素尺寸，與通道的位元深度不同。'],
+    ],
+    demo: 'depth',
+    source: 'depth',
+    ids: [25, 26],
+    lesson: 'document',
+  },
+  {
+    id: 'layers',
+    title: '圖層：為什麼不要一開始就合併？',
+    group: '圖層與範圍',
+    terms: 'Layer 圖層 群組 Group 可見度 順序',
+    one: '圖層讓照片、文字與效果分開修改，再疊成一張畫面。',
+    analogy: '像把標題和照片放在不同透明片上；要改字，不需要把照片一起擦掉。',
+    why: '分層保留修改彈性。畫面看起來相同，不代表背後的可編輯程度相同。',
+    when: '合成、排版、換照片或改客戶文案時，保留清楚命名的獨立圖層。',
+    compare: [
+      ['選取圖層', '決定目前的修改對象。'],
+      ['眼睛圖示', '控制是否顯示，不是刪除。'],
+      ['群組／合併', '群組用來整理；合併會把內容組合成較少圖層。'],
+    ],
+    mistake: '看不到物件時，可能只是被上方內容擋住、眼睛關掉，或不透明度太低。',
+    question: '客戶說標題要改，哪個工作檔最容易修改？',
+    answers: [
+      ['保留獨立文字圖層的工作檔', '對，可以選到標題，直接修改內容。'],
+      ['只有一張全部合併的 JPG', 'JPG 沒有保留原本的獨立文字層，修改通常更麻煩。'],
+      ['把所有圖層名稱都改成背景', '改名稱不會改變內容是否獨立，也會增加辨識困難。'],
+    ],
+    demo: 'layers',
+    source: 'layers',
+    ids: [98, 99, 100, 102, 113],
+    lesson: 'layers',
+  },
+  {
+    id: 'opacity',
+    title: '不透明度，不是亮度',
+    group: '圖層與範圍',
+    terms: 'Opacity Fill 不透明度 透明度 Alpha',
+    one: '不透明度越低，下面的內容越容易透出來；不是單純把照片變亮。',
+    analogy: '像在透明片上印圖案，印得越淡，越能看見底下的格子。',
+    why: '要淡化整層、水印或混合兩張圖時，應該想的是透出多少下方內容。',
+    when: '調整水印強度、降低效果，或做半透明疊圖。',
+    compare: [
+      ['100% 不透明度', '圖層原本不透明的部分完整顯示。'],
+      ['50% 不透明度', '圖層內容與下方內容混合顯示。'],
+      ['0% 不透明度', '整層內容看不見，但資料仍存在。'],
+    ],
+    mistake: '不透明度 0% 不是刪除圖層；亮度 0 的含意也不等於透明。',
+    question: '想讓底下的棋盤格透出來，應該優先調什麼？',
+    answers: [
+      ['降低上方圖層的不透明度', '對，這會讓下方內容透出。'],
+      ['把影像亮度提高', '亮度改明暗，並不等於增加透明度。'],
+      ['把檢視倍率縮小', '那只是改觀看大小，不會改圖層的透明程度。'],
+    ],
+    demo: 'opacity',
+    source: 'blend',
+    ids: [103, 104, 105, 106],
+    lesson: 'layers',
+  },
+  {
+    id: 'blend',
+    title: 'Multiply 和 Screen 在做什麼？',
+    group: '圖層與範圍',
+    terms: 'Blend Mode 混合模式 Multiply 色彩增值 Screen 濾色',
+    one: '混合模式決定上、下兩層的顏色如何一起計算。',
+    analogy: '不是只換一張透明片，而是換一套混色規則。相同兩個色塊，換規則就得到不同結果。',
+    why: '需要疊陰影、光感或線稿時，混色規則比單純降低透明度更合適。',
+    when: 'Multiply 常用於變暗；Screen 常用於變亮。仍要觀察素材與實際結果。',
+    compare: [
+      ['Normal', '在這個全不透明色塊範例中，顯示上方色塊。'],
+      ['Multiply', '以相乘方式混合，結果不比輸入更亮；白色不改變下方顏色。'],
+      ['Screen', '以反相後相乘再反相的方式混合，結果不比輸入更暗；黑色不改變下方顏色。'],
+    ],
+    mistake: 'Multiply 讓白底「看起來不影響下方」，不代表白色像素真的變透明。',
+    question: '線稿白底在 Multiply 下看起來消失，是否等於已經去背成透明？',
+    answers: [
+      ['不是，這是混色結果，不是刪除白色像素', '正確。換背景或模式，原本白色內容仍可能影響結果。'],
+      ['是，白色像素已自動刪除', '混合模式沒有替你刪掉白色像素。'],
+      ['是，也一定已經下載 PNG', '混色、透明度和匯出是不同事情。'],
+    ],
+    demo: 'blend',
+    source: 'blend',
+    ids: [137, 138, 139, 140],
+    lesson: 'layers',
+  },
+  {
+    id: 'selection',
+    title: '選圖層和選範圍，不是一樣的事',
+    group: '圖層與範圍',
+    terms: 'Selection 選取 Marquee Lasso Feather 羽化',
+    one: '選圖層決定「改誰」；選取範圍決定「改哪一塊」。',
+    analogy: '先選一本書，再圈出書上的一段話。選書和圈段落是兩個步驟。',
+    why: '有時工具只在部分位置生效，原因不是壞掉，而是選取範圍還限制著操作。',
+    when: '只想調整主體、複製局部，或建立精準遮色片時。羽化可以讓選取邊界過渡較柔和。',
+    compare: [
+      ['點圖層名稱', '改變目前修改對象。'],
+      ['建立選取', '限定許多編輯作用的區域。'],
+      ['取消選取', '移除作用範圍限制，不是刪掉圖片。'],
+    ],
+    mistake: '選主體完成後，背景通常還沒被隱藏；還要進一步建立遮色片等處理。',
+    question: '只想把照片中央變黑白，其他地方保留彩色，應先考慮什麼？',
+    answers: [
+      ['選對照片層，再限制中央的作用範圍', '對，圖層與範圍兩件事都要確認。'],
+      ['只要把照片層改名成中央', '圖層名稱不會限制實際作用範圍。'],
+      ['直接刪除所有彩色部分', '不需要先刪內容；可用選取或遮色片限制調整。'],
+    ],
+    demo: 'selection',
+    source: 'masks',
+    ids: [158, 159, 160, 177],
+    lesson: 'selection',
+  },
+  {
+    id: 'mask',
+    title: '遮色片為什麼是黑白的？',
+    group: '圖層與範圍',
+    terms: 'Layer Mask 遮色片 白顯示 黑隱藏 灰 部分透明',
+    one: '遮色片的明暗值決定對應內容顯示多少：白顯示、黑隱藏、灰色部分顯示。',
+    analogy: '像一扇能調透光量的窗簾，不是把窗外景色刪掉。',
+    why: '需要之後恢復背景或修正邊緣時，遮色片通常比直接刪像素保留更多彈性。',
+    when: '去背、合成、局部調色，或讓效果只作用在指定位置。',
+    compare: [
+      ['白色', '顯示對應的內容。'],
+      ['黑色', '隱藏對應的內容。'],
+      ['灰色', '依明暗控制部分顯示，不是把照片塗灰。'],
+    ],
+    mistake: '如果照片真的被畫黑，先確認是否選到了照片縮圖，而不是遮色片縮圖。',
+    question: '在遮色片上塗白，通常代表什麼？',
+    answers: [
+      ['讓對應的原始內容顯示出來', '對。白色控制顯示，不是把照片像素塗白。'],
+      ['把原照片塗成白色', '那是直接畫在照片上的效果，與編輯遮色片不同。'],
+      ['永久刪除對應內容', '遮色片主要控制可見範圍，內容仍可保留。'],
+    ],
+    demo: 'mask',
+    source: 'masks',
+    ids: [141, 142, 143, 144, 145],
+    lesson: 'mask',
+  },
+  {
+    id: 'clipping',
+    title: '剪裁遮色片：把照片放進形狀',
+    group: '圖層與範圍',
+    terms: 'Clipping Mask 剪裁遮色片 圓形 基底',
+    one: '下方基底圖層的不透明範圍，決定上方內容在哪裡顯示。',
+    analogy: '像用形狀餅乾模看照片：模具是圓形，就只在圓形範圍看到照片。',
+    why: '照片與形狀分開保留，之後可以移動照片或更換內容。',
+    when: '圓形頭像、文字填圖，或讓調整只影響指定圖層時。',
+    compare: [
+      ['上方照片', '提供要顯示的內容。'],
+      ['下方基底', '提供顯示範圍。'],
+      ['圖層遮色片', '用獨立黑白資訊控制本層；不等於剪裁遮色片的層間關係。'],
+    ],
+    mistake: '照片和基底放反，或基底全透明，就不會得到期待的結果。',
+    question: '想隨時換照片的圓形頭像，哪個安排較合適？',
+    answers: [
+      ['照片在上、圓形基底在下，使用剪裁遮色片', '對，內容和顯示範圍分開保留。'],
+      ['把照片永久剪掉，刪掉所有外部像素', '雖可能做出外觀，但之後移動或換照片的彈性較小。'],
+      ['把照片飽和度降為 0', '這只去掉色彩，不會建立圓形範圍。'],
+    ],
+    demo: 'clipping',
+    source: 'clipping',
+    ids: [151, 152, 153, 352],
+    lesson: 'mask',
+  },
+  {
+    id: 'smart',
+    title: '智慧型物件，不是畫質魔法',
+    group: '修圖判斷',
+    terms: 'Smart Object 智慧型物件 Linked Embedded Smart Filter 非破壞',
+    one: '智慧型物件保留來源資料，讓某些變形與濾鏡更容易重改。',
+    analogy: '像把原件放進保護套，用保護套的顯示方式做變化，而不是每次直接裁壞唯一的原件。',
+    why: '反覆縮小再放大時，保留來源可避免某些破壞式處理造成的累積損失。',
+    when: '放入素材、反覆變形，或希望重新調整支援的智慧型濾鏡。',
+    compare: [
+      ['一般像素層', '某些操作會直接改寫或丟失像素。'],
+      ['智慧型物件', '保留來源內容；直接畫像素前需改變編輯方式。'],
+      ['連結／嵌入', '前者參照外部來源，後者把來源保存於文件中。'],
+    ],
+    mistake: '智慧型物件仍受來源品質限制，不會把模糊小圖自動變成清楚大圖。',
+    question: '原始小圖很模糊，轉成智慧型物件能保證還原細節嗎？',
+    answers: [
+      [
+        '不能，它保留來源，不會保證補回不存在的細節',
+        '正確。保留來源與創造真實細節是兩個不同問題。',
+      ],
+      [
+        '一定能，智慧型代表所有細節都會自動補回',
+        '這不是智慧型物件的作用。它主要保留來源與編輯彈性。',
+      ],
+      ['只要改成連結就一定清楚', '連結描述來源的保存方式，不會提高來源本身的品質。'],
+    ],
+    demo: 'smart',
+    source: 'smart',
+    ids: [123, 124, 125, 126, 127, 130, 418],
+    lesson: 'move',
+  },
+  {
+    id: 'adjustment',
+    title: '調整圖層與非破壞性編輯',
+    group: '修圖判斷',
+    terms: 'Adjustment Layer 非破壞性 調整圖層 色階 黑白 Hue',
+    one: '把調色設定獨立保存，原照片與調整可以分開管理。',
+    analogy: '像戴一片有顏色的眼鏡：拿下眼鏡就能再看原來的景色。',
+    why: '方便改強度、比較前後，或用遮色片限制效果範圍。',
+    when: '需要反覆提亮、調色、做黑白，或交給別人繼續修改時。',
+    compare: [
+      ['直接改像素', '設定可能直接寫入目前影像資料。'],
+      ['調整圖層', '用獨立圖層保存調色設定。'],
+      ['效果範圍', '一般會影響下方符合條件的可見內容；可再用遮色片或剪裁限制。'],
+    ],
+    mistake: '非破壞不等於不用保存工作檔；只留合併 JPG 仍會失去這些分層設定。',
+    question: '還可能需要改回彩色，哪個黑白處理方式較有彈性？',
+    answers: [
+      ['保留照片，再新增可隱藏的黑白調整圖層', '對，照片與黑白設定分開，之後比較與修改更方便。'],
+      ['只留一張合併黑白 JPG，原檔刪除', '原本的彩色與分層資訊不會因改檔名而恢復。'],
+      ['把檔名加上可恢復三個字', '可恢復性來自保存的內容與編輯方式，不是名稱。'],
+    ],
+    demo: 'adjustment',
+    source: 'adjust',
+    ids: [119, 120, 121, 122, 133, 134, 421],
+    lesson: 'adjustment',
+  },
+  {
+    id: 'histogram',
+    title: '直方圖：看分布，不是看分數',
+    group: '修圖判斷',
+    terms: 'Histogram Levels Curves 直方圖 色階 黑點 白點 剪裁',
+    one: '直方圖把像素依明暗分組：左邊偏暗、右邊偏亮，高度代表數量。',
+    analogy: '像把班上身高分組統計；某一組人比較多，不代表這個班一定比較好。',
+    why: '幫你觀察明暗分布與細節風險，但不能單靠它判定照片好不好。',
+    when: '調整色階、曲線或曝光前後，配合畫面觀察暗部與亮部細節。',
+    compare: [
+      ['橫軸', '由暗到亮的階數。'],
+      ['縱軸', '各階數有多少像素。'],
+      ['兩端堆積', '可能有純黑或純白像素；是否失去重要細節，還要看影像。'],
+    ],
+    mistake: '夜景偏暗、白牆偏亮都可能合理，不必把每張圖拉成一樣的直方圖。',
+    question: '直方圖整體偏左，就一定表示照片拍壞了嗎？',
+    answers: [
+      ['不一定，可能本來就是暗色場景，需要配合畫面判斷', '對，分布不是品質分數。'],
+      ['一定，所有好照片都必須平均分布', '場景與風格不同，合理分布也不同。'],
+      ['是，因為左邊代表像素比較少', '左邊代表偏暗階數；柱子的高度才描述數量。'],
+    ],
+    demo: 'histogram',
+    source: 'histogram',
+    ids: [233, 234, 235, 236, 237],
+    lesson: 'adjustment',
+  },
+  {
+    id: 'transform',
+    title: '裁切、變形與檢視縮放',
+    group: '修圖判斷',
+    terms: 'Crop Free Transform Zoom 變形 裁切 旋轉 長寬比例',
+    one: '裁切改作品範圍，變形改內容的大小或形狀，檢視縮放只改觀看倍率。',
+    analogy: '裁切像換相框範圍；變形像調整相片本身；檢視縮放像把眼睛靠近。',
+    why: '先分清想改作品還是只想看清楚，才不會把照片壓扁或裁掉重要內容。',
+    when: '改構圖用裁切；調整物件位置大小用變形；檢查細節用檢視縮放。',
+    compare: [
+      ['檢視 50%', '不會把文件像素數變成一半。'],
+      ['物件等比例縮放', '寬、高以相同比例改變。'],
+      ['裁切', '保留新的畫面範圍；是否刪除外部像素取決於設定與內容。'],
+    ],
+    mistake: '不是所有向外拖曳都能找回已刪除的裁切內容，先確認是否保留外部像素。',
+    question: '只想看清葉子邊緣，不想改變作品內容，選什麼？',
+    answers: [
+      ['放大檢視倍率', '對，這只改觀看方式。'],
+      ['把整張圖片重新取樣成兩倍', '這會重算像素資料，不只是看得更近。'],
+      ['直接裁掉一半畫布', '這會改變作品範圍，不符合只想看細節的目標。'],
+    ],
+    demo: 'transform',
+    source: 'size',
+    ids: [221, 222, 224, 225, 229],
+    lesson: 'move',
+  },
+  {
+    id: 'retouch',
+    title: '仿製、修復和內容感知怎麼選？',
+    group: '修圖判斷',
+    terms: 'Clone Stamp Healing Brush Spot Healing Content Aware 仿製 修復 取樣',
+    one: '先判斷要複製內容、融合瑕疵，還是估算補上空缺，再選工具。',
+    analogy: '仿製像從別處剪一塊貼上；修復還會嘗試與周圍融合；自動補內容則會估算適合的結果。',
+    why: '工具名稱相近，但控制方式和適合的區域不同。自動結果也需要檢查。',
+    when: '需要精確來源可用仿製；小瑕疵可考慮修復；較大空缺再評估內容感知等方法。',
+    compare: [
+      ['Clone Stamp', '先指定取樣來源，再複製像素。'],
+      ['Healing Brush', '使用來源內容並與目的區域的周圍條件融合。'],
+      ['Content-Aware', '依周圍內容估算填補結果，不保證理解真實場景。'],
+    ],
+    mistake: '修補後要檢查重複花紋、接縫、光影與邊緣；不是按完就一定自然。',
+    question: '想指定另一片葉子的紋理來源，再複製過來，哪個較直接？',
+    answers: [
+      ['Clone Stamp 仿製印章', '對，它讓你指定來源位置。也要注意取樣層與目的圖層。'],
+      ['只改 PPI', 'PPI 不會複製另一區的影像內容。'],
+      ['把檢視倍率改成 50%', '觀看倍率不會修補或改寫圖片內容。'],
+    ],
+    demo: 'process',
+    source: 'healing',
+    ids: [191, 192, 193, 194, 195],
+    lesson: 'layers',
+  },
+  {
+    id: 'effects',
+    title: '濾鏡和圖層樣式差在哪？',
+    group: '修圖判斷',
+    terms: 'Filter Gaussian Blur Layer Style Drop Shadow 濾鏡 樣式 模糊 陰影',
+    one: '濾鏡處理內容的影像特徵；圖層樣式則依圖層內容產生陰影、描邊等效果。',
+    analogy: '濾鏡像讓照片本身變模糊；樣式像在這張剪下來的照片外面加陰影或邊框。',
+    why: '想讓主體柔焦，和想讓主體看起來浮起來，需要的效果不同。',
+    when: '模糊、銳化等需求考慮濾鏡；陰影、描邊等需求考慮圖層樣式。',
+    compare: [
+      ['Gaussian Blur', '讓影像細節變柔和。'],
+      ['Drop Shadow', '依內容輪廓產生陰影效果。'],
+      ['Smart Filter', '在支援的智慧型物件上保留可修改濾鏡設定。'],
+    ],
+    mistake: '想保留日後調整空間，先確認濾鏡的套用方式，而不是只看當下外觀。',
+    question: '想在植物外圍增加投影，而不是把葉片細節模糊，該選什麼？',
+    answers: [
+      ['Drop Shadow 圖層陰影', '對，目標是外部的投影效果。'],
+      ['Gaussian Blur 一定最合適', '它偏向模糊內容，不等於自動產生外部投影。'],
+      ['把照片縮小觀看', '那不會替匯出作品新增陰影。'],
+    ],
+    demo: 'effects',
+    source: 'nondestructive',
+    ids: [260, 262, 263, 267, 268, 269, 130],
+    lesson: 'adjustment',
+  },
+  {
+    id: 'type',
+    title: '文字層級：先讓人看得懂',
+    group: '輸出與工作流程',
+    terms: 'Type Typography Point Type Paragraph Type Character Paragraph 對比 對齊 留白',
+    one: '文字內容、大小、對比和排列，要讓讀者知道先看哪裡。',
+    analogy: '像書的書名、章節名和內文各有不同分工，不是每一行都用最大字。',
+    why: '排版不是裝飾越多越好。重要資訊要容易辨認，文字也要保持可修改。',
+    when: '短標題可用點文字；需要在指定寬度換行的內文可用段落文字。',
+    compare: [
+      ['點文字', '從一個起點開始輸入，常用於短標題。'],
+      ['段落文字', '在文字框範圍中排版，適合較長內容。'],
+      ['保留文字層', '方便改字與字體；點陣化後不再是原本的可編輯文字層。'],
+    ],
+    mistake: '不是把所有字放大就更清楚，字之間還需要層級、間距與背景對比。',
+    question: '一段長說明需要限制在固定寬度並自動換行，優先考慮什麼？',
+    answers: [
+      ['使用段落文字框', '對，文字框提供固定排版範圍。'],
+      ['每打一個字就建立一張圖片', '這會讓修改與排版更困難，不是合理的起點。'],
+      ['先把文字全部點陣化', '點陣化不會替你建立可編輯的段落排版。'],
+    ],
+    demo: 'type',
+    source: 'type',
+    ids: [279, 280, 281, 282, 288],
+    lesson: 'text',
+  },
+  {
+    id: 'formats',
+    title: 'PSD、PNG、JPG 怎麼選？',
+    group: '輸出與工作流程',
+    terms: 'PSD JPEG JPG PNG PSB TIFF 匯出 壓縮 透明 工作檔',
+    one: '工作檔保留修改內容；交付圖依透明度、用途和檔案大小選格式。',
+    analogy: '工作檔像食譜加食材；交付圖片像端上桌的成品。只留成品，不一定能輕鬆改回原食譜。',
+    why: '需要能改字的檔案，與只要上網顯示的圖片，要求不同。',
+    when: '在真正 Photoshop 保留合適的分層工作檔；一般照片交付可評估 JPG，需要透明可評估 PNG。',
+    compare: [
+      ['PSD', 'Photoshop 工作檔，可保留圖層等編輯資訊。'],
+      ['PNG', '支援透明；但不會自動去掉已顯示的背景。'],
+      ['JPG', '不支援透明，使用有損壓縮；反覆重新儲存可能累積品質損失。'],
+    ],
+    mistake: '改副檔名不會轉換檔案內容。此練習室的可編輯專案是 .acplab.json，不是原生 PSD。',
+    question: '要交透明植物圖，同時方便日後修改文字，怎麼保存最合適？',
+    answers: [
+      ['保留可編輯工作檔，另外匯出透明 PNG', '對，修改用的版本與交付圖分開保留。'],
+      ['只留 JPG，之後改名成 PSD 就好', 'JPG 不保留原本分層，改名也不會把圖層變回來。'],
+      ['只要選 PNG，任何背景都會自動消失', '透明格式不等於自動去背，背景內容也必須真的透明。'],
+    ],
+    demo: 'formats',
+    source: 'output',
+    ids: [300, 301, 302, 303, 304, 309, 310],
+    lesson: 'export',
+  },
+  {
+    id: 'ai',
+    title: '生成式 AI：候選內容仍要檢查',
+    group: '輸出與工作流程',
+    terms: 'Generative Fill Expand Firefly AI 生成填色 生成擴張 Content Aware',
+    one: '生成式工具產生的是候選內容，不是自動保證正確的真實資料。',
+    analogy: '像請人幫你補畫一段背景：你仍要看接縫、透視與光線，不能只因它畫得快就直接交件。',
+    why: '不合理的物件、重複紋理、錯誤文字與邊界，可能影響作品可信度。',
+    when: '依實際工具支援來增加、移除或延伸內容；交付前確認結果與使用要求。',
+    compare: [
+      ['選取範圍', '告訴工具要處理的區域。'],
+      ['生成結果', '是待挑選與修整的候選，不是原場景的證據。'],
+      ['本練習室', '不串接 Adobe AI；主體選取使用內建預備範圍。'],
+    ],
+    mistake: '生成填色與一般內容感知填補不是完全相同的技術，也不能保證生成內容真實。',
+    question: '生成出的背景看起來很自然，交付前還需要做什麼？',
+    answers: [
+      ['檢查光影、透視、接縫與內容是否符合需求', '對。生成結果仍需要人做判斷。'],
+      ['什麼都不用檢查，AI 結果一定正確', '速度快不等於結果正確，仍可能出現不合理細節。'],
+      ['只改檔名就能保證所有內容真實', '檔名不能替生成內容提供真實性保證。'],
+    ],
+    demo: 'process',
+    source: 'ai',
+    ids: [294, 295, 296, 297, 298],
+    lesson: 'project',
+  },
+  {
+    id: 'workflow',
+    title: '先理解需求，再開始修圖',
+    group: '輸出與工作流程',
+    terms: 'Client Brief Target Audience Scope Project 溝通 受眾 專案 規格 授權',
+    one: '設計不是先挑特效，而是先確認給誰看、在哪裡用、要交什麼。',
+    analogy: '像做一份餐點，先確認人數、口味與時間，再決定食材；不是先把所有調味料加進去。',
+    why: '把用途、尺寸、檔案格式、修改範圍和交期先確認，可以減少重做。',
+    when: '開工前整理簡報需求；過程中留版本；交付前核對規格，並確認素材與字體的使用權限。',
+    compare: [
+      ['受眾與用途', '決定資訊優先順序和呈現方式。'],
+      ['範圍與交付', '寫清尺寸、格式、版本與修改約定。'],
+      ['交付檢查', '檢查內容、可讀性、輸出規格與素材使用條件；權利問題依實際授權確認。'],
+    ],
+    mistake: '網路上能下載的素材，不代表一定能用在任何商業情境；使用前需要確認授權條件。',
+    question: '客戶只說想做一張好看的圖，合理的第一步是什麼？',
+    answers: [
+      ['先確認用途、受眾、尺寸和交付需求', '對，先把目標說清楚，再選工具與視覺做法。'],
+      ['直接套最多特效再說', '效果很多不代表符合實際用途，也可能增加重做。'],
+      ['先合併所有圖層避免修改', '這會降低修改彈性，也沒有解決需求不明確的問題。'],
+    ],
+    demo: 'process',
+    source: 'objectives',
+    ids: [339, 340, 341, 360, 361, 362],
+    lesson: 'project',
+  },
+];
+const CONCEPT_MAP = new Map(CONCEPT_TOPICS.map((topic) => [topic.id, topic]));
+const defaultConcepts = () => ({ last: 'raster', understood: [], review: [] });
+function validConcepts(state) {
+  return (
+    !!state &&
+    CONCEPT_MAP.has(state.last) &&
+    ['understood', 'review'].every(
+      (key) =>
+        Array.isArray(state[key]) &&
+        state[key].length <= CONCEPT_TOPICS.length &&
+        new Set(state[key]).size === state[key].length &&
+        state[key].every((id) => CONCEPT_MAP.has(id)),
+    )
+  );
+}
+
+class ConceptClassroom {
+  constructor(getState, save) {
+    this.getState = getState;
+    this.save = save;
+    this.query = '';
+    this.filter = 'all';
+    this.menuOpen = false;
+    this.answers = {};
+    this.orders = new Map(CONCEPT_TOPICS.map((t) => [t.id, shuffle([0, 1, 2])]));
+    this.demoToken = 0;
+    this.image = new Image();
+    this.imageReady = new Promise((resolve) => {
+      this.image.onload = () => resolve(true);
+      this.image.onerror = () => resolve(false);
+    });
+    this.image.src = PLANT_ASSET;
+  }
+  topic() {
+    return CONCEPT_MAP.get(this.getState().last);
+  }
+  render() {
+    document.body.classList.add('beginner-view');
+    byId('conceptsSurface').hidden = false;
+    byId('conceptsSurface').innerHTML =
+      `<header class="beginner-heading"><div><span class="eyebrow">先懂為什麼，再練怎麼做</span><h2>觀念教室</h2><p class="concept-subtitle">從「這是什麼」到「什麼時候用」，一次理解一個觀念。</p></div><div class="concept-heading-actions"><div class="course-progress"><label for="conceptProgress" id="conceptProgressLabel"></label><progress id="conceptProgress" max="${CONCEPT_TOPICS.length}"></progress></div><button id="conceptBack" class="secondary">${icon('mouse-pointer-2')}入門操作課</button></div></header>
+      <div class="concept-layout"><aside class="concept-directory" aria-label="觀念主題目錄"><label for="conceptSearch">找一個不懂的名詞</label><input type="search" id="conceptSearch" placeholder="例如：像素、遮色片、RGB" value="${escapeHtml(this.query)}"><label for="conceptFilter">主題範圍</label><select id="conceptFilter"><option value="all">全部觀念</option>${[...new Set(CONCEPT_TOPICS.map((t) => t.group))].map((g) => `<option value="${g}">${g}</option>`).join('')}<option value="review">待複習</option></select><button id="conceptMenuToggle" class="secondary" aria-expanded="${this.menuOpen}">${icon('list')}觀念目錄${icon('chevron-down')}</button><div id="conceptTopicList" class="${this.menuOpen ? 'expanded' : ''}"></div></aside><article id="conceptArticle" class="concept-article"></article></div>`;
+    byId('conceptFilter').value = this.filter;
+    byId('conceptSearch').oninput = (event) => {
+      this.query = event.target.value;
+      this.menuOpen = true;
+      this.renderList();
+    };
+    byId('conceptFilter').onchange = (event) => {
+      this.filter = event.target.value;
+      this.menuOpen = true;
+      this.renderList();
+    };
+    byId('conceptMenuToggle').onclick = () => {
+      this.menuOpen = !this.menuOpen;
+      this.renderList();
+    };
+    byId('conceptBack').onclick = () => showView('beginner');
+    this.renderList();
+    this.renderArticle();
+  }
+  renderList() {
+    const state = this.getState(),
+      query = this.query.normalize('NFKC').toLowerCase().trim();
+    const topics = CONCEPT_TOPICS.filter(
+      (t) =>
+        (this.filter === 'all' ||
+          (this.filter === 'review' ? state.review.includes(t.id) : this.filter === t.group)) &&
+        (!query ||
+          `${t.title} ${t.terms} ${t.one}`.normalize('NFKC').toLowerCase().includes(query)),
+    );
+    byId('conceptTopicList').classList.toggle('expanded', this.menuOpen);
+    byId('conceptMenuToggle').setAttribute('aria-expanded', String(this.menuOpen));
+    byId('conceptTopicList').innerHTML =
+      `<p class="concept-list-count" role="status">${topics.length} 個觀念${this.filter === 'review' ? '待複習' : ''}</p>${topics.length ? topics.map((t) => `<button data-concept-topic="${t.id}" ${t.id === state.last ? 'aria-current="page"' : ''}><span class="lesson-number">${state.understood.includes(t.id) ? icon('check') : String(CONCEPT_TOPICS.indexOf(t) + 1).padStart(2, '0')}</span><span>${t.title}<small>${t.group}${state.review.includes(t.id) ? ' · 待複習' : ''}</small></span></button>`).join('') : '<p class="empty-state">這個範圍沒有符合的主題。</p><button id="conceptClearFilter" class="secondary">清除篩選</button>'}`;
+    byId('conceptTopicList')
+      .querySelectorAll('[data-concept-topic]')
+      .forEach((b) => (b.onclick = () => this.open(b.dataset.conceptTopic)));
+    if (byId('conceptClearFilter'))
+      byId('conceptClearFilter').onclick = () => {
+        this.query = '';
+        this.filter = 'all';
+        byId('conceptSearch').value = '';
+        byId('conceptFilter').value = 'all';
+        this.renderList();
+      };
+    byId('conceptProgress').value = state.understood.length;
+    byId('conceptProgressLabel').textContent =
+      `已完成觀念確認 ${state.understood.length} / ${CONCEPT_TOPICS.length}`;
+    icons();
+  }
+  open(id) {
+    if (!CONCEPT_MAP.has(id)) return;
+    this.getState().last = id;
+    this.menuOpen = false;
+    this.save();
+    this.renderList();
+    this.renderArticle();
+    byId('conceptTitle').scrollIntoView({ block: 'start' });
+    byId('conceptTitle').focus({ preventScroll: true });
+  }
+  related(topic = this.topic()) {
+    return topic.ids.map((id) => QUESTION_MAP.get(`doc-${id}`)).filter(Boolean);
+  }
+  renderArticle() {
+    const topic = this.topic(),
+      state = this.getState(),
+      index = CONCEPT_TOPICS.indexOf(topic);
+    const related = this.related(),
+      practice = related
+        .filter((q) => q.type === 'choice' && q.reviewStatus === 'reviewed')
+        .slice(0, 3);
+    byId('conceptArticle').innerHTML =
+      `<header class="concept-topic-heading"><div><span class="eyebrow">${topic.group} · ${index + 1} / ${CONCEPT_TOPICS.length}</span><h3 id="conceptTitle" tabindex="-1">${topic.title}</h3><p>${topic.terms}</p></div><button id="conceptReview" class="icon-button ${state.review.includes(topic.id) ? 'bookmarked' : ''}" aria-pressed="${state.review.includes(topic.id)}" title="${state.review.includes(topic.id) ? '移出待複習' : '加入待複習'}" aria-label="${state.review.includes(topic.id) ? '移出待複習' : '加入待複習'}">${icon('bookmark')}</button></header>
+      <section class="concept-definition"><span>一句話理解</span><p>${topic.one}</p></section>
+      <section class="concept-analogy"><h4>${icon('lightbulb')}換成生活例子</h4><p>${topic.analogy}</p></section>
+      <section class="concept-experiment" aria-label="觀念圖解"><div class="section-title"><h4>${topic.demo === 'process' ? '先看懂這個流程' : topic.demo === 'smart' ? '比較來源資料的差異' : '動動看，差別在哪裡'}</h4><button id="conceptDemoReset" class="icon-button small" title="重設觀念圖解" aria-label="重設觀念圖解">${icon('rotate-ccw')}</button></div><div id="conceptDemo"></div></section>
+      <dl class="concept-reasons"><div><dt>為什麼要懂？</dt><dd>${topic.why}</dd></div><div><dt>什麼時候用？</dt><dd>${topic.when}</dd></div></dl>
+      <section class="concept-comparison"><h4>最容易混在一起的地方</h4><dl>${topic.compare.map(([name, text]) => `<div><dt>${name}</dt><dd>${text}</dd></div>`).join('')}</dl></section>
+      <aside class="lesson-mistake">${icon('triangle-alert')}<div><h4>常見誤會</h4><p>${topic.mistake}</p></div></aside>
+      <section class="lesson-check"><h4>換個情境，你會怎麼判斷？</h4><p>${topic.question}</p><div class="lesson-answers">${this.orders
+        .get(topic.id)
+        .map(
+          (i, position) =>
+            `<button data-concept-answer="${i}" aria-pressed="${this.answers[topic.id] === i}" class="${this.answers[topic.id] === i ? (i === 0 ? 'correct' : 'wrong') : ''}"><span>${String.fromCharCode(65 + position)}</span>${topic.answers[i][0]}</button>`,
+        )
+        .join(
+          '',
+        )}</div><p id="conceptAnswerFeedback" class="lesson-answer-feedback" role="status">${this.answers[topic.id] !== undefined ? topic.answers[this.answers[topic.id]][1] : state.understood.includes(topic.id) ? '曾完成這個觀念確認，也可以再想一次。' : '不計分。選錯時，先看看是哪個觀念混在一起了。'}</p></section>
+      <div class="concept-next-actions"><button id="conceptToLesson" class="secondary">${icon('mouse-pointer-2')}接著練相關操作</button>${practice.length ? `<button id="conceptPractice" class="secondary">${icon('list-checks')}試 ${practice.length} 題文件題</button>` : ''}</div>
+      <details class="concept-doc-reference"><summary>對照 ACP.docx 的相關題目</summary><ul>${related.map((q) => `<li>Q${q.id} · ${escapeHtml(q.question)}</li>`).join('')}</ul><p>這裡的白話說明與觀念確認為自編教學；原文件題號保留。</p></details>
+      <p class="lesson-source">延伸閱讀：<a href="${CONCEPT_SOURCES[topic.source]}" target="_blank" rel="noopener">Adobe 官方資料${icon('external-link')}</a> · 互動圖解為簡化示意，不是完整 Photoshop 或印刷色彩模擬。</p>
+      <footer class="lesson-footer"><button id="conceptPrevious" class="icon-button" title="上一個觀念" aria-label="上一個觀念" ${index ? '' : 'disabled'}>${icon('arrow-left')}</button><span>${state.understood.includes(topic.id) ? '已完成觀念確認，仍可重讀。' : '先理解原因，不必急著背答案。'}</span><button id="conceptNext" class="secondary" ${index === CONCEPT_TOPICS.length - 1 ? 'disabled' : ''}>下一個觀念${icon('arrow-right')}</button></footer>`;
+    byId('conceptArticle')
+      .querySelectorAll('[data-concept-answer]')
+      .forEach(
+        (b) =>
+          (b.onclick = () => {
+            const answer = Number(b.dataset.conceptAnswer);
+            this.answers[topic.id] = answer;
+            if (answer === 0) {
+              if (!state.understood.includes(topic.id)) state.understood.push(topic.id);
+              state.review = state.review.filter((id) => id !== topic.id);
+            } else if (!state.review.includes(topic.id)) state.review.push(topic.id);
+            this.save();
+            byId('conceptArticle')
+              .querySelectorAll('[data-concept-answer]')
+              .forEach((button) => {
+                const selected = Number(button.dataset.conceptAnswer) === answer;
+                button.classList.toggle('correct', selected && answer === 0);
+                button.classList.toggle('wrong', selected && answer !== 0);
+                button.setAttribute('aria-pressed', String(selected));
+              });
+            byId('conceptAnswerFeedback').textContent = topic.answers[answer][1];
+            this.renderList();
+            this.updateReviewButton();
+          }),
+      );
+    byId('conceptReview').onclick = () => {
+      state.review = state.review.includes(topic.id)
+        ? state.review.filter((id) => id !== topic.id)
+        : [...state.review, topic.id];
+      this.save();
+      this.renderList();
+      this.updateReviewButton();
+    };
+    byId('conceptPrevious').onclick = () => this.open(CONCEPT_TOPICS[index - 1]?.id);
+    byId('conceptNext').onclick = () => this.open(CONCEPT_TOPICS[index + 1]?.id);
+    byId('conceptToLesson').onclick = () => {
+      showView('beginner');
+      if (currentView === 'beginner') beginner.open(topic.lesson);
+    };
+    if (byId('conceptPractice'))
+      byId('conceptPractice').onclick = () =>
+        requestFinish(() => {
+          setMode('chapter');
+          byId('questionCount').value = practice.length;
+          startExam('choice', practice, 'chapter');
+        });
+    this.mountDemo(topic);
+    byId('conceptDemoReset').onclick = () => this.mountDemo(topic);
+    icons();
+  }
+  updateReviewButton() {
+    const review = this.getState().review.includes(this.topic().id),
+      label = review ? '移出待複習' : '加入待複習';
+    byId('conceptReview').classList.toggle('bookmarked', review);
+    byId('conceptReview').title = label;
+    byId('conceptReview').setAttribute('aria-label', label);
+    byId('conceptReview').setAttribute('aria-pressed', String(review));
+  }
+  photo(extra = '', id = '') {
+    return `<div class="concept-photo-stage ${extra}"><img ${id ? `id="${id}"` : ''} src="${PLANT_ASSET}" alt="觀察用的植物照片"></div>`;
+  }
+  range(id, label, min, max, value, step = 1) {
+    return `<label class="concept-range" for="${id}"><span>${label}</span><input type="range" id="${id}" min="${min}" max="${max}" value="${value}" step="${step}"><output for="${id}" id="${id}Value">${value}</output></label>`;
+  }
+  async mountDemo(topic) {
+    const token = ++this.demoToken,
+      host = byId('conceptDemo');
+    const select = (id, label, choices) =>
+      `<label class="concept-select" for="${id}">${label}<select id="${id}">${choices.map(([v, t]) => `<option value="${v}">${t}</option>`).join('')}</select></label>`;
+    const canvas = (id, label) =>
+      `<canvas id="${id}" width="320" height="200" role="img" aria-label="${label}"></canvas>`;
+    const note = (text) => `<p class="demo-note">${text}</p>`;
+    const pair = (left, right) => `<div class="concept-demo-pair">${left}${right}</div>`;
+    const pane = (title, body) => `<div class="concept-demo-pane"><h5>${title}</h5>${body}</div>`;
+    const markup = {
+      raster:
+        this.range('conceptZoom', '放大倍率', 2, 10, 7) +
+        pair(
+          pane('固定像素的小圓圖', canvas('rasterDemo', '點陣圓形放大後可見像素格')),
+          pane('依幾何規則重新畫圓', canvas('vectorDemo', '依新尺寸重畫的圓形')),
+        ) +
+        note('同一個圓形的兩種記錄方式。照片不會因這個比較就變成向量。'),
+      ppi:
+        `<label class="concept-select" for="conceptPPI">PPI（不重新取樣）<input id="conceptPPI" type="number" min="30" max="600" step="1" value="72"></label><div class="ppi-result"><div><span>像素尺寸，保持不變</span><b>1200 × 800 px</b></div><div><span>計算出的列印尺寸</span><output id="ppiResult"></output></div></div>` +
+        note('公分＝像素 ÷ PPI × 2.54。這是列印尺寸計算，不是用尺量螢幕上的圖。'),
+      rgb:
+        `<div class="rgb-experiment"><div id="rgbSwatch" class="rgb-swatch" role="img" aria-label="三個 RGB 通道混合出的顏色"></div><div>${['R', 'G', 'B'].map((c, i) => this.range(`rgb${c}`, c, 0, 255, [80, 160, 100][i])).join('')}<output id="rgbResult"></output></div></div>` +
+        note('三個通道全為 0 是黑，全為 255 是白。這裡沒有做 CMYK 或 ICC 轉換。'),
+      tone:
+        pair(pane('原圖', this.photo()), pane('調整後', this.photo('', 'toneImage'))) +
+        this.range('toneHue', '色相位移（°）', -180, 180, 0) +
+        this.range('toneSat', '飽和度（%）', 0, 200, 100) +
+        this.range('toneLight', '亮度（%）', 40, 200, 100) +
+        note('使用瀏覽器濾鏡示意感受，不代表 Photoshop 數值或色彩管理完全相同。'),
+      depth:
+        select('depthLevel', '比較可記錄的階數', [
+          ['2', '2-bit：4 階示意'],
+          ['4', '4-bit：16 階示意'],
+          ['8', '8-bit：256 階示意'],
+        ]) +
+        '<canvas id="depthDemo" width="640" height="140" role="img" aria-label="由黑至白，不同階數的明暗帶"></canvas>' +
+        note('這是單一灰階通道的簡化圖解，不是宣稱整張 RGB 圖只有這些顏色。'),
+      layers:
+        `<div class="concept-photo-stage layer-stage"><img id="layerDemoImage" src="${PLANT_ASSET}" alt="獨立的植物內容"><strong id="layerDemoText">GREEN LIFE</strong></div><div class="concept-demo-toggles"><label><input type="checkbox" id="layerDemoShowImage" checked>顯示植物層</label><label><input type="checkbox" id="layerDemoShowText" checked>顯示文字層</label></div>` +
+        note('隱藏其中一層，其他內容仍然存在。圖層順序也會影響遮擋關係。'),
+      opacity:
+        this.photo('transparency-stage', 'opacityImage') +
+        this.range('conceptOpacity', '圖層不透明度（%）', 0, 100, 100) +
+        note('觀察植物和下方棋盤格的混合，不是觀察照片有沒有變亮。'),
+      blend:
+        select('conceptBlend', '混合模式', [
+          ['normal', 'Normal 正常'],
+          ['multiply', 'Multiply 色彩增值'],
+          ['screen', 'Screen 濾色'],
+        ]) +
+        '<div class="blend-swatches"><div><span>下方色塊</span><div style="background:rgb(80,120,180)"></div><small>80, 120, 180</small></div><div><span>上方色塊</span><div style="background:rgb(200,80,80)"></div><small>200, 80, 80</small></div><div><span>計算結果</span><div id="blendResultSwatch"></div><output id="blendResult"></output></div></div>' +
+        note('全不透明 RGB 色塊的公式示意；實際文件還受色彩空間等設定影響。'),
+      selection:
+        select('conceptSelection', '黑白調整的作用範圍', [
+          ['partial', '有選取：只改中央區域'],
+          ['all', '沒有選取限制：改整張'],
+        ]) +
+        `<div class="concept-photo-stage selection-stage"><img src="${PLANT_ASSET}" alt="原本彩色植物"><img id="selectionOverlay" src="${PLANT_ASSET}" alt="黑白調整作用的範圍"></div>` +
+        note('選取限制作用區域。這裡沒有刪除範圍外的照片。'),
+      mask:
+        pair(
+          pane(
+            '遮色片明暗值',
+            '<div id="maskValueSwatch" class="mask-value-swatch"></div><output id="maskMeaning"></output>',
+          ),
+          pane('對應的內容可見程度', this.photo('transparency-stage', 'maskImage')),
+        ) +
+        this.range('conceptMask', '遮色片明暗值', 0, 255, 255) +
+        note('為了看清關係，這裡整塊使用同一個明暗值；真正遮色片每個位置都可不同。'),
+      clipping:
+        select('conceptClip', '下方基底的範圍', [
+          ['circle', '圓形基底'],
+          ['square', '方形基底'],
+          ['none', '解除剪裁'],
+        ]) +
+        this.photo('transparency-stage', 'clippingImage') +
+        note('照片仍完整保留；顯示範圍由基底決定，不是把照片永久切掉。'),
+      smart:
+        pair(
+          pane('保留較完整的來源', canvas('smartOriginal', '保留來源的植物圖像')),
+          pane('縮小丟失像素後再放大', canvas('smartReduced', '低解析度植物再放大的結果')),
+        ) + note('只是示意來源資料是否保留；智慧型物件仍無法保證補出來源沒有的真實細節。'),
+      adjustment:
+        pair(
+          pane('保留的原照片', this.photo()),
+          pane('獨立黑白效果', this.photo('', 'adjustmentImage')),
+        ) +
+        '<label class="concept-check-control"><input type="checkbox" id="conceptAdjustment" checked>顯示黑白調整</label>' +
+        note('開關效果，原照片沒有因此被替換；真正工作時也要保留可編輯文件。'),
+      histogram:
+        canvas('histogramPhoto', '經亮度倍率調整的植物圖') +
+        this.range('histogramLight', '亮度倍率', 0.4, 1.8, 1, 0.1) +
+        '<canvas id="histogramChart" width="640" height="140" role="img" aria-label="目前圖像像素的明暗分布直方圖"></canvas><div class="histogram-axis"><span>暗 ←</span><span>→ 亮</span></div><output id="histogramSummary"></output>' +
+        note('圖表由上方示例圖的實際像素計算，縱向高度會隨目前最高柱調整；不是照片品質分數。'),
+      transform:
+        select('conceptTransform', '想改變的是什麼？', [
+          ['zoom', '檢視放大：只靠近觀看'],
+          ['object', '物件縮小：畫布不變'],
+          ['canvas', '增加畫布：物件大小不變'],
+          ['crop', '裁切：換一個可見範圍'],
+        ]) +
+        this.photo('transform-stage', 'transformImage') +
+        '<p id="transformMeaning" class="demo-result"></p>' +
+        note('這是位置、邊界與觀看倍率的圖解，不會修改你的測驗文件。'),
+      effects:
+        select('conceptEffect', '比較效果', [
+          ['none', '原圖'],
+          ['blur', '模糊內容'],
+          ['shadow', '增加外部投影'],
+        ]) +
+        this.photo('', 'effectImage') +
+        note('瀏覽器視覺示意，不是 Photoshop 濾鏡引擎。'),
+      type:
+        select('conceptHierarchy', '文字層級', [
+          ['clear', '標題、說明有層級'],
+          ['same', '每一行都一樣大'],
+        ]) +
+        `<div class="typography-example"><div id="typeDemoText"><h5>GREEN LIFE</h5><p class="type-subtitle">把自然帶進日常</p><p class="type-body">用一盆植物，留下一點呼吸的空間。</p></div><img src="${PLANT_ASSET}" alt="排版中的植物照片"></div>` +
+        note('先看標題，再看說明。可讀性也與背景對比、留白和文字長度有關。'),
+      formats:
+        select('conceptFormat', '你準備保留哪一種版本？', [
+          ['png', 'PNG：透明交付圖'],
+          ['jpg', 'JPG：不支援透明'],
+          ['work', '可編輯工作檔'],
+        ]) +
+        this.photo('transparency-stage', 'formatImage') +
+        '<p id="formatMeaning" class="demo-result"></p>' +
+        note('此處比較概念，不會產生下載；實際匯出可接著做第 9 課。'),
+    };
+    const steps =
+      topic.id === 'ai'
+        ? ['指定處理範圍', '取得候選結果', '檢查並修整']
+        : topic.id === 'workflow'
+          ? ['確認用途與規格', '保留來源與版本', '核對後交付']
+          : ['判斷取樣來源', '修補局部內容', '檢查邊緣與光影'];
+    host.innerHTML =
+      markup[topic.demo] ||
+      `<div class="concept-process"><img src="${PLANT_ASSET}" alt="作為練習情境的植物素材"><ol>${steps.map((s, i) => `<li><span>${i + 1}</span>${s}</li>`).join('')}</ol></div>${note(topic.id === 'ai' ? '流程圖解，沒有呼叫生成式 AI，也沒有把示例素材當成生成結果。' : '先判斷目標，再選擇工具。這裡不執行自動修補。')}`;
+    const ready = await this.imageReady;
+    if (token !== this.demoToken || currentView !== 'concepts' || !ready) return;
+    this.bindDemo(topic);
+  }
+  bindDemo(topic) {
+    const input = (id, update) => {
+      const el = byId(id);
+      if (!el) return;
+      el.oninput = () => {
+        const output = byId(id + 'Value');
+        if (output) output.textContent = el.value;
+        update(el.value);
+      };
+      el.oninput();
+    };
+    const paintPhoto = (canvas, img = this.image) => {
+      const ctx = canvas.getContext('2d', { willReadFrequently: true });
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#e3ebe5';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      const size = Math.min(canvas.width, canvas.height);
+      ctx.drawImage(img, (canvas.width - size) / 2, 0, size, size);
+      return ctx;
+    };
+    if (topic.demo === 'raster')
+      input('conceptZoom', (value) => {
+        const tiny = document.createElement('canvas');
+        tiny.width = tiny.height = 16;
+        const tc = tiny.getContext('2d');
+        tc.fillStyle = '#5b9276';
+        tc.beginPath();
+        tc.arc(8, 8, 6, 0, 2 * Math.PI);
+        tc.fill();
+        for (const [id, vector] of [
+          ['rasterDemo', false],
+          ['vectorDemo', true],
+        ]) {
+          const c = byId(id),
+            ctx = c.getContext('2d'),
+            size = 16 * Number(value);
+          ctx.fillStyle = '#e5ece7';
+          ctx.fillRect(0, 0, c.width, c.height);
+          if (vector) {
+            ctx.fillStyle = '#5b9276';
+            ctx.beginPath();
+            ctx.arc(c.width / 2, c.height / 2, (size * 6) / 16, 0, Math.PI * 2);
+            ctx.fill();
+          } else {
+            ctx.imageSmoothingEnabled = false;
+            ctx.drawImage(tiny, (c.width - size) / 2, (c.height - size) / 2, size, size);
+          }
+        }
+      });
+    if (topic.demo === 'ppi')
+      input('conceptPPI', (value) => {
+        const ppi = Number(value);
+        byId('ppiResult').textContent =
+          ppi >= 30 && ppi <= 600
+            ? `${((1200 / ppi) * 2.54).toFixed(2)} × ${((800 / ppi) * 2.54).toFixed(2)} cm`
+            : '請輸入 30～600 PPI';
+      });
+    if (topic.demo === 'rgb') {
+      const update = () => {
+        const values = ['R', 'G', 'B'].map((c) => Number(byId('rgb' + c).value));
+        byId('rgbSwatch').style.backgroundColor = `rgb(${values.join(',')})`;
+        byId('rgbResult').textContent = `RGB (${values.join(', ')})`;
+      };
+      ['R', 'G', 'B'].forEach((c) => input('rgb' + c, update));
+    }
+    if (topic.demo === 'tone') {
+      const update = () =>
+        (byId('toneImage').style.filter =
+          `hue-rotate(${byId('toneHue').value}deg) saturate(${byId('toneSat').value}%) brightness(${byId('toneLight').value}%)`);
+      ['toneHue', 'toneSat', 'toneLight'].forEach((id) => input(id, update));
+    }
+    if (topic.demo === 'depth')
+      input('depthLevel', (value) => {
+        const c = byId('depthDemo'),
+          ctx = c.getContext('2d'),
+          levels = 2 ** Number(value);
+        for (let x = 0; x < c.width; x++) {
+          const v = Math.round(
+            (Math.round((x / (c.width - 1)) * (levels - 1)) / (levels - 1)) * 255,
+          );
+          ctx.fillStyle = `rgb(${v},${v},${v})`;
+          ctx.fillRect(x, 0, 1, c.height);
+        }
+      });
+    if (topic.demo === 'layers') {
+      input(
+        'layerDemoShowImage',
+        () => (byId('layerDemoImage').hidden = !byId('layerDemoShowImage').checked),
+      );
+      input(
+        'layerDemoShowText',
+        () => (byId('layerDemoText').hidden = !byId('layerDemoShowText').checked),
+      );
+    }
+    if (topic.demo === 'opacity')
+      input('conceptOpacity', (v) => (byId('opacityImage').style.opacity = Number(v) / 100));
+    if (topic.demo === 'blend')
+      input('conceptBlend', (mode) => {
+        const base = [80, 120, 180],
+          top = [200, 80, 80];
+        const result = top.map((v, i) =>
+          Math.round(
+            mode === 'multiply'
+              ? (base[i] * v) / 255
+              : mode === 'screen'
+                ? 255 - ((255 - base[i]) * (255 - v)) / 255
+                : v,
+          ),
+        );
+        byId('blendResultSwatch').style.backgroundColor = `rgb(${result.join(',')})`;
+        byId('blendResult').textContent = result.join(', ');
+      });
+    if (topic.demo === 'selection')
+      input('conceptSelection', (value) => {
+        byId('selectionOverlay').style.clipPath =
+          value === 'partial' ? 'inset(10% 30% 10% 30%)' : 'none';
+      });
+    if (topic.demo === 'mask')
+      input('conceptMask', (v) => {
+        byId('maskValueSwatch').style.backgroundColor = `rgb(${v},${v},${v})`;
+        byId('maskImage').style.opacity = Number(v) / 255;
+        byId('maskMeaning').textContent =
+          Number(v) === 0
+            ? '黑色：隱藏'
+            : Number(v) === 255
+              ? '白色：顯示'
+              : `灰色：約顯示 ${Math.round((Number(v) / 255) * 100)}%`;
+      });
+    if (topic.demo === 'clipping')
+      input('conceptClip', (value) => {
+        byId('clippingImage').style.clipPath =
+          value === 'circle'
+            ? 'circle(38% at 50% 50%)'
+            : value === 'square'
+              ? 'inset(15% 25%)'
+              : 'none';
+      });
+    if (topic.demo === 'smart') {
+      paintPhoto(byId('smartOriginal'));
+      const tiny = document.createElement('canvas');
+      tiny.width = 24;
+      tiny.height = 15;
+      paintPhoto(tiny);
+      const c = byId('smartReduced'),
+        ctx = c.getContext('2d');
+      ctx.imageSmoothingEnabled = false;
+      ctx.drawImage(tiny, 0, 0, c.width, c.height);
+    }
+    if (topic.demo === 'adjustment')
+      input(
+        'conceptAdjustment',
+        () =>
+          (byId('adjustmentImage').style.filter = byId('conceptAdjustment').checked
+            ? 'grayscale(1)'
+            : 'none'),
+      );
+    if (topic.demo === 'histogram')
+      input('histogramLight', (value) => {
+        const c = byId('histogramPhoto'),
+          ctx = paintPhoto(c),
+          image = ctx.getImageData(0, 0, c.width, c.height),
+          bins = Array(256).fill(0);
+        let dark = 0,
+          light = 0;
+        for (let i = 0; i < image.data.length; i += 4) {
+          for (let channel = 0; channel < 3; channel++)
+            image.data[i + channel] = Math.min(
+              255,
+              Math.round(image.data[i + channel] * Number(value)),
+            );
+          const level = Math.round(
+            0.2126 * image.data[i] + 0.7152 * image.data[i + 1] + 0.0722 * image.data[i + 2],
+          );
+          bins[level]++;
+          if (level < 85) dark++;
+          if (level > 170) light++;
+        }
+        ctx.putImageData(image, 0, 0);
+        const chart = byId('histogramChart'),
+          chartCtx = chart.getContext('2d'),
+          max = Math.max(...bins);
+        chartCtx.fillStyle = '#242729';
+        chartCtx.fillRect(0, 0, chart.width, chart.height);
+        bins.forEach((n, i) => {
+          chartCtx.fillStyle = '#a5c8b5';
+          chartCtx.fillRect(
+            (i * chart.width) / 256,
+            chart.height - (n / max) * (chart.height - 5),
+            chart.width / 256,
+            (n / max) * (chart.height - 5),
+          );
+        });
+        const total = c.width * c.height;
+        byId('histogramSummary').textContent =
+          `暗部約 ${Math.round((dark / total) * 100)}% · 中間調約 ${Math.round(((total - dark - light) / total) * 100)}% · 亮部約 ${Math.round((light / total) * 100)}%`;
+      });
+    if (topic.demo === 'transform')
+      input('conceptTransform', (value) => {
+        const img = byId('transformImage');
+        img.style.transform =
+          value === 'zoom' ? 'scale(1.25)' : value === 'object' ? 'scale(.6)' : 'none';
+        img.style.clipPath = value === 'crop' ? 'inset(15% 20%)' : 'none';
+        img.parentElement.classList.toggle('canvas-expanded', value === 'canvas');
+        img.parentElement.classList.toggle('crop-frame', value === 'crop');
+        byId('transformMeaning').textContent = {
+          zoom: '觀看得更近；在真正文件中，檢視倍率不改像素尺寸。',
+          object: '物件變小，外部畫布邊界維持不變。',
+          canvas: '新增周圍空間；植物本身不必跟著縮放。',
+          crop: '只保留新的可見範圍；是否保留外部內容要看實際裁切設定。',
+        }[value];
+      });
+    if (topic.demo === 'effects')
+      input('conceptEffect', (value) => {
+        byId('effectImage').style.filter =
+          value === 'blur'
+            ? 'blur(4px)'
+            : value === 'shadow'
+              ? 'drop-shadow(14px 10px 5px #0008)'
+              : 'none';
+      });
+    if (topic.demo === 'type')
+      input('conceptHierarchy', (value) =>
+        byId('typeDemoText').classList.toggle('same-hierarchy', value === 'same'),
+      );
+    if (topic.demo === 'formats')
+      input('conceptFormat', (value) => {
+        byId('formatImage').parentElement.style.background = value === 'jpg' ? '#fff' : '';
+        byId('formatMeaning').textContent = {
+          png: 'PNG 支援透明；這個素材本身的背景也已透明。',
+          jpg: 'JPG 不支援透明；這裡用白色底示意扁平化的交付結果。',
+          work: '工作檔保存可編輯結構。本平台用 .acplab.json，真正 Photoshop 可保留 PSD。',
+        }[value];
+      });
+  }
+}
 </script><script>const STORAGE_VERSION = 3;
 const MODE_NAMES = {
   learn: '新手學習',
@@ -7058,6 +8918,7 @@ const defaultData = () => ({
   results: [],
   lessons: [],
   beginner: defaultBeginner(),
+  concepts: defaultConcepts(),
   plan: {
     daily: 10,
     examDate: '',
@@ -7095,6 +8956,7 @@ const lab = new LabEditor((doc) => {
   saveSession();
 });
 const beginner = new BeginnerCourse(lab, () => (data.beginner ||= defaultBeginner()), persistData);
+const concepts = new ConceptClassroom(() => (data.concepts ||= defaultConcepts()), persistData);
 lab.onReset = () => {
   if (currentView === 'beginner') beginner.restartProgress();
 };
@@ -7351,6 +9213,7 @@ function hideSurfaces() {
     'dashboardSurface',
     'librarySurface',
     'beginnerSurface',
+    'conceptsSurface',
     'feedback',
     'hintBox',
   ])
@@ -7359,14 +9222,20 @@ function hideSurfaces() {
 function updateTabs() {
   document
     .querySelectorAll('[data-view]')
-    .forEach((b) => b.classList.toggle('active', b.dataset.view === currentView));
+    .forEach((b) =>
+      b.classList.toggle(
+        'active',
+        b.dataset.view === currentView ||
+          (currentView === 'concepts' && b.dataset.view === 'beginner'),
+      ),
+    );
 }
 function showView(view) {
   if (
     session &&
     !session.completed &&
-    ((isFormal() && ['library', 'records', 'beginner'].includes(view)) ||
-      (view === 'beginner' && session.deadline))
+    ((isFormal() && ['library', 'records', 'beginner', 'concepts'].includes(view)) ||
+      (['beginner', 'concepts'].includes(view) && session.deadline))
   ) {
     requestFinish(() => showView(view));
     return;
@@ -7379,6 +9248,7 @@ function showView(view) {
   saveSession();
   if (view === 'dashboard') renderDashboard();
   else if (view === 'beginner') beginner.render();
+  else if (view === 'concepts') concepts.render();
   else if (view === 'library') renderLibrary();
   else if (view === 'records') renderRecords();
   else {
@@ -7967,7 +9837,7 @@ function renderDashboard() {
           : '練習中';
   byId('dashboardSurface').innerHTML =
     `<div class="surface-heading"><div><span class="eyebrow">${new Intl.DateTimeFormat('zh-TW', { timeZone: 'Asia/Taipei', dateStyle: 'full' }).format(new Date())}</span><h2>你的 Photoshop 學習工作區</h2><p class="muted">${stage} · 今日目標 ${data.plan.daily} 題</p></div><div class="heading-actions"><button class="secondary" id="continueExam" ${session && !session.completed ? '' : 'disabled'}>${icon('play')}繼續上次練習</button><button class="primary" id="startFormal">${icon('clipboard-check')}正式模擬考</button></div></div>
-    <section class="beginner-entry"><div>${icon('sprout')}<div><h3>第一次用 Photoshop？從這裡開始</h3><p>先認識介面與圖層，再完成第一張小海報。</p><span class="muted">入門課程 ${data.beginner?.completed.length || 0} / ${BEGINNER_LESSONS.length} 課</span></div></div><button class="primary" id="openBeginner">${icon('book-open')}${data.beginner?.completed.length ? '繼續入門課' : '從零開始學'}</button></section>
+    <section class="beginner-entry"><div>${icon('sprout')}<div><h3>第一次用 Photoshop？從這裡開始</h3><p>先理解觀念，再一步一步完成自己的作品。</p><span class="muted">入門操作 ${data.beginner?.completed.length || 0} / ${BEGINNER_LESSONS.length} 課 · 觀念確認 ${data.concepts?.understood.length || 0} / ${CONCEPT_TOPICS.length}</span></div></div><div class="beginner-entry-actions"><button class="secondary" id="openConcepts">${icon('lightbulb')}先學觀念</button><button class="primary" id="openBeginner">${icon('book-open')}${data.beginner?.completed.length ? '繼續入門課' : '從零開始學'}</button></div></section>
     <div class="dashboard-stats">${[
       ['list-checks', '累計答題', summary.total],
       ['target', '累計正確率', summary.rate === null ? '—' : summary.rate + '%'],
@@ -8007,6 +9877,7 @@ function renderDashboard() {
     <footer class="source-footer">題目來源：ACP.docx＋自編補充；非官方原題。參考 <a href="https://certifiedprofessional.adobe.com/photoshop" target="_blank" rel="noopener">Adobe 2025 Photoshop 考試目標</a>，核對日期 2026-10-14。模擬考題數、時間與指標均為平台自訂。</footer>`;
   byId('continueExam').onclick = () => renderSession();
   byId('openBeginner').onclick = () => showView('beginner');
+  byId('openConcepts').onclick = () => showView('concepts');
   byId('startFormal').onclick = () => launchMode('formal');
   byId('editPlan').onclick = editPlan;
   byId('dailyPractice').onclick = () => {
@@ -8181,6 +10052,7 @@ function renderLibrary() {
   byId('librarySurface').innerHTML =
     `<div class="surface-heading"><div><span class="eyebrow">ACP.docx 與補充課題</span><h2>學習中心</h2></div><button id="librarySettings" class="secondary">${icon('settings-2')}學習計畫</button></div><nav class="library-tabs">${[
       ['bank', '題庫搜尋'],
+      ['concepts', '觀念教室'],
       ['chapters', '章節課程'],
       ['wrong', '錯題中心'],
       ['starred', '收藏與筆記'],
@@ -8194,6 +10066,7 @@ function renderLibrary() {
   document.querySelectorAll('[data-library-tab]').forEach(
     (b) =>
       (b.onclick = () => {
+        if (b.dataset.libraryTab === 'concepts') return showView('concepts');
         libraryTab = b.dataset.libraryTab;
         renderLibrary();
       }),
@@ -8416,6 +10289,7 @@ function validBackup(d) {
   const knownKeys = (list) =>
     Array.isArray(list) && list.length <= 10000 && list.every((k) => QUESTION_MAP.has(k));
   if (d?.beginner !== undefined && !validBeginner(d.beginner)) return false;
+  if (d?.concepts !== undefined && !validConcepts(d.concepts)) return false;
   if (
     !d ||
     d.version !== STORAGE_VERSION ||
@@ -8626,6 +10500,7 @@ function importBackup() {
           lab.taskKey = null;
           beginner.mode = 'read';
           beginner.answers = {};
+          concepts.answers = {};
           persistData();
           saveSession();
           showView('dashboard');
@@ -8646,6 +10521,8 @@ function clearData() {
     (form) => {
       if (form.get('confirm') !== '清除') throw Error('請輸入「清除」');
       data = defaultData();
+      beginner.answers = {};
+      concepts.answers = {};
       session = null;
       persistData();
       saveSession();
@@ -8671,9 +10548,16 @@ async function boot() {
     currentView = localStorage.getItem(VIEW_KEY) || 'dashboard';
   } catch (_) {}
   if (
-    !['dashboard', 'beginner', 'library', 'records', 'live', 'choice', 'order'].includes(
-      currentView,
-    )
+    ![
+      'dashboard',
+      'beginner',
+      'concepts',
+      'library',
+      'records',
+      'live',
+      'choice',
+      'order',
+    ].includes(currentView)
   )
     currentView = 'dashboard';
   document
