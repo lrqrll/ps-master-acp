@@ -7451,11 +7451,11 @@ class BeginnerCourse {
     byId('beginnerSurface').hidden = false;
     byId('editor').hidden = this.mode !== 'practice' || !lesson.lab;
     byId('beginnerSurface').innerHTML = `
-      <header class="beginner-heading"><div><span class="eyebrow">一步一步，從零開始</span><h2>零基礎入門</h2></div><div class="concept-heading-actions"><button id="beginnerConcepts" class="secondary">${icon('lightbulb')}觀念教室</button><div class="course-progress"><label for="beginnerProgress">已完成 ${state.completed.length} / ${BEGINNER_LESSONS.length} 課</label><progress id="beginnerProgress" value="${state.completed.length}" max="${BEGINNER_LESSONS.length}"></progress></div></div></header>
+      <header class="beginner-heading"><div><h2>零基礎入門</h2></div><div class="concept-heading-actions"><button id="beginnerConcepts" class="secondary">${icon('lightbulb')}觀念教室</button><div class="course-progress"><label for="beginnerProgress">已完成 ${state.completed.length} / ${BEGINNER_LESSONS.length} 課</label><progress id="beginnerProgress" value="${state.completed.length}" max="${BEGINNER_LESSONS.length}"></progress></div></div></header>
       <div class="beginner-layout ${this.mode === 'practice' ? 'practicing' : ''}"><aside class="course-outline ${this.outlineOpen ? 'expanded' : ''}" aria-label="入門課程目錄"><h3>學習路線</h3><button class="course-toggle" id="beginnerToggleOutline" aria-expanded="${this.outlineOpen}">${icon('list')}課程目錄 · 第 ${index + 1} 課${icon(this.outlineOpen ? 'chevron-up' : 'chevron-down')}</button>${['先看懂', '動手做', '完成作品'].map((phase) => `<h4>${phase}</h4><ol>${BEGINNER_LESSONS.map((l, i) => (l.phase === phase ? `<li><button data-beginner-lesson="${l.id}" class="${l.id === lesson.id ? 'active' : ''}" ${l.id === lesson.id ? 'aria-current="step"' : ''}><span class="lesson-number">${state.completed.includes(l.id) ? icon('check') : String(i + 1).padStart(2, '0')}</span><span>${l.title}<small>約 ${l.minutes} 分鐘${state.completed.includes(l.id) ? ' · 已完成' : ''}</small></span></button></li>` : '')).join('')}</ol>`).join('')}</aside>
       <article class="lesson-article"><div class="lesson-heading"><div><span class="eyebrow">第 ${index + 1} 課 / ${BEGINNER_LESSONS.length} · ${lesson.phase}</span><h3 id="beginnerLessonTitle" tabindex="-1">${lesson.title}</h3><p>${lesson.goal}</p></div><div class="lesson-modes" role="group" aria-label="課程內容"><button data-lesson-mode="read" aria-pressed="${this.mode === 'read'}">${icon('book-open')}先看懂</button>${lesson.lab ? `<button data-lesson-mode="practice" aria-pressed="${this.mode === 'practice'}">${icon('mouse-pointer-2')}跟著做</button>` : ''}</div></div>
       ${this.mode === 'read' ? this.reading(lesson) : '<div id="beginnerPractice"></div>'}
-      <footer class="lesson-footer"><button id="beginnerPrevious" class="icon-button" title="上一課" aria-label="上一課" ${index ? '' : 'disabled'}>${icon('arrow-left')}</button><span>${state.completed.includes(lesson.id) ? '這一課已完成，隨時可以重練。' : '每次只學一點，理解比速度重要。'}</span><button id="beginnerNext" class="secondary" ${index === BEGINNER_LESSONS.length - 1 ? 'disabled' : ''}>下一課${icon('arrow-right')}</button></footer></article></div>`;
+      <footer class="lesson-footer"><button id="beginnerPrevious" class="icon-button" title="上一課" aria-label="上一課" ${index ? '' : 'disabled'}>${icon('arrow-left')}</button><button id="beginnerNext" class="secondary" ${index === BEGINNER_LESSONS.length - 1 ? 'disabled' : ''}>下一課${icon('arrow-right')}</button></footer></article></div>`;
     byId('beginnerSurface')
       .querySelectorAll('[data-beginner-lesson]')
       .forEach((b) => (b.onclick = () => this.open(b.dataset.beginnerLesson)));
@@ -7496,9 +7496,9 @@ class BeginnerCourse {
       ready = this.ready();
     return `<div class="lesson-reading"><p class="lesson-intro">${lesson.intro}</p>${this.visual(lesson)}
       <dl class="lesson-ideas">${lesson.ideas.map(([term, meaning]) => `<div><dt>${term}</dt><dd>${meaning}</dd></div>`).join('')}</dl>
-      <aside class="lesson-mistake">${icon('lightbulb')}<div><h4>卡住時先想這件事</h4><p>${lesson.mistake}</p></div></aside>
-      <div class="lesson-takeaway"><span>先記住這一句</span><p>${lesson.remember}</p></div>
-      <section class="lesson-check" aria-labelledby="beginnerCheckTitle"><h4 id="beginnerCheckTitle">停一下，想一想</h4><p>${lesson.question}</p><div class="lesson-answers">${this.answerOrders
+      <aside class="lesson-mistake">${icon('lightbulb')}<div><h4>常見誤會</h4><p>${lesson.mistake}</p></div></aside>
+      <div class="lesson-takeaway"><span>重點</span><p>${lesson.remember}</p></div>
+      <section class="lesson-check" aria-labelledby="beginnerCheckTitle"><h4 id="beginnerCheckTitle">理解確認</h4><p>${lesson.question}</p><div class="lesson-answers">${this.answerOrders
         .get(lesson.id)
         .map(
           (i, position) =>
@@ -7506,10 +7506,10 @@ class BeginnerCourse {
         )
         .join(
           '',
-        )}</div><p id="beginnerAnswerFeedback" class="lesson-answer-feedback" role="status">${this.answers[lesson.id] !== undefined ? lesson.answers[this.answers[lesson.id]][1] : state.understood.includes(lesson.id) ? '這個觀念已理解，也可以再選一次複習。' : '不計分，可以慢慢想，也可以回頭看。'}</p></section>
+        )}</div><p id="beginnerAnswerFeedback" class="lesson-answer-feedback" role="status">${this.answers[lesson.id] !== undefined ? lesson.answers[this.answers[lesson.id]][1] : state.understood.includes(lesson.id) ? '已完成確認。' : '不計分。'}</p></section>
       <div class="lesson-completion"><div><span>${state.understood.includes(lesson.id) ? '✓ 觀念已理解' : '○ 先完成觀念確認'}</span>${lesson.lab ? `<span>${this.practiceDone() ? '✓ 跟著做已完成' : '○ 再完成跟著做'}</span>` : ''}</div>${lesson.lab && !this.practiceDone() ? `<button id="beginnerStartPractice" class="primary">${icon('mouse-pointer-2')}開始跟著做</button>` : ''}<button id="beginnerComplete" class="${ready ? 'primary' : 'secondary'}" ${ready ? '' : 'disabled'}>${icon('check')}${state.completed.includes(lesson.id) ? '已完成這一課' : '完成這一課'}</button></div>
-      ${state.completed.length === BEGINNER_LESSONS.length ? `<div class="course-finished"><h4>你已經完成從零到第一張作品。</h4><p>接下來可以從基礎觀念測驗開始；不必一次挑戰正式模擬考。</p><button id="beginnerTryQuiz" class="secondary">${icon('list-checks')}基礎觀念練習</button></div>` : ''}
-      <p class="lesson-source">自編入門教學 · <a href="${BEGINNER_HELP[lesson.source]}" target="_blank" rel="noopener">Adobe 官方延伸閱讀${icon('external-link')}</a> · 實際 Photoshop 的選單會依版本略有差異。</p></div>`;
+      ${state.completed.length === BEGINNER_LESSONS.length ? `<div class="course-finished"><h4>入門課已完成。</h4><button id="beginnerTryQuiz" class="secondary">${icon('list-checks')}基礎觀念練習</button></div>` : ''}
+      <p class="lesson-source">自編教學 · <a href="${BEGINNER_HELP[lesson.source]}" target="_blank" rel="noopener">Adobe 參考資料${icon('external-link')}</a></p></div>`;
   }
   visual(lesson) {
     if (lesson.visual === 'workspace') {
@@ -7534,8 +7534,8 @@ class BeginnerCourse {
     if (lesson.visual === 'pixels')
       return `<figure class="pixel-explainer"><div class="pixel-grid" role="img" aria-label="小色塊組成像素圖">${Array.from({ length: 64 }, (_, i) => `<span class="pixel-${(i * 7 + Math.floor(i / 8)) % 4}"></span>`).join('')}</div><figcaption><b>像素是圖片的小色點</b><p>寬 × 高＝像素尺寸<br>不是螢幕上用尺量到的大小。</p></figcaption></figure>`;
     if (FIGURE_ASSETS[lesson.visual])
-      return `<figure class="lesson-screenshot"><img src="${FIGURE_ASSETS[lesson.visual]}" alt="PS MASTER ${lesson.title}相關操作面板"><figcaption>練習室操作範例，並非 Adobe Photoshop 本體。</figcaption></figure>`;
-    return `<figure class="lesson-photo"><img src="${PLANT_ASSET}" alt="本課使用的植物素材"><figcaption>${lesson.id === 'project' ? '照片＋標題＋底色，完成一張自己的作品。' : '用同一張素材練習，先熟悉操作，再追求效果。'}</figcaption></figure>`;
+      return `<figure class="lesson-screenshot"><img src="${FIGURE_ASSETS[lesson.visual]}" alt="PS MASTER ${lesson.title}相關操作面板"><figcaption>模擬器畫面</figcaption></figure>`;
+    return `<figure class="lesson-photo"><img src="${PLANT_ASSET}" alt="本課使用的植物素材">${lesson.id === 'project' ? '<figcaption>照片＋標題＋底色</figcaption>' : ''}</figure>`;
   }
   bindReading() {
     byId('beginnerSurface')
@@ -7604,17 +7604,17 @@ class BeginnerCourse {
     const step = lesson.lab.steps[stepIndex];
     byId('beginnerPractice').innerHTML =
       `<div class="practice-route">${lesson.lab.steps.map((s, i) => `<span class="${i < stepIndex ? 'done' : i === stepIndex ? 'current' : ''}">${i < stepIndex ? icon('check') : i + 1}${s.title}</span>`).join('')}</div>
-      ${step ? `<section class="guided-step"><div><span class="eyebrow">第 ${stepIndex + 1} / ${lesson.lab.steps.length} 步</span><h4>${step.title}</h4><p>${step.action}</p><p class="step-expected">完成後會看到：${step.expected}</p></div><div class="step-controls"><button id="beginnerLocate" class="secondary">${icon('scan-eye')}找操作位置</button><button id="beginnerCheckStep" class="primary">${icon('check')}檢查這一步</button></div></section><details class="step-help"><summary>還是不知道怎麼做</summary><p>${step.help}</p><p>下面是可操作的練習畫布，不用先開真正的 Photoshop。每一步只修改這一課的素材。</p></details>` : `<div class="practice-finished">${icon('circle-check')}<div><h4>這一課的操作完成了。</h4><p>${lesson.remember}</p></div><button id="beginnerReview" class="primary">${icon('book-open')}回到觀念確認</button></div>`}
-      <p id="beginnerStepFeedback" class="step-feedback ${this.message.startsWith('完成') ? 'good' : ''}" role="status">${this.message || '這裡不計分，做錯可以復原，也可以重新練。'}</p><div class="practice-bottom"><span>教學模擬器，非完整 Photoshop。主體範圍為內建素材預備資料。</span><button id="beginnerReset" class="secondary">${icon('rotate-ccw')}重練這一課</button></div>`;
+      ${step ? `<section class="guided-step"><div><span class="eyebrow">第 ${stepIndex + 1} / ${lesson.lab.steps.length} 步</span><h4>${step.title}</h4><p>${step.action}</p><p class="step-expected">結果：${step.expected}</p></div><div class="step-controls"><button id="beginnerLocate" class="secondary">${icon('scan-eye')}操作位置</button><button id="beginnerCheckStep" class="primary">${icon('check')}檢查</button></div></section><details class="step-help"><summary>提示</summary><p>${step.help}</p></details>` : `<div class="practice-finished">${icon('circle-check')}<div><h4>操作完成。</h4><p>${lesson.remember}</p></div><button id="beginnerReview" class="primary">${icon('book-open')}觀念確認</button></div>`}
+      <p id="beginnerStepFeedback" class="step-feedback ${this.message.startsWith('完成') ? 'good' : ''}" role="status">${this.message || '不計分。'}</p><div class="practice-bottom"><span>教學模擬器；主體選取為預備範圍。</span><button id="beginnerReset" class="secondary">${icon('rotate-ccw')}重練</button></div>`;
     if (step) {
       byId('beginnerCheckStep').onclick = () => {
         if (step.test(this.editor.doc)) {
           this.getState().practice[lesson.id] = stepIndex + 1;
-          this.message = `完成第 ${stepIndex + 1} 步：${step.expected}`;
+          this.message = `完成第 ${stepIndex + 1} 步`;
           this.save();
           this.renderPractice();
         } else {
-          this.message = `還差一點：${step.help} 這一步要看到的是：${step.expected}`;
+          this.message = `未完成：${step.help}`;
           byId('beginnerStepFeedback').textContent = this.message;
           byId('beginnerStepFeedback').classList.remove('good');
         }
@@ -7667,7 +7667,7 @@ class BeginnerCourse {
     if (!state.completed.includes(lesson.id)) state.completed.push(lesson.id);
     this.save();
     this.render();
-    toast(`第 ${BEGINNER_LESSONS.indexOf(lesson) + 1} 課完成了，按自己的步調繼續。`);
+    toast(`第 ${BEGINNER_LESSONS.indexOf(lesson) + 1} 課完成`);
   }
 }
 </script><script>const CONCEPT_SOURCES = {
@@ -7701,9 +7701,9 @@ const CONCEPT_TOPICS = [
     group: '影像基礎',
     terms: '點陣圖 Raster Bitmap 向量圖 Vector 像素',
     one: '點陣圖保存一格一格的色點；向量內容保存形狀的描述。',
-    analogy: '點陣圖像馬賽克拼圖：越靠近越看得到格子。向量像圓規畫圓的規則，換大小時可以重新畫。',
-    why: '選對素材類型，才知道放大時能期待什麼。照片通常是點陣資料，不能只靠放大恢復不存在的細節。',
-    when: '修照片用像素思考；需要反覆變尺寸的標誌或圖形，優先保留可用的向量來源。',
+    analogy: '點陣像馬賽克，放大可見格子；向量像圓規規則，可按尺寸重畫。',
+    why: '放大點陣照片，不能保證恢復原本沒有的細節。',
+    when: '照片看像素；常需改尺寸的標誌與圖形保留向量來源。',
     compare: [
       ['點陣', '以像素記錄色彩，適合照片。'],
       ['向量', '以路徑和幾何描述形狀，適合可縮放圖形。'],
@@ -7733,8 +7733,8 @@ const CONCEPT_TOPICS = [
     group: '影像基礎',
     terms: '解析度 Resolution PPI DPI 列印 螢幕',
     one: '像素數是圖片有多少資料；PPI 是列印時每英吋放多少像素。',
-    analogy: '同樣 1200 顆珠子，排得密，整排就短；排得疏，整排就長。珠子的總數沒有增加。',
-    why: '先分清螢幕輸出與紙張輸出，才不會只改一個 PPI 數字，就以為模糊照片變清楚了。',
+    analogy: '同樣 1200 顆珠子，排得密就短，排得疏就長，總數不變。',
+    why: 'PPI 是密度，不是改善模糊照片的開關。',
     when: '網頁先確認像素尺寸；列印再確認公分大小、解析度和印廠規格。',
     compare: [
       ['1200 × 800 px', '固定有 96 萬個像素。'],
@@ -7759,7 +7759,7 @@ const CONCEPT_TOPICS = [
     group: '影像基礎',
     terms: 'Resize Resample 重新取樣 Canvas Size Image Size',
     one: '重新取樣改像素數；改畫布則改作品邊界，不是把所有物件一起縮放。',
-    analogy: '重新取樣像重排整幅馬賽克；改畫布像換一張更大的裱畫紙，畫裡的物件不一定跟著變大。',
+    analogy: '重新取樣像重排馬賽克；改畫布像換裱畫紙，物件不必跟著變大。',
     why: '想留白、想縮小整張圖、想換列印尺寸，應該使用不同方法。',
     when: '要輸出較小像素圖，用影像尺寸與重新取樣；只想加邊界留白，用畫布尺寸。',
     compare: [
@@ -7785,7 +7785,7 @@ const CONCEPT_TOPICS = [
     group: '影像基礎',
     terms: 'RGB CMYK ICC sRGB Adobe RGB 色域 Gamut Color Profile',
     one: 'RGB 與 CMYK 是描述顏色的方法；色彩描述檔則幫助解讀這些數值代表的顏色。',
-    analogy: 'RGB 像調整紅、綠、藍三盞燈；CMYK 像調配印刷墨水。描述檔則像附上的色彩對照規則。',
+    analogy: 'RGB 像三盞色燈，CMYK 像印刷墨水；描述檔是色彩對照規則。',
     why: '螢幕與紙張呈現顏色的方法不同，不能期待每個鮮豔顏色都完全一致。',
     when: '螢幕作品通常以 RGB 製作；印刷依交付規格處理模式與描述檔，別隨意反覆轉換。',
     compare: [
@@ -7817,8 +7817,7 @@ const CONCEPT_TOPICS = [
     group: '影像基礎',
     terms: 'Hue Saturation Brightness Contrast HSB 色調',
     one: '色相問「什麼顏色」；飽和度問「多鮮豔」；亮度問「多明亮」；對比問「差異多大」。',
-    analogy:
-      '同一件綠色衣服，可以偏藍綠、變成灰綠、看起來更亮，或與背景更有差別。這些不是同一件事。',
+    analogy: '綠衣服可以偏藍、變灰、變亮，或與背景產生更大差異；各自對應不同調整。',
     why: '先說清楚想改什麼，才不會只想提亮，卻把綠葉調得過度鮮豔。',
     when: '顏色偏掉看色相；太灰看飽和度；太暗看明暗；畫面平淡時再判斷對比。',
     compare: [
@@ -7896,7 +7895,7 @@ const CONCEPT_TOPICS = [
     group: '圖層與範圍',
     terms: 'Opacity Fill 不透明度 透明度 Alpha',
     one: '不透明度越低，下面的內容越容易透出來；不是單純把照片變亮。',
-    analogy: '像在透明片上印圖案，印得越淡，越能看見底下的格子。',
+    analogy: '透明片上的圖案越淡，底下格子越明顯。',
     why: '要淡化整層、水印或混合兩張圖時，應該想的是透出多少下方內容。',
     when: '調整水印強度、降低效果，或做半透明疊圖。',
     compare: [
@@ -8026,7 +8025,7 @@ const CONCEPT_TOPICS = [
     group: '修圖判斷',
     terms: 'Smart Object 智慧型物件 Linked Embedded Smart Filter 非破壞',
     one: '智慧型物件保留來源資料，讓某些變形與濾鏡更容易重改。',
-    analogy: '像把原件放進保護套，用保護套的顯示方式做變化，而不是每次直接裁壞唯一的原件。',
+    analogy: '像保留原件，再改變它的顯示方式，不直接改壞唯一來源。',
     why: '反覆縮小再放大時，保留來源可避免某些破壞式處理造成的累積損失。',
     when: '放入素材、反覆變形，或希望重新調整支援的智慧型濾鏡。',
     compare: [
@@ -8084,7 +8083,7 @@ const CONCEPT_TOPICS = [
     group: '修圖判斷',
     terms: 'Histogram Levels Curves 直方圖 色階 黑點 白點 剪裁',
     one: '直方圖把像素依明暗分組：左邊偏暗、右邊偏亮，高度代表數量。',
-    analogy: '像把班上身高分組統計；某一組人比較多，不代表這個班一定比較好。',
+    analogy: '像身高分布統計：某組人多，不代表整班表現比較好。',
     why: '幫你觀察明暗分布與細節風險，但不能單靠它判定照片好不好。',
     when: '調整色階、曲線或曝光前後，配合畫面觀察暗部與亮部細節。',
     compare: [
@@ -8266,7 +8265,7 @@ const CONCEPT_TOPICS = [
     group: '輸出與工作流程',
     terms: 'Client Brief Target Audience Scope Project 溝通 受眾 專案 規格 授權',
     one: '設計不是先挑特效，而是先確認給誰看、在哪裡用、要交什麼。',
-    analogy: '像做一份餐點，先確認人數、口味與時間，再決定食材；不是先把所有調味料加進去。',
+    analogy: '像備餐，先確認人數、口味和時間，再決定食材。',
     why: '把用途、尺寸、檔案格式、修改範圍和交期先確認，可以減少重做。',
     when: '開工前整理簡報需求；過程中留版本；交付前核對規格，並確認素材與字體的使用權限。',
     compare: [
@@ -8327,8 +8326,8 @@ class ConceptClassroom {
     document.body.classList.add('beginner-view');
     byId('conceptsSurface').hidden = false;
     byId('conceptsSurface').innerHTML =
-      `<header class="beginner-heading"><div><span class="eyebrow">先懂為什麼，再練怎麼做</span><h2>觀念教室</h2><p class="concept-subtitle">從「這是什麼」到「什麼時候用」，一次理解一個觀念。</p></div><div class="concept-heading-actions"><div class="course-progress"><label for="conceptProgress" id="conceptProgressLabel"></label><progress id="conceptProgress" max="${CONCEPT_TOPICS.length}"></progress></div><button id="conceptBack" class="secondary">${icon('mouse-pointer-2')}入門操作課</button></div></header>
-      <div class="concept-layout"><aside class="concept-directory" aria-label="觀念主題目錄"><label for="conceptSearch">找一個不懂的名詞</label><input type="search" id="conceptSearch" placeholder="例如：像素、遮色片、RGB" value="${escapeHtml(this.query)}"><label for="conceptFilter">主題範圍</label><select id="conceptFilter"><option value="all">全部觀念</option>${[...new Set(CONCEPT_TOPICS.map((t) => t.group))].map((g) => `<option value="${g}">${g}</option>`).join('')}<option value="review">待複習</option></select><button id="conceptMenuToggle" class="secondary" aria-expanded="${this.menuOpen}">${icon('list')}觀念目錄${icon('chevron-down')}</button><div id="conceptTopicList" class="${this.menuOpen ? 'expanded' : ''}"></div></aside><article id="conceptArticle" class="concept-article"></article></div>`;
+      `<header class="beginner-heading"><div><h2>觀念教室</h2></div><div class="concept-heading-actions"><div class="course-progress"><label for="conceptProgress" id="conceptProgressLabel"></label><progress id="conceptProgress" max="${CONCEPT_TOPICS.length}"></progress></div><button id="conceptBack" class="secondary">${icon('mouse-pointer-2')}操作課</button></div></header>
+      <div class="concept-layout"><aside class="concept-directory" aria-label="觀念主題目錄"><label for="conceptSearch">搜尋名詞</label><input type="search" id="conceptSearch" placeholder="像素、遮色片、RGB" value="${escapeHtml(this.query)}"><label for="conceptFilter">範圍</label><select id="conceptFilter"><option value="all">全部觀念</option>${[...new Set(CONCEPT_TOPICS.map((t) => t.group))].map((g) => `<option value="${g}">${g}</option>`).join('')}<option value="review">待複習</option></select><button id="conceptMenuToggle" class="secondary" aria-expanded="${this.menuOpen}">${icon('list')}目錄${icon('chevron-down')}</button><div id="conceptTopicList" class="${this.menuOpen ? 'expanded' : ''}"></div></aside><article id="conceptArticle" class="concept-article"></article></div>`;
     byId('conceptFilter').value = this.filter;
     byId('conceptSearch').oninput = (event) => {
       this.query = event.target.value;
@@ -8375,7 +8374,7 @@ class ConceptClassroom {
       };
     byId('conceptProgress').value = state.understood.length;
     byId('conceptProgressLabel').textContent =
-      `已完成觀念確認 ${state.understood.length} / ${CONCEPT_TOPICS.length}`;
+      `已確認 ${state.understood.length} / ${CONCEPT_TOPICS.length}`;
     icons();
   }
   open(id) {
@@ -8401,13 +8400,13 @@ class ConceptClassroom {
         .slice(0, 3);
     byId('conceptArticle').innerHTML =
       `<header class="concept-topic-heading"><div><span class="eyebrow">${topic.group} · ${index + 1} / ${CONCEPT_TOPICS.length}</span><h3 id="conceptTitle" tabindex="-1">${topic.title}</h3><p>${topic.terms}</p></div><button id="conceptReview" class="icon-button ${state.review.includes(topic.id) ? 'bookmarked' : ''}" aria-pressed="${state.review.includes(topic.id)}" title="${state.review.includes(topic.id) ? '移出待複習' : '加入待複習'}" aria-label="${state.review.includes(topic.id) ? '移出待複習' : '加入待複習'}">${icon('bookmark')}</button></header>
-      <section class="concept-definition"><span>一句話理解</span><p>${topic.one}</p></section>
-      <section class="concept-analogy"><h4>${icon('lightbulb')}換成生活例子</h4><p>${topic.analogy}</p></section>
-      <section class="concept-experiment" aria-label="觀念圖解"><div class="section-title"><h4>${topic.demo === 'process' ? '先看懂這個流程' : topic.demo === 'smart' ? '比較來源資料的差異' : '動動看，差別在哪裡'}</h4><button id="conceptDemoReset" class="icon-button small" title="重設觀念圖解" aria-label="重設觀念圖解">${icon('rotate-ccw')}</button></div><div id="conceptDemo"></div></section>
-      <dl class="concept-reasons"><div><dt>為什麼要懂？</dt><dd>${topic.why}</dd></div><div><dt>什麼時候用？</dt><dd>${topic.when}</dd></div></dl>
-      <section class="concept-comparison"><h4>最容易混在一起的地方</h4><dl>${topic.compare.map(([name, text]) => `<div><dt>${name}</dt><dd>${text}</dd></div>`).join('')}</dl></section>
+      <section class="concept-definition"><span>觀念</span><p>${topic.one}</p></section>
+      <section class="concept-analogy"><h4>${icon('lightbulb')}例子</h4><p>${topic.analogy}</p></section>
+      <section class="concept-experiment" aria-label="觀念圖解"><div class="section-title"><h4>${topic.demo === 'process' ? '流程' : '比較圖解'}</h4><button id="conceptDemoReset" class="icon-button small" title="重設圖解" aria-label="重設圖解">${icon('rotate-ccw')}</button></div><div id="conceptDemo"></div></section>
+      <dl class="concept-reasons"><div><dt>原因</dt><dd>${topic.why}</dd></div><div><dt>用途</dt><dd>${topic.when}</dd></div></dl>
+      <section class="concept-comparison"><h4>差異</h4><dl>${topic.compare.map(([name, text]) => `<div><dt>${name}</dt><dd>${text}</dd></div>`).join('')}</dl></section>
       <aside class="lesson-mistake">${icon('triangle-alert')}<div><h4>常見誤會</h4><p>${topic.mistake}</p></div></aside>
-      <section class="lesson-check"><h4>換個情境，你會怎麼判斷？</h4><p>${topic.question}</p><div class="lesson-answers">${this.orders
+      <section class="lesson-check"><h4>理解確認</h4><p>${topic.question}</p><div class="lesson-answers">${this.orders
         .get(topic.id)
         .map(
           (i, position) =>
@@ -8415,11 +8414,11 @@ class ConceptClassroom {
         )
         .join(
           '',
-        )}</div><p id="conceptAnswerFeedback" class="lesson-answer-feedback" role="status">${this.answers[topic.id] !== undefined ? topic.answers[this.answers[topic.id]][1] : state.understood.includes(topic.id) ? '曾完成這個觀念確認，也可以再想一次。' : '不計分。選錯時，先看看是哪個觀念混在一起了。'}</p></section>
-      <div class="concept-next-actions"><button id="conceptToLesson" class="secondary">${icon('mouse-pointer-2')}接著練相關操作</button>${practice.length ? `<button id="conceptPractice" class="secondary">${icon('list-checks')}試 ${practice.length} 題文件題</button>` : ''}</div>
-      <details class="concept-doc-reference"><summary>對照 ACP.docx 的相關題目</summary><ul>${related.map((q) => `<li>Q${q.id} · ${escapeHtml(q.question)}</li>`).join('')}</ul><p>這裡的白話說明與觀念確認為自編教學；原文件題號保留。</p></details>
-      <p class="lesson-source">延伸閱讀：<a href="${CONCEPT_SOURCES[topic.source]}" target="_blank" rel="noopener">Adobe 官方資料${icon('external-link')}</a> · 互動圖解為簡化示意，不是完整 Photoshop 或印刷色彩模擬。</p>
-      <footer class="lesson-footer"><button id="conceptPrevious" class="icon-button" title="上一個觀念" aria-label="上一個觀念" ${index ? '' : 'disabled'}>${icon('arrow-left')}</button><span>${state.understood.includes(topic.id) ? '已完成觀念確認，仍可重讀。' : '先理解原因，不必急著背答案。'}</span><button id="conceptNext" class="secondary" ${index === CONCEPT_TOPICS.length - 1 ? 'disabled' : ''}>下一個觀念${icon('arrow-right')}</button></footer>`;
+        )}</div><p id="conceptAnswerFeedback" class="lesson-answer-feedback" role="status">${this.answers[topic.id] !== undefined ? topic.answers[this.answers[topic.id]][1] : state.understood.includes(topic.id) ? '已完成確認。' : '不計分。'}</p></section>
+      <div class="concept-next-actions"><button id="conceptToLesson" class="secondary">${icon('mouse-pointer-2')}相關操作</button>${practice.length ? `<button id="conceptPractice" class="secondary">${icon('list-checks')}練習 ${practice.length} 題</button>` : ''}</div>
+      <details class="concept-doc-reference"><summary>ACP.docx 相關題目</summary><ul>${related.map((q) => `<li>Q${q.id} · ${escapeHtml(q.question)}</li>`).join('')}</ul></details>
+      <p class="lesson-source">自編教學 · <a href="${CONCEPT_SOURCES[topic.source]}" target="_blank" rel="noopener">Adobe 參考資料${icon('external-link')}</a></p>
+      <footer class="lesson-footer"><button id="conceptPrevious" class="icon-button" title="上一個觀念" aria-label="上一個觀念" ${index ? '' : 'disabled'}>${icon('arrow-left')}</button><button id="conceptNext" class="secondary" ${index === CONCEPT_TOPICS.length - 1 ? 'disabled' : ''}>下一個${icon('arrow-right')}</button></footer>`;
     byId('conceptArticle')
       .querySelectorAll('[data-concept-answer]')
       .forEach(
@@ -9837,7 +9836,7 @@ function renderDashboard() {
           : '練習中';
   byId('dashboardSurface').innerHTML =
     `<div class="surface-heading"><div><span class="eyebrow">${new Intl.DateTimeFormat('zh-TW', { timeZone: 'Asia/Taipei', dateStyle: 'full' }).format(new Date())}</span><h2>你的 Photoshop 學習工作區</h2><p class="muted">${stage} · 今日目標 ${data.plan.daily} 題</p></div><div class="heading-actions"><button class="secondary" id="continueExam" ${session && !session.completed ? '' : 'disabled'}>${icon('play')}繼續上次練習</button><button class="primary" id="startFormal">${icon('clipboard-check')}正式模擬考</button></div></div>
-    <section class="beginner-entry"><div>${icon('sprout')}<div><h3>第一次用 Photoshop？從這裡開始</h3><p>先理解觀念，再一步一步完成自己的作品。</p><span class="muted">入門操作 ${data.beginner?.completed.length || 0} / ${BEGINNER_LESSONS.length} 課 · 觀念確認 ${data.concepts?.understood.length || 0} / ${CONCEPT_TOPICS.length}</span></div></div><div class="beginner-entry-actions"><button class="secondary" id="openConcepts">${icon('lightbulb')}先學觀念</button><button class="primary" id="openBeginner">${icon('book-open')}${data.beginner?.completed.length ? '繼續入門課' : '從零開始學'}</button></div></section>
+    <section class="beginner-entry"><div>${icon('sprout')}<div><h3>Photoshop 入門</h3><span class="muted">操作 ${data.beginner?.completed.length || 0} / ${BEGINNER_LESSONS.length} 課 · 觀念 ${data.concepts?.understood.length || 0} / ${CONCEPT_TOPICS.length}</span></div></div><div class="beginner-entry-actions"><button class="secondary" id="openConcepts">${icon('lightbulb')}先學觀念</button><button class="primary" id="openBeginner">${icon('book-open')}${data.beginner?.completed.length ? '繼續入門課' : '從零開始學'}</button></div></section>
     <div class="dashboard-stats">${[
       ['list-checks', '累計答題', summary.total],
       ['target', '累計正確率', summary.rate === null ? '—' : summary.rate + '%'],
