@@ -21,6 +21,806 @@
   font-size: 14px;
   letter-spacing: 0;
 }
+.beginner-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid #4d6056;
+  border-bottom: 1px solid #4d6056;
+  background: #29332f;
+  padding: 20px;
+  margin: 0 0 24px;
+}
+.beginner-entry > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.beginner-entry > div > svg {
+  width: 24px;
+  height: 24px;
+  color: #a9cfb5;
+  flex: none;
+}
+.beginner-entry h3 {
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+.beginner-entry p {
+  margin-bottom: 8px;
+  color: #d4ded7;
+  line-height: 1.6;
+}
+.beginner-entry button {
+  flex: none;
+}
+.beginner-view .shell {
+  grid-template-columns: minmax(0, 1fr);
+}
+.beginner-view .exam-sidebar,
+.beginner-view .mobile-settings {
+  display: none;
+}
+.beginner-surface {
+  padding: 28px 32px 0;
+}
+.beginner-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.beginner-heading h2 {
+  font-size: 25px;
+  margin-top: 6px;
+}
+.course-progress {
+  width: 200px;
+  flex: none;
+}
+.course-progress label {
+  display: block;
+  margin-bottom: 8px;
+}
+.course-progress progress {
+  width: 100%;
+  height: 6px;
+  accent-color: #9fc8b0;
+}
+.beginner-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 40px;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+.course-outline {
+  padding: 24px 20px 24px 0;
+  border-right: 1px solid var(--line);
+}
+.course-outline h3 {
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+.course-outline .course-toggle {
+  display: none;
+}
+.course-outline h4 {
+  color: var(--muted);
+  font-size: 11px;
+  margin: 18px 0 8px;
+  font-weight: 500;
+}
+.course-outline ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.course-outline button {
+  background: transparent;
+  border: 1px solid transparent;
+  width: 100%;
+  text-align: left;
+  justify-content: flex-start;
+  padding: 10px 8px;
+  gap: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.course-outline button > span:last-child {
+  min-width: 0;
+}
+.course-outline button.active {
+  border-color: #5a7162;
+  background: #303e35;
+}
+.course-outline small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 4px;
+}
+.lesson-number {
+  color: #a6cdb4;
+  width: 22px;
+  flex: none;
+  font-size: 12px;
+}
+.lesson-article {
+  min-width: 0;
+  padding: 28px 0;
+}
+.lesson-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 22px;
+  margin-bottom: 24px;
+}
+.lesson-heading h3 {
+  font-size: 23px;
+  line-height: 1.5;
+  margin: 5px 0 10px;
+}
+.lesson-heading p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+.lesson-modes {
+  display: flex;
+  flex: none;
+  border: 1px solid #535658;
+  border-radius: 4px;
+}
+.lesson-modes button {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  white-space: nowrap;
+  font-size: 12px;
+}
+.lesson-modes button[aria-pressed='true'] {
+  background: #47564c;
+  color: #e5f2e9;
+}
+.lesson-reading {
+  max-width: 850px;
+}
+.lesson-intro {
+  font-size: 16px;
+  line-height: 1.95;
+  color: #e0e3e2;
+}
+.workspace-figure,
+.layer-explainer,
+.pixel-explainer,
+.lesson-screenshot,
+.lesson-photo {
+  margin: 24px 0;
+}
+.workspace-diagram {
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr) 160px;
+  background: #292a2c;
+  border: 1px solid #56585b;
+  padding: 10px;
+  gap: 10px;
+}
+.workspace-diagram button {
+  border-radius: 2px;
+  background: #343638;
+  border-color: #52565a;
+}
+.diagram-tools {
+  flex-direction: column;
+  gap: 20px;
+  padding: 8px 2px;
+  font-size: 10px;
+}
+.diagram-canvas {
+  position: relative;
+  min-width: 0;
+  min-height: 200px;
+  background: #e1e9e2 !important;
+  padding: 0;
+}
+.diagram-canvas img {
+  height: 180px;
+  max-width: 100%;
+  object-fit: contain;
+}
+.diagram-canvas span {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  color: #254b37;
+  font-size: 12px;
+}
+.diagram-layers {
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: 10px;
+}
+.diagram-layers span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #43474a;
+  padding: 8px;
+  font-size: 12px;
+}
+.diagram-layers b {
+  font-size: 11px;
+  margin-top: 8px;
+  font-weight: 400;
+  color: #bec7c0;
+}
+.workspace-figure figcaption {
+  min-height: 90px;
+  padding: 14px 0;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.workspace-figure figcaption b {
+  color: #add2ba;
+}
+.workspace-figure figcaption p {
+  color: var(--muted);
+}
+.layer-explainer,
+.pixel-explainer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1fr;
+  gap: 28px;
+  align-items: center;
+  background: #282b2c;
+  padding: 20px;
+  border-block: 1px solid var(--line);
+}
+.layer-example {
+  position: relative;
+  height: 200px;
+  background: #dce6df;
+  text-align: center;
+}
+.layer-example img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.layer-example b {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  color: #234b3a;
+  font-size: 15px;
+}
+.layer-explainer figcaption span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid #484e50;
+  font-size: 13px;
+}
+.layer-explainer svg {
+  width: 16px;
+  height: 16px;
+}
+.layer-explainer figcaption p,
+.pixel-explainer p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-top: 12px;
+  font-size: 12px;
+}
+.pixel-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  aspect-ratio: 1;
+  gap: 3px;
+  width: 180px;
+  max-width: 100%;
+}
+.pixel-0 {
+  background: #8db7a0;
+}
+.pixel-1 {
+  background: #dfe7e2;
+}
+.pixel-2 {
+  background: #365a47;
+}
+.pixel-3 {
+  background: #9dabb4;
+}
+.lesson-screenshot {
+  background: #282a2c;
+  border-block: 1px solid var(--line);
+  padding: 16px;
+}
+.lesson-screenshot img {
+  display: block;
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+}
+.lesson-screenshot figcaption,
+.lesson-photo figcaption {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 12px;
+  line-height: 1.7;
+}
+.lesson-photo {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background: #2c3230;
+  border-block: 1px solid #48534c;
+  padding: 16px;
+}
+.lesson-photo img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  max-width: 50%;
+  background: #dce6df;
+}
+.lesson-ideas {
+  margin: 28px 0;
+}
+.lesson-ideas > div {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.lesson-ideas dt {
+  font-weight: 600;
+  color: #bbd9c5;
+  line-height: 1.8;
+}
+.lesson-ideas dd {
+  margin: 0;
+  line-height: 1.9;
+  color: #d2d6d5;
+}
+.lesson-mistake {
+  display: flex;
+  gap: 12px;
+  padding: 18px;
+  border-left: 3px solid #c8af78;
+  background: #36342d;
+}
+.lesson-mistake > svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  color: #d9c28b;
+}
+.lesson-mistake h4 {
+  margin: 0 0 8px;
+  font-size: 13px;
+}
+.lesson-mistake p {
+  line-height: 1.85;
+  color: #d4d0c5;
+}
+.lesson-takeaway {
+  margin: 26px 0;
+  padding: 20px 0;
+  border-block: 1px solid #485c4f;
+}
+.lesson-takeaway span {
+  font-size: 11px;
+  color: #a5cdb4;
+}
+.lesson-takeaway p {
+  font-size: 17px;
+  line-height: 1.8;
+  margin-top: 6px;
+}
+.lesson-check {
+  margin: 28px 0 12px;
+}
+.lesson-check h4 {
+  font-size: 15px;
+  margin: 0 0 12px;
+}
+.lesson-check > p {
+  line-height: 1.9;
+}
+.lesson-answers {
+  display: grid;
+  gap: 9px;
+  margin: 16px 0;
+}
+.lesson-answers button {
+  text-align: left;
+  justify-content: flex-start;
+  background: #2a2c2d;
+  padding: 14px;
+  line-height: 1.8;
+}
+.lesson-answers button > span {
+  width: 24px;
+  flex: none;
+  color: var(--muted);
+}
+.lesson-answers button.correct {
+  background: #2d4436;
+  border-color: #7dba92;
+}
+.lesson-answers button.wrong {
+  background: #463331;
+  border-color: #cc9791;
+}
+.lesson-answer-feedback {
+  font-size: 13px;
+  min-height: 50px;
+  color: #c4d6c9;
+}
+.lesson-completion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-block: 20px;
+  border-block: 1px solid var(--line);
+}
+.lesson-completion > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-right: auto;
+  font-size: 12px;
+  color: #b3cebd;
+}
+.lesson-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+.lesson-footer > span {
+  font-size: 11px;
+  color: var(--muted);
+  margin-right: auto;
+  line-height: 1.7;
+}
+.lesson-footer button {
+  flex: none;
+}
+.lesson-source {
+  margin: 20px 0 0;
+  font-size: 10px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.lesson-source a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.lesson-source svg {
+  width: 11px;
+  height: 11px;
+}
+.course-finished {
+  padding-block: 24px;
+}
+.course-finished h4 {
+  color: #bddfc9;
+  margin: 0 0 10px;
+}
+.course-finished p {
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+.practicing {
+  grid-template-columns: minmax(0, 1fr);
+}
+.practicing .course-outline {
+  display: none;
+}
+.practicing .lesson-article {
+  padding-bottom: 12px;
+}
+.practice-route {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  border-block: 1px solid var(--line);
+  padding: 14px 0;
+  margin-bottom: 20px;
+}
+.practice-route span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.practice-route svg {
+  width: 15px;
+  height: 15px;
+}
+.practice-route .current {
+  color: #c7e3d0;
+  font-weight: 600;
+}
+.practice-route .done {
+  color: #8dba9c;
+}
+.guided-step {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+.guided-step > div:first-child {
+  max-width: 850px;
+}
+.guided-step h4 {
+  margin: 8px 0;
+  font-size: 18px;
+}
+.guided-step p {
+  line-height: 1.9;
+  font-size: 15px;
+}
+.guided-step .step-expected {
+  color: #b0c5b7;
+  font-size: 13px;
+  margin-top: 8px;
+}
+.step-controls {
+  display: flex;
+  gap: 10px;
+  flex: none;
+  padding-top: 24px;
+}
+.step-help {
+  margin: 15px 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.step-help summary {
+  cursor: pointer;
+  padding-block: 8px;
+  color: #d8c796;
+}
+.step-help p {
+  line-height: 1.9;
+  padding: 6px 0;
+}
+.step-feedback {
+  min-height: 32px;
+  line-height: 1.9;
+  color: #dfcba6;
+  font-size: 13px;
+}
+.step-feedback.good {
+  color: #a5d2b6;
+}
+.practice-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 10px;
+}
+.practice-bottom > span {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.8;
+}
+.practice-bottom button {
+  flex: none;
+  font-size: 11px;
+}
+.practice-finished {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.practice-finished > svg {
+  width: 24px;
+  color: #a5d2b6;
+  flex: none;
+}
+.practice-finished h4 {
+  margin: 0 0 8px;
+  color: #bddfc9;
+}
+.practice-finished p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+.practice-finished button {
+  margin-left: auto;
+  flex: none;
+}
+.lesson-focus {
+  outline: 3px solid #d7c180 !important;
+  outline-offset: -3px;
+}
+@media (max-width: 1100px) {
+  .beginner-layout {
+    grid-template-columns: 205px minmax(0, 1fr);
+    gap: 24px;
+  }
+  .practicing {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .lesson-heading {
+    flex-direction: column;
+  }
+  .guided-step {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .step-controls {
+    padding-top: 6px;
+  }
+  .beginner-surface {
+    padding: 24px 22px 0;
+  }
+}
+@media (max-width: 780px) {
+  .beginner-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .course-outline {
+    padding: 18px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .course-outline h3 {
+    display: none;
+  }
+  .course-outline .course-toggle {
+    display: flex;
+    min-height: 42px;
+    padding: 5px 0;
+    font-size: 13px;
+  }
+  .course-outline h4 {
+    display: none;
+  }
+  .course-outline ol {
+    display: none;
+  }
+  .course-outline.expanded ol {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .course-outline small {
+    display: none;
+  }
+  .course-outline button {
+    min-height: 54px;
+  }
+  .lesson-ideas > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+  .workspace-diagram {
+    grid-template-columns: 40px minmax(0, 1fr) 110px;
+    gap: 6px;
+    padding: 6px;
+  }
+  .diagram-layers {
+    padding: 6px;
+  }
+  .diagram-layers span {
+    padding: 8px 4px;
+    gap: 5px;
+  }
+  .diagram-canvas {
+    min-height: 180px;
+  }
+  .diagram-canvas img {
+    height: 150px;
+  }
+  .layer-explainer {
+    gap: 15px;
+    padding: 14px;
+  }
+  .layer-example {
+    height: 160px;
+  }
+  .layer-example b {
+    font-size: 12px;
+    left: 6px;
+  }
+}
+@media (max-width: 640px) {
+  .beginner-surface {
+    padding: 20px 12px 0;
+  }
+  .beginner-heading {
+    gap: 14px;
+    padding-bottom: 18px;
+  }
+  .beginner-heading h2 {
+    font-size: 22px;
+  }
+  .course-progress {
+    width: 120px;
+  }
+  .course-progress label {
+    font-size: 10px;
+  }
+  .lesson-heading h3 {
+    font-size: 22px;
+  }
+  .lesson-intro {
+    font-size: 15px;
+  }
+  .lesson-photo {
+    gap: 15px;
+    padding: 12px;
+  }
+  .lesson-photo img {
+    height: 130px;
+    width: 130px;
+  }
+  .lesson-mistake {
+    padding: 14px;
+  }
+  .lesson-completion > div {
+    width: 100%;
+  }
+  .lesson-completion button {
+    flex: 1;
+  }
+  .practice-finished {
+    flex-wrap: wrap;
+  }
+  .practice-finished > div {
+    flex: 1;
+    min-width: 0;
+  }
+  .practice-finished button {
+    margin-left: 0;
+  }
+  .practice-bottom {
+    align-items: flex-start;
+  }
+  .beginner-entry {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+  }
+  .beginner-entry h3 {
+    font-size: 16px;
+  }
+  .lesson-footer > span {
+    display: none;
+  }
+  .main-tabs {
+    gap: 0;
+  }
+  .main-tabs button {
+    min-width: 0;
+    flex: 1;
+    padding-inline: 2px;
+  }
+  .main-tabs button span {
+    font-size: 9px;
+    overflow-wrap: anywhere;
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -2253,6 +3053,7 @@ select {
     <div class="brand"><span class="ps-mark">Ps</span><div><h1>PS MASTER</h1><span class="brand-sub">Photoshop ACP 學習平台</span></div></div>
     <nav class="main-tabs" aria-label="練習模式">
       <button data-view="dashboard" class="active"><i data-lucide="layout-dashboard"></i><span>首頁</span></button>
+      <button data-view="beginner"><i data-lucide="sprout"></i><span>零基礎</span></button>
       <button data-view="live"><i data-lucide="mouse-pointer-2"></i><span>模擬實作</span></button>
       <button data-view="choice"><i data-lucide="list-checks"></i><span>觀念測驗</span></button>
       <button data-view="order"><i data-lucide="list-ordered"></i><span>步驟練習</span></button>
@@ -2281,6 +3082,7 @@ select {
     </aside>
     <main>
       <section class="dashboard-surface" id="dashboardSurface" hidden></section>
+      <section class="beginner-surface" id="beginnerSurface" aria-label="零基礎入門課程" hidden></section>
       <section class="library-surface" id="librarySurface" hidden></section>
       <section class="task-band" id="taskBand" hidden>
         <div class="task-copy"><div class="task-meta" id="taskMeta"></div><h2 id="taskTitle"></h2><p id="taskGoal"></p></div>
@@ -3716,6 +4518,7 @@ class LabEditor {
     this.setDocument(this.initialDoc || this.history[0].doc);
     this.historyBase = [];
     this.onChange?.(clone(this.doc));
+    this.onReset?.();
     toast('已重設本題畫布');
   }
   selectedLayer() {
@@ -5405,6 +6208,800 @@ class LabEditor {
     );
   }
 }
+</script><script>const BEGINNER_HELP = {
+  workspace:
+    'https://helpx.adobe.com/photoshop/desktop/get-started/learn-the-basics/workspace-overview.html',
+  layers:
+    'https://helpx.adobe.com/photoshop/desktop/create-manage-layers/get-started-layers/work-with-the-layers-panel.html',
+  masks: 'https://helpx.adobe.com/photoshop/desktop/create-masks/layer-masks/add-layer-masks.html',
+  output: 'https://helpx.adobe.com/photoshop/using/saving-files-graphics-formats.html',
+};
+const beginnerPhoto = (doc) => doc.layers.find((l) => l.id === 'photo');
+const beginnerText = (doc) => doc.layers.find((l) => l.kind === 'text');
+const beginnerStep = (title, action, expected, help, focus, test) => ({
+  title,
+  action,
+  expected,
+  help,
+  focus,
+  test,
+});
+const BEGINNER_LESSONS = [
+  {
+    id: 'workspace',
+    phase: '先看懂',
+    title: '先認識你的工作桌',
+    minutes: 4,
+    goal: '看得懂工具、畫布與圖層，不需要背快捷鍵。',
+    visual: 'workspace',
+    intro:
+      'Photoshop 是用來修改照片、合成圖片與排版的工具。你可以把它想成一張工作桌：中間擺作品，旁邊放工具，右邊管理作品的各個部分。',
+    ideas: [
+      ['畫布 Canvas', '中間正在編輯的圖片範圍。畫布外面的深色區域不是作品的一部分。'],
+      ['工具列 Tools', '決定你要做什麼，例如移動、選取、打字。上方選項會跟著工具改變。'],
+      ['圖層面板 Layers', '決定你正在改哪一個部分。先選對圖層，再使用工具，是最重要的習慣。'],
+    ],
+    mistake: '按了工具卻沒有想要的效果，不一定是你操作錯了；先看看有沒有選到正確圖層。',
+    remember: '先選「改哪一層」，再選「用什麼工具」。',
+    question: '想把標題往右移，第一件事應該是什麼？',
+    answers: [
+      ['先選標題圖層，再用移動工具', '對，圖層決定修改對象，工具決定修改方式。'],
+      ['先把照片刪掉', '不需要刪照片。標題和照片可以放在不同圖層，分開修改。'],
+      ['把畫面放大到 200%', '放大只是看得更近，不會替你選到標題。'],
+    ],
+    source: 'workspace',
+  },
+  {
+    id: 'layers',
+    phase: '先看懂',
+    title: '圖層就像透明片',
+    minutes: 6,
+    goal: '知道顯示、隱藏和刪除有什麼不同。',
+    visual: 'layers',
+    intro:
+      '想像把背景、照片、文字各畫在一張透明片上，再疊成一張作品。每一張透明片就是一個圖層，你可以只改文字，不動到照片。',
+    ideas: [
+      ['上面會遮住下面', '圖層面板越上方的內容越靠前；只有不透明的部分會遮住下方。'],
+      ['眼睛圖示＝可見度', '關掉眼睛只是暫時藏起來，再打開就回來，內容並沒有被刪除。'],
+      ['選取不等於顯示', '點選圖層名稱是選修改對象；點眼睛才是切換顯示。兩件事不同。'],
+    ],
+    mistake: '看不到文字時，先檢查眼睛、圖層順序和不透明度，不要急著重做。',
+    remember: '眼睛控制看不看得到；選取控制現在改誰。',
+    question: '關掉照片圖層旁的眼睛，照片會怎樣？',
+    answers: [
+      ['暫時不顯示，打開眼睛就能恢復', '正確，這是可見度，不是刪除。'],
+      ['永久刪除，不能恢復', '關眼睛沒有刪除內容。再次開啟可見度就會恢復。'],
+      ['自動存成另一張圖片', '眼睛只控制顯示。存檔和匯出需要另外操作。'],
+    ],
+    source: 'layers',
+    lab: {
+      scene: 'group',
+      steps: [
+        beginnerStep(
+          '先藏起照片',
+          '在圖層面板找到「植物照片 / Plant」，點它旁邊的眼睛。',
+          '植物消失，文字和背景還在。',
+          '眼睛在每個圖層名稱的左側。不是按底下的垃圾桶。',
+          '#layers',
+          (d) => beginnerPhoto(d)?.visible === false && beginnerText(d)?.visible === true,
+        ),
+        beginnerStep(
+          '再把照片找回來',
+          '在植物圖層剛才的眼睛位置再點一次。',
+          '植物重新出現，證明剛才沒有刪掉它。',
+          '已隱藏的圖層，左側會顯示劃線眼睛。',
+          '#layers',
+          (d) => beginnerPhoto(d)?.visible === true,
+        ),
+        beginnerStep(
+          '選到文字這一層',
+          '點「標題 / Title」的圖層名稱，不要點眼睛。',
+          '標題圖層被選取，上方出現文字內容設定。',
+          '選取後圖層列會反白。只需點一下名稱。',
+          '#layers',
+          (d) => d.selected.length === 1 && d.selected[0] === 'title',
+        ),
+      ],
+    },
+  },
+  {
+    id: 'move',
+    phase: '動手做',
+    title: '移動與縮小，不把圖片壓扁',
+    minutes: 6,
+    goal: '移動一個物件，並保留它原來的長寬比例。',
+    visual: 'transform',
+    intro:
+      '移動物件和改變物件大小是兩件事。X、Y 是位置；W、H 是寬和高。只改寬卻不維持比例，圖片可能被擠扁或拉長。',
+    ideas: [
+      ['X / Y＝位置', 'X 越大越靠右，Y 越大越往下。這些數值是物件在畫布上的座標。'],
+      ['W / H＝大小', 'W 是 Width 寬度，H 是 Height 高度。這裡改的是圖層物件，不是整份文件。'],
+      ['鏈結＝維持比例', '比例鏈結開啟時，改寬度，高度會一起計算。放大觀看則只改檢視倍率。'],
+    ],
+    mistake: '想讓圖片變小，不是把檢視倍率從 100% 調到 50%；那只是看得比較遠。',
+    remember: '縮放檢視不改作品；改 W、H 才改物件大小。',
+    question: '照片原本 400 × 300，維持比例縮到寬 320，高應該是多少？',
+    answers: [
+      ['240', '正確，寬縮為 0.8 倍，高也同樣縮為 0.8 倍。'],
+      ['300', '只變寬、不變高會改變比例。300 × 0.8 應為 240。'],
+      ['320', '寬高相同會變成正方形，不是原本 4:3 的比例。'],
+    ],
+    source: 'workspace',
+    lab: {
+      scene: 'transform',
+      steps: [
+        beginnerStep(
+          '把植物往右移',
+          '選植物照片，使用移動工具，在上方 X 輸入 260，按 Tab 或點欄位外。',
+          '植物比原先往右移，X 變成 260。',
+          'X 在工具選項列，不是右側的 W 寬度欄。',
+          '#optionsBar',
+          (d) => Math.round(beginnerPhoto(d)?.x) === 260,
+        ),
+        beginnerStep(
+          '等比例縮小',
+          '確認長寬鏈結開啟，在上方 W 輸入 320，再離開欄位。',
+          '植物變成 320 × 240，形狀沒有被壓扁。',
+          '鏈結圖示在 W、H 旁邊；若剛才解除了鏈結，點一次恢復。',
+          '#optionsBar',
+          (d) => Math.round(beginnerPhoto(d)?.w) === 320 && Math.round(beginnerPhoto(d)?.h) === 240,
+        ),
+      ],
+    },
+  },
+  {
+    id: 'document',
+    phase: '動手做',
+    title: '像素、尺寸和解析度',
+    minutes: 5,
+    goal: '建立一張 1080 × 1080 的螢幕用正方形文件。',
+    visual: 'pixels',
+    intro:
+      '數位圖片由很多小色點組成，這些色點叫像素。1080 × 1080 px，意思是橫向和直向各有 1080 個像素，不是 1080 公分。',
+    ideas: [
+      ['px＝像素', '做螢幕圖片時，先確認對方要求的像素寬高。不是 PPI 越高就一定越清楚。'],
+      [
+        'PPI＝列印密度',
+        '相同像素數下，PPI 影響列印的實際大小。沒有重新取樣時，更改 PPI 不會憑空增加細節。',
+      ],
+      [
+        'RGB＝螢幕色彩',
+        '螢幕作品通常使用 RGB。印刷要另外確認色彩描述檔、尺寸與印廠規格，不能只背一個數字。',
+      ],
+    ],
+    mistake: '把 72 PPI 改成 300 PPI，不代表原本模糊的小圖就能自動變清楚。',
+    remember: '螢幕先看像素尺寸；印刷還要看實際尺寸與列印條件。',
+    question: '要交一張 1080 × 1080 px 的螢幕圖片，最先確認什麼？',
+    answers: [
+      ['像素寬高是否都是 1080', '對，這才是指定的螢幕圖片尺寸。'],
+      ['PPI 是否一定要 300', '300 PPI 常見於某些印刷情境，不能代替像素尺寸要求。'],
+      ['檢視倍率是不是 100%', '檢視倍率只影響你怎麼看，不決定輸出有幾個像素。'],
+    ],
+    source: 'workspace',
+    lab: {
+      scene: 'blank',
+      steps: [
+        beginnerStep(
+          '建立正方形文件',
+          'File 檔案 → New 新增文件：寬、高都填 1080，單位 Pixels 像素，色彩 RGB，解析度保留 72，再確定。',
+          '文件資訊顯示 1080 × 1080 px，模式 RGB。',
+          '請確認單位是 px，不是 mm。這課的 72 是練習設定，不是螢幕畫質的保證。',
+          '#menuBar',
+          (d) => d.width === 1080 && d.height === 1080 && d.mode === 'RGB' && d.ppi === 72,
+        ),
+      ],
+    },
+  },
+  {
+    id: 'selection',
+    phase: '動手做',
+    title: '選取範圍，只指定要處理哪裡',
+    minutes: 5,
+    goal: '選到植物主體，再取消選取，理解選取不等於刪除。',
+    visual: 'selection',
+    intro:
+      '圖層選取決定「改哪一層」，選取範圍決定「改這一層的哪個區域」。就像先選一張紙，再用框線圈出紙上的一部分。',
+    ideas: [
+      ['虛線＝作用範圍', '建立選取後，許多編輯只作用在範圍裡。虛線本身不是實際畫進圖片的線。'],
+      ['選主體不等於去背', '選到植物後，外部背景還在。要隱藏背景，可以用這個選取建立遮色片。'],
+      ['取消選取', 'Deselect 取消的是作用範圍，不會刪掉原本圖片。'],
+    ],
+    mistake: '畫筆只在一小塊區域有反應時，先檢查是否還留著沒取消的選取範圍。',
+    remember: '選取是指定範圍，還沒有改掉像素。',
+    question: '按「Select Subject 選主體」後，就一定已經把背景刪掉了嗎？',
+    answers: [
+      ['沒有，只是建立了主體的選取範圍', '正確，要隱藏外部還需要遮色片等後續操作。'],
+      ['有，背景一定永久消失', '建立選取沒有刪像素，照片原始內容仍然存在。'],
+      ['有，已經存好 PNG', '選取與匯出是不同步驟，也還沒有產生檔案。'],
+    ],
+    source: 'masks',
+    lab: {
+      scene: 'photo',
+      steps: [
+        beginnerStep(
+          '選到植物',
+          '先選植物圖層，再按右側「Select Subject 選主體」，或 Select 選取 → Subject。',
+          '植物周圍出現選取提示；背景暫時還在。',
+          '這個練習素材使用預備好的主體範圍，並非真正的 Adobe AI。',
+          '#properties',
+          (d) => d.selection?.kind === 'subject' && !beginnerPhoto(d)?.mask,
+        ),
+        beginnerStep(
+          '取消選取',
+          'Select 選取 → Deselect 取消選取。',
+          '選取提示消失，但植物與背景沒有被刪除。',
+          '是上方 Select 選單，不是圖層面板的垃圾桶。',
+          '#menuBar',
+          (d) => d.selection === null && !!beginnerPhoto(d) && !beginnerPhoto(d).mask,
+        ),
+      ],
+    },
+  },
+  {
+    id: 'mask',
+    phase: '動手做',
+    title: '遮色片：藏起來，還能找回來',
+    minutes: 7,
+    goal: '用選取建立遮色片，保留照片原始內容。',
+    visual: 'mask',
+    intro:
+      '遮色片就像可以修改的遮擋紙。你不是刪掉照片，而是決定照片的哪些地方可以看見。做錯時，通常還能改回來。',
+    ideas: [
+      ['白顯示、黑隱藏', '遮色片裡的白色區域顯示照片，黑色區域隱藏照片；灰色是部分透明。'],
+      ['兩張縮圖不同', '照片縮圖代表影像；旁邊的黑白縮圖代表遮色片。要改遮擋範圍，應選遮色片。'],
+      ['停用不等於刪除', '暫時停用遮色片，可以比較原圖，稍後再啟用。'],
+    ],
+    mistake: '想修遮色片卻在照片上畫黑色，通常是選到了照片縮圖，而不是遮色片縮圖。',
+    remember: '遮色片藏的是內容，原始照片仍保留。',
+    question: '在遮色片上塗黑，主要會發生什麼事？',
+    answers: [
+      ['把對應照片區域隱藏', '正確，之後在遮色片塗白可再顯示。'],
+      ['把原照片永久塗成黑色', '那通常是畫在照片像素上。遮色片上的黑色代表隱藏。'],
+      ['把整張文件變成黑白照片', '那是黑白調整的用途，和遮色片控制可見範圍不同。'],
+    ],
+    source: 'masks',
+    lab: {
+      scene: 'photo',
+      steps: [
+        beginnerStep(
+          '先選到植物',
+          '選植物圖層，按「Select Subject 選主體」。',
+          '先有主體選取，才知道遮色片該顯示哪裡。',
+          '右側內容面板有 Select Subject 按鈕。',
+          '#properties',
+          (d) => d.selection?.kind === 'subject',
+        ),
+        beginnerStep(
+          '用選取建立遮色片',
+          'Layer 圖層 → Add Layer Mask 新增遮色片。',
+          '植物留下，外部出現透明棋盤格；照片旁多出黑白縮圖。',
+          '此時不用反轉選取。主體選取直接建立遮色片，就會保留主體。',
+          '#menuBar',
+          (d) =>
+            beginnerPhoto(d)?.mask?.base === 'subject' && beginnerPhoto(d)?.mask?.enabled !== false,
+        ),
+        beginnerStep(
+          '確認原圖還在',
+          '點植物圖層旁的黑白遮色片縮圖，再取消右側「Enable Mask 啟用遮色片」。',
+          '原本的背景回來了，證明它先前只是被隱藏。',
+          '先點黑白縮圖，內容面板才會出現 Enable Mask 核取方塊。不要刪掉照片。',
+          '#layers',
+          (d) =>
+            beginnerPhoto(d)?.mask?.enabled === false && d.layers.some((l) => l.id === 'photo'),
+        ),
+      ],
+    },
+  },
+  {
+    id: 'adjustment',
+    phase: '動手做',
+    title: '調色也能保留後悔的空間',
+    minutes: 5,
+    goal: '新增黑白調整圖層，再切回原本的彩色。',
+    visual: 'bw',
+    intro:
+      '你不需要把每個效果都直接烙在照片上。調整圖層把調色設定獨立放在一層，方便比較前後差異，也比較容易修改。',
+    ideas: [
+      ['獨立保存調整', '照片和調整設定分開，原照片像素不會因這個調整而被直接改寫。'],
+      ['位置會影響範圍', '一般調整圖層會影響下方符合條件的可見圖層。只改特定圖層還需要限制範圍。'],
+      ['比較前後', '切換調整圖層的眼睛，就能比較有沒有這個效果。'],
+    ],
+    mistake: '黑白照片不是去背照片。去掉色彩，和讓背景變透明，是兩種不同目標。',
+    remember: '照片保留在原層，效果另外放。',
+    question: '想比較黑白效果與原本彩色，最適合怎麼做？',
+    answers: [
+      ['切換黑白調整圖層的眼睛', '對，這樣可以比較效果，也保留原照片。'],
+      ['刪掉原始照片圖層', '刪照片反而失去內容。你只需要暫時隱藏調整效果。'],
+      ['把文件解析度改成 300', '解析度不負責控制彩色或黑白。'],
+    ],
+    source: 'layers',
+    lab: {
+      scene: 'photo',
+      steps: [
+        beginnerStep(
+          '新增黑白調整',
+          '選植物圖層，Layer 圖層 → Adjustment Layer → Black & White。',
+          '照片變成黑白，圖層面板多出 Black & White 黑白。',
+          '也可按圖層面板下方的 Black & White 黑白調整圖示。',
+          '#menuBar',
+          (d) =>
+            d.layers.some((l) => l.kind === 'adjustment' && l.adjustment === 'bw' && l.visible),
+        ),
+        beginnerStep(
+          '回到彩色看看',
+          '關閉「Black & White 黑白」調整圖層旁的眼睛。',
+          '照片恢復彩色；調整層仍然保留。',
+          '要關的是黑白調整層，不是植物照片層。',
+          '#layers',
+          (d) =>
+            d.layers.some((l) => l.adjustment === 'bw' && !l.visible) && beginnerPhoto(d)?.visible,
+        ),
+      ],
+    },
+  },
+  {
+    id: 'text',
+    phase: '完成作品',
+    title: '加上一個能修改的標題',
+    minutes: 6,
+    goal: '建立文字圖層，修改內容與字級。',
+    visual: 'poster',
+    intro:
+      '文字也可以是獨立圖層。先用文字工具建立文字，再修改內容、字級和位置。不要一開始就把文字轉成像素，才容易改錯字。',
+    ideas: [
+      ['T＝文字工具', '文字工具用來建立文字；移動工具用來搬動已存在的文字。'],
+      ['字級不等於整張圖尺寸', '字級控制文字大小；文件寬高控制整張作品大小。'],
+      ['可讀性優先', '標題與背景需要足夠對比，旁邊也留一些空間，不要每個角落都塞滿。'],
+    ],
+    mistake: '想改錯字卻拖動畫布，不是電腦壞了；先選到文字圖層，再改文字內容。',
+    remember: '文字獨立一層，內容與位置就能分開調整。',
+    question: '下次還可能改標題，最適合保留哪一種狀態？',
+    answers: [
+      ['獨立、可編輯的文字圖層', '正確，修改內容和字級會更方便。'],
+      ['先把文字和照片全部合併', '合併後難以單獨改字。先保留分層工作檔。'],
+      ['只留匯出的 JPG', 'JPG 主要用來交付圖片，不會保留這裡的文字圖層。'],
+    ],
+    source: 'layers',
+    lab: {
+      scene: 'cutout',
+      steps: [
+        beginnerStep(
+          '建立文字',
+          '選左側 T 文字工具，在畫布靠左上方點一下。',
+          '出現一個新的文字圖層。',
+          '手機的工具列會排在畫布上方；找 T 圖示，點完再點圖片。',
+          '#toolRail',
+          (d) => !!beginnerText(d),
+        ),
+        beginnerStep(
+          '寫下自己的標題',
+          '保持文字圖層選取，在內容 Properties 面板把文字內容改為 GREEN LIFE，Size 字級改為 48，各自離開欄位。',
+          '畫布上顯示 GREEN LIFE；字級為 48。',
+          '電腦的內容面板在右側，手機在畫布下方。先選文字圖層，就會出現文字內容欄位。',
+          '#properties',
+          (d) =>
+            d.layers.some((l) => l.kind === 'text' && l.text === 'GREEN LIFE' && l.fontSize === 48),
+        ),
+      ],
+    },
+  },
+  {
+    id: 'export',
+    phase: '完成作品',
+    title: '工作檔與交出去的圖片',
+    minutes: 6,
+    goal: '匯出一張真正有透明背景的 PNG。',
+    visual: 'export',
+    intro:
+      '工作檔是留給自己繼續修改的；匯出圖片是拿來傳給別人或放上網的。兩種用途不同，通常應各保留一份。',
+    ideas: [
+      [
+        'PSD＝Photoshop 工作檔',
+        '真正的 Photoshop 可用 PSD 保留圖層。本練習室的可編輯檔是 .acplab.json，不是原生 PSD。',
+      ],
+      ['PNG＝可以保留透明', 'PNG 支援透明，但如果背景圖層還顯示著，匯出的背景仍然不會透明。'],
+      ['JPG＝一般照片交付', 'JPG 不支援透明，而且使用有損壓縮。品質與檔案大小需依用途取捨。'],
+    ],
+    mistake: '選了 PNG 但背景還是白的，先看看是不是仍有白色背景圖層顯示著。',
+    remember: '保留可編輯版本，再匯出適合用途的圖片。',
+    question: '要交一張沒有底色的植物圖，哪一組最合適？',
+    answers: [
+      [
+        '背景透明，再匯出保留透明度的 PNG',
+        '對，內容本身透明，加上支援透明的格式，兩個條件都要有。',
+      ],
+      ['背景仍顯示，但改成 PNG 就好', 'PNG 支援透明不代表會自動去掉背景。'],
+      ['匯出 JPG 並勾選透明度', 'JPG 不支援透明度，不能靠勾選改變格式限制。'],
+    ],
+    source: 'output',
+    lab: {
+      scene: 'cutout',
+      steps: [
+        beginnerStep(
+          '讓背景真的透明',
+          '關閉「背景 / Background」圖層的眼睛。',
+          '植物外圍顯示透明棋盤格。',
+          '植物已經有遮色片，但下方仍有一張底色圖層，需要另外隱藏。',
+          '#layers',
+          (d) =>
+            d.layers.find((l) => l.id === 'background')?.visible === false &&
+            beginnerPhoto(d)?.mask?.enabled !== false,
+        ),
+        beginnerStep(
+          '匯出 PNG',
+          'File 檔案 → Export As 匯出，格式選 PNG，勾選 Transparency 透明度，再匯出。',
+          '下載一張 PNG，圖片包含透明區域。',
+          '瀏覽器下載的是圖片；不同手機可能會開啟下載預覽。請保持背景隱藏。',
+          '#menuBar',
+          (d) => d.output?.format === 'png' && d.output?.hasAlpha === true,
+        ),
+      ],
+    },
+  },
+  {
+    id: 'project',
+    phase: '完成作品',
+    title: '我的第一張小海報',
+    minutes: 10,
+    goal: '把照片、文字和輸出串成一次完整流程。',
+    visual: 'poster',
+    intro:
+      '這次不需要做得很華麗。先完成一張有主角、有標題、能分享的小海報。讓每個物件留在自己的圖層，你就能一步一步修改。',
+    ideas: [
+      ['先安排主角', '先把植物縮小，留出標題空間。畫面不是填滿才算完成。'],
+      ['再加入標題', '使用簡短文字，確認它在植物前方，而且不會被其他圖層遮住。'],
+      ['最後再交付', '完成後可先下載可編輯練習專案，再匯出 PNG。之後要修改，就從工作檔繼續。'],
+    ],
+    mistake: '練習時不需要跟範例長得一模一樣。這課只檢查主角、可讀標題和實際輸出。',
+    remember: '照片、文字分層，完成後保留工作檔與交付圖。',
+    question: '發現標題打錯字，但之後還要修改排版，應該優先做什麼？',
+    answers: [
+      ['回到可編輯工作檔修改文字層，再重新匯出', '對，保留分層工作檔，才能方便繼續修改。'],
+      ['只在 JPG 上塗掉文字，再猜原本字體', '那會增加不必要的修補。可編輯文字層更適合修改。'],
+      ['把檔名改成 PSD 就會恢復所有圖層', '改副檔名不會改變檔案內容，也無法找回已合併的圖層。'],
+    ],
+    source: 'output',
+    lab: {
+      scene: 'poster',
+      steps: [
+        beginnerStep(
+          '替標題留空間',
+          '選植物照片，用上方 W 把寬度改為 360，維持長寬比例。',
+          '植物縮小到 360 × 270，仍然可見。',
+          '先確認選的是植物照片，不是背景。',
+          '#optionsBar',
+          (d) =>
+            Math.round(beginnerPhoto(d)?.w) === 360 &&
+            Math.round(beginnerPhoto(d)?.h) === 270 &&
+            beginnerPhoto(d)?.visible,
+        ),
+        beginnerStep(
+          '加上 GREEN LIFE',
+          '用 T 工具在左上方點一下，在內容 Properties 面板把文字內容改成 GREEN LIFE。保留文字圖層顯示。',
+          '作品有獨立、可見的 GREEN LIFE 標題。',
+          '選文字層後，內容 Properties 面板會顯示文字欄位。若文字被遮住，將它移到圖層最上方。',
+          '#toolRail',
+          (d) =>
+            d.layers.some(
+              (l) => l.kind === 'text' && l.text === 'GREEN LIFE' && l.visible && l.opacity > 0,
+            ),
+        ),
+        beginnerStep(
+          '交出第一張作品',
+          'File 檔案 → Export As 匯出，選 PNG 並匯出。這張海報保留底色也可以。',
+          '成功下載一張含照片和標題的 PNG。',
+          '可先使用 File → 下載可編輯練習專案，另外保留日後修改的版本。',
+          '#menuBar',
+          (d) =>
+            d.output?.format === 'png' &&
+            d.layers.some((l) => l.kind === 'text' && l.text === 'GREEN LIFE' && l.visible) &&
+            Math.round(beginnerPhoto(d)?.w) === 360,
+        ),
+      ],
+    },
+  },
+];
+const BEGINNER_MAP = new Map(BEGINNER_LESSONS.map((lesson) => [lesson.id, lesson]));
+const defaultBeginner = () => ({
+  lesson: 'workspace',
+  understood: [],
+  completed: [],
+  practice: {},
+  drafts: {},
+});
+function validBeginner(state) {
+  if (
+    !state ||
+    !BEGINNER_MAP.has(state.lesson) ||
+    !Array.isArray(state.understood) ||
+    !Array.isArray(state.completed) ||
+    !state.practice ||
+    typeof state.practice !== 'object' ||
+    Array.isArray(state.practice)
+  )
+    return false;
+  if (
+    ![state.understood, state.completed].every(
+      (ids) =>
+        ids.length <= BEGINNER_LESSONS.length &&
+        new Set(ids).size === ids.length &&
+        ids.every((id) => BEGINNER_MAP.has(id)),
+    )
+  )
+    return false;
+  if (
+    !Object.entries(state.practice).every(
+      ([id, n]) =>
+        BEGINNER_MAP.get(id)?.lab &&
+        Number.isInteger(n) &&
+        n >= 0 &&
+        n <= BEGINNER_MAP.get(id).lab.steps.length,
+    )
+  )
+    return false;
+  if (!state.completed.every((id) => state.understood.includes(id))) return false;
+  return (
+    state.drafts &&
+    typeof state.drafts === 'object' &&
+    !Array.isArray(state.drafts) &&
+    Object.entries(state.drafts).every(
+      ([id, doc]) => BEGINNER_MAP.get(id)?.lab && LabEditor.validDocument(doc),
+    )
+  );
+}
+
+class BeginnerCourse {
+  constructor(editor, getState, save) {
+    this.editor = editor;
+    this.getState = getState;
+    this.save = save;
+    this.mode = 'read';
+    this.answers = {};
+    this.answerOrders = new Map(BEGINNER_LESSONS.map((l) => [l.id, shuffle([0, 1, 2])]));
+    this.message = '';
+    this.zone = 'canvas';
+    this.outlineOpen = false;
+  }
+  lesson() {
+    return BEGINNER_MAP.get(this.getState().lesson);
+  }
+  open(id) {
+    if (!BEGINNER_MAP.has(id)) return;
+    this.getState().lesson = id;
+    this.mode = 'read';
+    this.message = '';
+    this.save();
+    this.render();
+    byId('beginnerSurface').scrollIntoView({ block: 'start' });
+    byId('beginnerLessonTitle').focus({ preventScroll: true });
+  }
+  render() {
+    const state = this.getState(),
+      lesson = this.lesson(),
+      index = BEGINNER_LESSONS.indexOf(lesson);
+    document.body.classList.add('beginner-view');
+    document.querySelectorAll('.lesson-focus').forEach((el) => el.classList.remove('lesson-focus'));
+    byId('beginnerSurface').hidden = false;
+    byId('editor').hidden = this.mode !== 'practice' || !lesson.lab;
+    byId('beginnerSurface').innerHTML = `
+      <header class="beginner-heading"><div><span class="eyebrow">一步一步，從零開始</span><h2>零基礎入門</h2></div><div class="course-progress"><label for="beginnerProgress">已完成 ${state.completed.length} / ${BEGINNER_LESSONS.length} 課</label><progress id="beginnerProgress" value="${state.completed.length}" max="${BEGINNER_LESSONS.length}"></progress></div></header>
+      <div class="beginner-layout ${this.mode === 'practice' ? 'practicing' : ''}"><aside class="course-outline ${this.outlineOpen ? 'expanded' : ''}" aria-label="入門課程目錄"><h3>學習路線</h3><button class="course-toggle" id="beginnerToggleOutline" aria-expanded="${this.outlineOpen}">${icon('list')}課程目錄 · 第 ${index + 1} 課${icon(this.outlineOpen ? 'chevron-up' : 'chevron-down')}</button>${['先看懂', '動手做', '完成作品'].map((phase) => `<h4>${phase}</h4><ol>${BEGINNER_LESSONS.map((l, i) => (l.phase === phase ? `<li><button data-beginner-lesson="${l.id}" class="${l.id === lesson.id ? 'active' : ''}" ${l.id === lesson.id ? 'aria-current="step"' : ''}><span class="lesson-number">${state.completed.includes(l.id) ? icon('check') : String(i + 1).padStart(2, '0')}</span><span>${l.title}<small>約 ${l.minutes} 分鐘${state.completed.includes(l.id) ? ' · 已完成' : ''}</small></span></button></li>` : '')).join('')}</ol>`).join('')}</aside>
+      <article class="lesson-article"><div class="lesson-heading"><div><span class="eyebrow">第 ${index + 1} 課 / ${BEGINNER_LESSONS.length} · ${lesson.phase}</span><h3 id="beginnerLessonTitle" tabindex="-1">${lesson.title}</h3><p>${lesson.goal}</p></div><div class="lesson-modes" role="group" aria-label="課程內容"><button data-lesson-mode="read" aria-pressed="${this.mode === 'read'}">${icon('book-open')}先看懂</button>${lesson.lab ? `<button data-lesson-mode="practice" aria-pressed="${this.mode === 'practice'}">${icon('mouse-pointer-2')}跟著做</button>` : ''}</div></div>
+      ${this.mode === 'read' ? this.reading(lesson) : '<div id="beginnerPractice"></div>'}
+      <footer class="lesson-footer"><button id="beginnerPrevious" class="icon-button" title="上一課" aria-label="上一課" ${index ? '' : 'disabled'}>${icon('arrow-left')}</button><span>${state.completed.includes(lesson.id) ? '這一課已完成，隨時可以重練。' : '每次只學一點，理解比速度重要。'}</span><button id="beginnerNext" class="secondary" ${index === BEGINNER_LESSONS.length - 1 ? 'disabled' : ''}>下一課${icon('arrow-right')}</button></footer></article></div>`;
+    byId('beginnerSurface')
+      .querySelectorAll('[data-beginner-lesson]')
+      .forEach((b) => (b.onclick = () => this.open(b.dataset.beginnerLesson)));
+    byId('beginnerToggleOutline').onclick = () => {
+      this.outlineOpen = !this.outlineOpen;
+      this.render();
+    };
+    byId('beginnerSurface')
+      .querySelectorAll('[data-lesson-mode]')
+      .forEach(
+        (b) =>
+          (b.onclick = () => {
+            this.mode = b.dataset.lessonMode;
+            this.message = '';
+            this.render();
+          }),
+      );
+    byId('beginnerPrevious').onclick = () => this.open(BEGINNER_LESSONS[index - 1]?.id);
+    byId('beginnerNext').onclick = () => this.open(BEGINNER_LESSONS[index + 1]?.id);
+    if (this.mode === 'practice' && lesson.lab) {
+      const key = `beginner:${lesson.id}`;
+      if (this.editor.taskKey !== key) {
+        const doc = state.drafts[lesson.id] || this.editor.makeDocument(lesson.lab.scene);
+        this.editor.initialDoc = this.editor.makeDocument(lesson.lab.scene);
+        this.editor.historyBase = [];
+        this.editor.taskKey = key;
+        this.editor.setDocument(doc);
+        this.onDocumentChange(this.editor.doc);
+      }
+      this.renderPractice();
+      this.editor.fitCanvas();
+    } else this.bindReading();
+    icons();
+  }
+  reading(lesson) {
+    const state = this.getState(),
+      ready = this.ready();
+    return `<div class="lesson-reading"><p class="lesson-intro">${lesson.intro}</p>${this.visual(lesson)}
+      <dl class="lesson-ideas">${lesson.ideas.map(([term, meaning]) => `<div><dt>${term}</dt><dd>${meaning}</dd></div>`).join('')}</dl>
+      <aside class="lesson-mistake">${icon('lightbulb')}<div><h4>卡住時先想這件事</h4><p>${lesson.mistake}</p></div></aside>
+      <div class="lesson-takeaway"><span>先記住這一句</span><p>${lesson.remember}</p></div>
+      <section class="lesson-check" aria-labelledby="beginnerCheckTitle"><h4 id="beginnerCheckTitle">停一下，想一想</h4><p>${lesson.question}</p><div class="lesson-answers">${this.answerOrders
+        .get(lesson.id)
+        .map(
+          (i, position) =>
+            `<button data-beginner-answer="${i}" class="${this.answers[lesson.id] === i ? (i === 0 ? 'correct' : 'wrong') : ''}" aria-pressed="${this.answers[lesson.id] === i}"><span>${String.fromCharCode(65 + position)}</span>${lesson.answers[i][0]}</button>`,
+        )
+        .join(
+          '',
+        )}</div><p id="beginnerAnswerFeedback" class="lesson-answer-feedback" role="status">${this.answers[lesson.id] !== undefined ? lesson.answers[this.answers[lesson.id]][1] : state.understood.includes(lesson.id) ? '這個觀念已理解，也可以再選一次複習。' : '不計分，可以慢慢想，也可以回頭看。'}</p></section>
+      <div class="lesson-completion"><div><span>${state.understood.includes(lesson.id) ? '✓ 觀念已理解' : '○ 先完成觀念確認'}</span>${lesson.lab ? `<span>${this.practiceDone() ? '✓ 跟著做已完成' : '○ 再完成跟著做'}</span>` : ''}</div>${lesson.lab && !this.practiceDone() ? `<button id="beginnerStartPractice" class="primary">${icon('mouse-pointer-2')}開始跟著做</button>` : ''}<button id="beginnerComplete" class="${ready ? 'primary' : 'secondary'}" ${ready ? '' : 'disabled'}>${icon('check')}${state.completed.includes(lesson.id) ? '已完成這一課' : '完成這一課'}</button></div>
+      ${state.completed.length === BEGINNER_LESSONS.length ? `<div class="course-finished"><h4>你已經完成從零到第一張作品。</h4><p>接下來可以從基礎觀念測驗開始；不必一次挑戰正式模擬考。</p><button id="beginnerTryQuiz" class="secondary">${icon('list-checks')}基礎觀念練習</button></div>` : ''}
+      <p class="lesson-source">自編入門教學 · <a href="${BEGINNER_HELP[lesson.source]}" target="_blank" rel="noopener">Adobe 官方延伸閱讀${icon('external-link')}</a> · 實際 Photoshop 的選單會依版本略有差異。</p></div>`;
+  }
+  visual(lesson) {
+    if (lesson.visual === 'workspace') {
+      const zones = {
+        tools: [
+          '工具列：用什麼方式修改',
+          '移動、選取、文字，各有不同用途；選好工具後再看上方的工具選項。',
+        ],
+        canvas: [
+          '畫布：作品所在的地方',
+          '照片與文字組合在這裡。畫布外的工作區不會出現在匯出圖片中。',
+        ],
+        layers: [
+          '圖層面板：這次要修改誰',
+          '背景、照片與標題可以各自獨立，選到哪一層，操作就針對哪一層。',
+        ],
+      };
+      return `<figure class="workspace-figure"><div class="workspace-diagram"><button data-workspace-zone="tools" class="diagram-tools" aria-label="認識工具列">${icon('mouse-pointer-2')}${icon('type')}${icon('paintbrush')}<span>工具列</span></button><button data-workspace-zone="canvas" class="diagram-canvas" aria-label="認識畫布"><img src="${PLANT_ASSET}" alt="畫布上的植物照片"><span>畫布</span></button><button data-workspace-zone="layers" class="diagram-layers" aria-label="認識圖層面板"><span>${icon('type')}標題</span><span>${icon('image')}植物</span><span>${icon('square')}背景</span><b>圖層面板</b></button></div><figcaption id="workspaceCaption"><b>${zones[this.zone][0]}</b><p>${zones[this.zone][1]}</p></figcaption></figure>`;
+    }
+    if (lesson.visual === 'layers')
+      return `<figure class="layer-explainer"><div class="layer-example"><b>GREEN LIFE</b><img src="${PLANT_ASSET}" alt="文字、植物和背景合成的作品"></div><figcaption><span>${icon('type')}第 3 層：文字</span><span>${icon('image')}第 2 層：植物</span><span>${icon('square')}第 1 層：背景</span><p>各自一層，合起來是一張圖。</p></figcaption></figure>`;
+    if (lesson.visual === 'pixels')
+      return `<figure class="pixel-explainer"><div class="pixel-grid" role="img" aria-label="小色塊組成像素圖">${Array.from({ length: 64 }, (_, i) => `<span class="pixel-${(i * 7 + Math.floor(i / 8)) % 4}"></span>`).join('')}</div><figcaption><b>像素是圖片的小色點</b><p>寬 × 高＝像素尺寸<br>不是螢幕上用尺量到的大小。</p></figcaption></figure>`;
+    if (FIGURE_ASSETS[lesson.visual])
+      return `<figure class="lesson-screenshot"><img src="${FIGURE_ASSETS[lesson.visual]}" alt="PS MASTER ${lesson.title}相關操作面板"><figcaption>練習室操作範例，並非 Adobe Photoshop 本體。</figcaption></figure>`;
+    return `<figure class="lesson-photo"><img src="${PLANT_ASSET}" alt="本課使用的植物素材"><figcaption>${lesson.id === 'project' ? '照片＋標題＋底色，完成一張自己的作品。' : '用同一張素材練習，先熟悉操作，再追求效果。'}</figcaption></figure>`;
+  }
+  bindReading() {
+    byId('beginnerSurface')
+      .querySelectorAll('[data-beginner-answer]')
+      .forEach(
+        (b) =>
+          (b.onclick = () => {
+            const index = Number(b.dataset.beginnerAnswer),
+              lesson = this.lesson();
+            this.answers[lesson.id] = index;
+            if (index === 0 && !this.getState().understood.includes(lesson.id)) {
+              this.getState().understood.push(lesson.id);
+              this.save();
+            }
+            const scroll = window.scrollY;
+            this.render();
+            window.scrollTo(0, scroll);
+            byId('beginnerAnswerFeedback').scrollIntoView({ block: 'nearest' });
+          }),
+      );
+    byId('beginnerSurface')
+      .querySelectorAll('[data-workspace-zone]')
+      .forEach(
+        (b) =>
+          (b.onclick = () => {
+            this.zone = b.dataset.workspaceZone;
+            const old = byId('beginnerSurface').querySelector('.workspace-figure');
+            old.outerHTML = this.visual(this.lesson());
+            this.bindZones();
+            icons();
+          }),
+      );
+    if (byId('beginnerStartPractice'))
+      byId('beginnerStartPractice').onclick = () => {
+        this.mode = 'practice';
+        this.render();
+      };
+    byId('beginnerComplete').onclick = () => this.complete();
+    if (byId('beginnerTryQuiz')) byId('beginnerTryQuiz').onclick = () => launchMode('learn');
+  }
+  bindZones() {
+    byId('beginnerSurface')
+      .querySelectorAll('[data-workspace-zone]')
+      .forEach(
+        (b) =>
+          (b.onclick = () => {
+            this.zone = b.dataset.workspaceZone;
+            byId('beginnerSurface').querySelector('.workspace-figure').outerHTML = this.visual(
+              this.lesson(),
+            );
+            this.bindZones();
+            icons();
+          }),
+      );
+  }
+  practiceDone() {
+    const lesson = this.lesson();
+    return !lesson.lab || (this.getState().practice[lesson.id] || 0) >= lesson.lab.steps.length;
+  }
+  ready() {
+    return this.getState().understood.includes(this.lesson().id) && this.practiceDone();
+  }
+  renderPractice() {
+    const lesson = this.lesson(),
+      stepIndex = this.getState().practice[lesson.id] || 0;
+    const step = lesson.lab.steps[stepIndex];
+    byId('beginnerPractice').innerHTML =
+      `<div class="practice-route">${lesson.lab.steps.map((s, i) => `<span class="${i < stepIndex ? 'done' : i === stepIndex ? 'current' : ''}">${i < stepIndex ? icon('check') : i + 1}${s.title}</span>`).join('')}</div>
+      ${step ? `<section class="guided-step"><div><span class="eyebrow">第 ${stepIndex + 1} / ${lesson.lab.steps.length} 步</span><h4>${step.title}</h4><p>${step.action}</p><p class="step-expected">完成後會看到：${step.expected}</p></div><div class="step-controls"><button id="beginnerLocate" class="secondary">${icon('scan-eye')}找操作位置</button><button id="beginnerCheckStep" class="primary">${icon('check')}檢查這一步</button></div></section><details class="step-help"><summary>還是不知道怎麼做</summary><p>${step.help}</p><p>下面是可操作的練習畫布，不用先開真正的 Photoshop。每一步只修改這一課的素材。</p></details>` : `<div class="practice-finished">${icon('circle-check')}<div><h4>這一課的操作完成了。</h4><p>${lesson.remember}</p></div><button id="beginnerReview" class="primary">${icon('book-open')}回到觀念確認</button></div>`}
+      <p id="beginnerStepFeedback" class="step-feedback ${this.message.startsWith('完成') ? 'good' : ''}" role="status">${this.message || '這裡不計分，做錯可以復原，也可以重新練。'}</p><div class="practice-bottom"><span>教學模擬器，非完整 Photoshop。主體範圍為內建素材預備資料。</span><button id="beginnerReset" class="secondary">${icon('rotate-ccw')}重練這一課</button></div>`;
+    if (step) {
+      byId('beginnerCheckStep').onclick = () => {
+        if (step.test(this.editor.doc)) {
+          this.getState().practice[lesson.id] = stepIndex + 1;
+          this.message = `完成第 ${stepIndex + 1} 步：${step.expected}`;
+          this.save();
+          this.renderPractice();
+        } else {
+          this.message = `還差一點：${step.help} 這一步要看到的是：${step.expected}`;
+          byId('beginnerStepFeedback').textContent = this.message;
+          byId('beginnerStepFeedback').classList.remove('good');
+        }
+      };
+      byId('beginnerLocate').onclick = () => {
+        document
+          .querySelectorAll('.lesson-focus')
+          .forEach((el) => el.classList.remove('lesson-focus'));
+        const target = document.querySelector(step.focus);
+        target?.classList.add('lesson-focus');
+        target?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      };
+    } else
+      byId('beginnerReview').onclick = () => {
+        this.mode = 'read';
+        this.render();
+      };
+    byId('beginnerReset').onclick = () =>
+      openDialog(
+        '重新練習這一課',
+        '<p>會重設這一課的畫布與操作步驟；已完成的課程紀錄和原本測驗都會保留。</p>',
+        () => {
+          this.getState().practice[lesson.id] = 0;
+          this.editor.historyBase = [];
+          this.editor.setDocument(this.editor.makeDocument(lesson.lab.scene));
+          this.onDocumentChange(this.editor.doc);
+          this.message = '';
+          this.save();
+          this.render();
+        },
+        '重新練習',
+      );
+    icons();
+  }
+  onDocumentChange(doc) {
+    if (this.mode !== 'practice' || !this.lesson().lab) return;
+    this.getState().drafts[this.lesson().id] = clone(doc);
+    this.save();
+  }
+  restartProgress() {
+    this.getState().practice[this.lesson().id] = 0;
+    this.message = '已還原這一課的起始畫布，從第一步再來一次。';
+    this.save();
+    this.renderPractice();
+  }
+  complete() {
+    if (!this.ready()) return;
+    const lesson = this.lesson(),
+      state = this.getState();
+    if (!state.completed.includes(lesson.id)) state.completed.push(lesson.id);
+    this.save();
+    this.render();
+    toast(`第 ${BEGINNER_LESSONS.indexOf(lesson) + 1} 課完成了，按自己的步調繼續。`);
+  }
+}
 </script><script>const STORAGE_VERSION = 3;
 const MODE_NAMES = {
   learn: '新手學習',
@@ -5460,6 +7057,7 @@ const defaultData = () => ({
   reports: [],
   results: [],
   lessons: [],
+  beginner: defaultBeginner(),
   plan: {
     daily: 10,
     examDate: '',
@@ -5482,6 +7080,10 @@ let data = defaultData(),
   showAnswers = true;
 let activeSince = Date.now();
 const lab = new LabEditor((doc) => {
+  if (currentView === 'beginner') {
+    beginner.onDocumentChange(doc);
+    return;
+  }
   if (!session || session.completed) return;
   const row = currentRow();
   if (!row || row.q.type !== 'live' || row.submitted) return;
@@ -5492,6 +7094,10 @@ const lab = new LabEditor((doc) => {
   ];
   saveSession();
 });
+const beginner = new BeginnerCourse(lab, () => (data.beginner ||= defaultBeginner()), persistData);
+lab.onReset = () => {
+  if (currentView === 'beginner') beginner.restartProgress();
+};
 
 async function initStorage() {
   try {
@@ -5734,6 +7340,8 @@ function setMode(mode) {
   else if (byId('bankFilter').value === 'wrong') byId('bankFilter').value = 'all';
 }
 function hideSurfaces() {
+  document.body.classList.remove('beginner-view');
+  document.querySelectorAll('.lesson-focus').forEach((el) => el.classList.remove('lesson-focus'));
   for (const id of [
     'taskBand',
     'editor',
@@ -5742,6 +7350,7 @@ function hideSurfaces() {
     'recordsSurface',
     'dashboardSurface',
     'librarySurface',
+    'beginnerSurface',
     'feedback',
     'hintBox',
   ])
@@ -5753,16 +7362,23 @@ function updateTabs() {
     .forEach((b) => b.classList.toggle('active', b.dataset.view === currentView));
 }
 function showView(view) {
-  if (session && !session.completed && isFormal() && ['library', 'records'].includes(view)) {
+  if (
+    session &&
+    !session.completed &&
+    ((isFormal() && ['library', 'records', 'beginner'].includes(view)) ||
+      (view === 'beginner' && session.deadline))
+  ) {
     requestFinish(() => showView(view));
     return;
   }
   if (session && !session.completed) trackTime();
+  activeSince = Date.now();
   currentView = view;
   hideSurfaces();
   updateTabs();
   saveSession();
   if (view === 'dashboard') renderDashboard();
+  else if (view === 'beginner') beginner.render();
   else if (view === 'library') renderLibrary();
   else if (view === 'records') renderRecords();
   else {
@@ -6351,6 +7967,7 @@ function renderDashboard() {
           : '練習中';
   byId('dashboardSurface').innerHTML =
     `<div class="surface-heading"><div><span class="eyebrow">${new Intl.DateTimeFormat('zh-TW', { timeZone: 'Asia/Taipei', dateStyle: 'full' }).format(new Date())}</span><h2>你的 Photoshop 學習工作區</h2><p class="muted">${stage} · 今日目標 ${data.plan.daily} 題</p></div><div class="heading-actions"><button class="secondary" id="continueExam" ${session && !session.completed ? '' : 'disabled'}>${icon('play')}繼續上次練習</button><button class="primary" id="startFormal">${icon('clipboard-check')}正式模擬考</button></div></div>
+    <section class="beginner-entry"><div>${icon('sprout')}<div><h3>第一次用 Photoshop？從這裡開始</h3><p>先認識介面與圖層，再完成第一張小海報。</p><span class="muted">入門課程 ${data.beginner?.completed.length || 0} / ${BEGINNER_LESSONS.length} 課</span></div></div><button class="primary" id="openBeginner">${icon('book-open')}${data.beginner?.completed.length ? '繼續入門課' : '從零開始學'}</button></section>
     <div class="dashboard-stats">${[
       ['list-checks', '累計答題', summary.total],
       ['target', '累計正確率', summary.rate === null ? '—' : summary.rate + '%'],
@@ -6389,6 +8006,7 @@ function renderDashboard() {
       .join('')}</div>
     <footer class="source-footer">題目來源：ACP.docx＋自編補充；非官方原題。參考 <a href="https://certifiedprofessional.adobe.com/photoshop" target="_blank" rel="noopener">Adobe 2025 Photoshop 考試目標</a>，核對日期 2026-10-14。模擬考題數、時間與指標均為平台自訂。</footer>`;
   byId('continueExam').onclick = () => renderSession();
+  byId('openBeginner').onclick = () => showView('beginner');
   byId('startFormal').onclick = () => launchMode('formal');
   byId('editPlan').onclick = editPlan;
   byId('dailyPractice').onclick = () => {
@@ -6797,6 +8415,7 @@ function validBackup(d) {
   const safeId = (s) => typeof s === 'string' && /^[a-z0-9-]{1,100}$/i.test(s);
   const knownKeys = (list) =>
     Array.isArray(list) && list.length <= 10000 && list.every((k) => QUESTION_MAP.has(k));
+  if (d?.beginner !== undefined && !validBeginner(d.beginner)) return false;
   if (
     !d ||
     d.version !== STORAGE_VERSION ||
@@ -7002,8 +8621,11 @@ function importBackup() {
         '還原學習備份',
         `<p>此備份有 ${parsed.data.results.length} 份測驗紀錄。還原會取代這台瀏覽器目前的學習資料。</p>`,
         () => {
-          data = parsed.data;
+          data = { ...defaultData(), ...parsed.data };
           session = parsed.session || null;
+          lab.taskKey = null;
+          beginner.mode = 'read';
+          beginner.answers = {};
           persistData();
           saveSession();
           showView('dashboard');
@@ -7048,7 +8670,11 @@ async function boot() {
     if (validSession(stored)) session = stored;
     currentView = localStorage.getItem(VIEW_KEY) || 'dashboard';
   } catch (_) {}
-  if (!['dashboard', 'library', 'records', 'live', 'choice', 'order'].includes(currentView))
+  if (
+    !['dashboard', 'beginner', 'library', 'records', 'live', 'choice', 'order'].includes(
+      currentView,
+    )
+  )
     currentView = 'dashboard';
   document
     .querySelectorAll('[data-view]')
