@@ -4557,6 +4557,9 @@ body:is([data-screen='choice'], [data-screen='order'])
   justify-content: flex-start;
   gap: 20px;
 }
+#conceptNext {
+  margin-left: auto;
+}
 @media (max-width: 640px) {
   .concept-chapter > div {
     grid-template-columns: minmax(0, 1fr);
@@ -8311,9 +8314,9 @@ class BeginnerCourse {
     byId('beginnerSurface').hidden = false;
     byId('editor').hidden = this.mode !== 'practice' || !lesson.lab;
     byId('beginnerSurface').innerHTML = `
-      <header class="beginner-heading"><div class="learning-switch" aria-label="學習內容"><button id="beginnerConcepts">學觀念</button><span aria-current="page">跟著做</span></div><div class="course-progress"><label for="beginnerProgress">${state.completed.length} / ${BEGINNER_LESSONS.length} 課</label><progress id="beginnerProgress" value="${state.completed.length}" max="${BEGINNER_LESSONS.length}"></progress></div></header>
-      <div class="beginner-layout ${this.mode === 'practice' ? 'practicing' : ''}"><aside class="course-outline ${this.outlineOpen ? 'expanded' : ''}" aria-label="入門課程目錄"><h3>學習路線</h3><button class="course-toggle" id="beginnerToggleOutline" aria-expanded="${this.outlineOpen}">${icon('list')}課程目錄 · 第 ${index + 1} 課${icon(this.outlineOpen ? 'chevron-up' : 'chevron-down')}</button>${['先看懂', '動手做', '完成作品'].map((phase) => `<h4>${phase}</h4><ol>${BEGINNER_LESSONS.map((l, i) => (l.phase === phase ? `<li><button data-beginner-lesson="${l.id}" class="${l.id === lesson.id ? 'active' : ''}" ${l.id === lesson.id ? 'aria-current="step"' : ''}><span class="lesson-number">${state.completed.includes(l.id) ? icon('check') : String(i + 1).padStart(2, '0')}</span><span>${l.title}<small>約 ${l.minutes} 分鐘${state.completed.includes(l.id) ? ' · 已完成' : ''}</small></span></button></li>` : '')).join('')}</ol>`).join('')}</aside>
-      <article class="lesson-article"><div class="lesson-heading"><div><span class="eyebrow">第 ${index + 1} 課 / ${BEGINNER_LESSONS.length} · ${lesson.phase}</span><h3 id="beginnerLessonTitle" tabindex="-1">${lesson.title}</h3><p>${lesson.goal}</p></div><div class="lesson-modes" role="group" aria-label="課程內容"><button data-lesson-mode="read" aria-pressed="${this.mode === 'read'}">${icon('book-open')}先看懂</button>${lesson.lab ? `<button data-lesson-mode="practice" aria-pressed="${this.mode === 'practice'}">${icon('mouse-pointer-2')}跟著做</button>` : ''}</div></div>
+      <header class="beginner-heading"><div class="learning-switch" aria-label="學習內容"><button id="beginnerConcepts">學觀念</button><span aria-current="page">跟著做</span></div></header>
+      <div class="beginner-layout ${this.mode === 'practice' ? 'practicing' : ''}"><aside class="course-outline ${this.outlineOpen ? 'expanded' : ''}" aria-label="入門課程目錄"><h3>學習路線</h3><button class="course-toggle" id="beginnerToggleOutline" aria-expanded="${this.outlineOpen}">${icon('list')}課程目錄${icon(this.outlineOpen ? 'chevron-up' : 'chevron-down')}</button>${['先看懂', '動手做', '完成作品'].map((phase) => `<h4>${phase}</h4><ol>${BEGINNER_LESSONS.map((l, i) => (l.phase === phase ? `<li><button data-beginner-lesson="${l.id}" class="${l.id === lesson.id ? 'active' : ''}" ${l.id === lesson.id ? 'aria-current="step"' : ''}><span class="lesson-number">${String(i + 1).padStart(2, '0')}</span><span>${l.title}<small>約 ${l.minutes} 分鐘</small></span></button></li>` : '')).join('')}</ol>`).join('')}</aside>
+      <article class="lesson-article"><div class="lesson-heading"><div><span class="eyebrow">${lesson.phase}</span><h3 id="beginnerLessonTitle" tabindex="-1">${lesson.title}</h3><p>${lesson.goal}</p></div><div class="lesson-modes" role="group" aria-label="課程內容"><button data-lesson-mode="read" aria-pressed="${this.mode === 'read'}">${icon('book-open')}先看懂</button>${lesson.lab ? `<button data-lesson-mode="practice" aria-pressed="${this.mode === 'practice'}">${icon('mouse-pointer-2')}跟著做</button>` : ''}</div></div>
       ${this.mode === 'read' ? this.reading(lesson) : '<div id="beginnerPractice"></div>'}
       <footer class="lesson-footer"><button id="beginnerPrevious" class="icon-button" title="上一課" aria-label="上一課" ${index ? '' : 'disabled'}>${icon('arrow-left')}</button><button id="beginnerNext" class="secondary" ${index === BEGINNER_LESSONS.length - 1 ? 'disabled' : ''}>下一課${icon('arrow-right')}</button></footer></article></div>`;
     byId('beginnerSurface')
@@ -8352,8 +8355,6 @@ class BeginnerCourse {
     icons();
   }
   reading(lesson) {
-    const state = this.getState(),
-      ready = this.ready();
     return `<div class="lesson-reading"><p class="lesson-intro">${lesson.remember}</p>${this.visual(lesson)}
       <details class="quiet-details"><summary>例子與說明</summary><p>${lesson.intro}</p>
       <dl class="lesson-ideas">${lesson.ideas.map(([term, meaning]) => `<div><dt>${term}</dt><dd>${meaning}</dd></div>`).join('')}</dl>
@@ -8368,8 +8369,8 @@ class BeginnerCourse {
         .join(
           '',
         )}</div><p id="beginnerAnswerFeedback" class="lesson-answer-feedback" role="status" ${this.answers[lesson.id] === undefined ? 'hidden' : ''}>${this.answers[lesson.id] !== undefined ? lesson.answers[this.answers[lesson.id]][1] : ''}</p></section>
-      <div class="lesson-completion"><div><span>${state.understood.includes(lesson.id) ? '✓ 觀念已理解' : '○ 先完成觀念確認'}</span>${lesson.lab ? `<span>${this.practiceDone() ? '✓ 跟著做已完成' : '○ 再完成跟著做'}</span>` : ''}</div>${lesson.lab && !this.practiceDone() ? `<button id="beginnerStartPractice" class="primary">${icon('mouse-pointer-2')}開始跟著做</button>` : ''}<button id="beginnerComplete" class="${ready ? 'primary' : 'secondary'}" ${ready ? '' : 'disabled'}>${icon('check')}${state.completed.includes(lesson.id) ? '已完成這一課' : '完成這一課'}</button></div>
-      </details>${state.completed.length === BEGINNER_LESSONS.length ? `<div class="course-finished"><h4>入門課已完成。</h4><button id="beginnerTryQuiz" class="secondary">${icon('list-checks')}基礎觀念練習</button></div>` : ''}</div>`;
+      ${lesson.lab ? `<div class="lesson-completion"><button id="beginnerStartPractice" class="primary">${icon('mouse-pointer-2')}開始跟著做</button></div>` : ''}
+      </details></div>`;
   }
   visual(lesson) {
     if (lesson.visual === 'workspace') {
@@ -8406,10 +8407,6 @@ class BeginnerCourse {
             const index = Number(b.dataset.beginnerAnswer),
               lesson = this.lesson();
             this.answers[lesson.id] = index;
-            if (index === 0 && !this.getState().understood.includes(lesson.id)) {
-              this.getState().understood.push(lesson.id);
-              this.save();
-            }
             const scroll = window.scrollY;
             this.render();
             byId('beginnerCheck').open = true;
@@ -8434,8 +8431,6 @@ class BeginnerCourse {
         this.mode = 'practice';
         this.render();
       };
-    byId('beginnerComplete').onclick = () => this.complete();
-    if (byId('beginnerTryQuiz')) byId('beginnerTryQuiz').onclick = () => launchMode('learn');
   }
   bindZones() {
     byId('beginnerSurface')
@@ -8455,9 +8450,6 @@ class BeginnerCourse {
   practiceDone() {
     const lesson = this.lesson();
     return !lesson.lab || (this.getState().practice[lesson.id] || 0) >= lesson.lab.steps.length;
-  }
-  ready() {
-    return this.getState().understood.includes(this.lesson().id) && this.practiceDone();
   }
   renderPractice() {
     const lesson = this.lesson(),
@@ -8496,7 +8488,7 @@ class BeginnerCourse {
     byId('beginnerReset').onclick = () =>
       openDialog(
         '重新練習這一課',
-        '<p>會重設這一課的畫布與操作步驟；已完成的課程紀錄和原本測驗都會保留。</p>',
+        '<p>只重設這一課的畫布與操作步驟，不影響測驗成績。</p>',
         () => {
           this.getState().practice[lesson.id] = 0;
           this.editor.historyBase = [];
@@ -8520,15 +8512,6 @@ class BeginnerCourse {
     this.message = '已還原這一課的起始畫布，從第一步再來一次。';
     this.save();
     this.renderPractice();
-  }
-  complete() {
-    if (!this.ready()) return;
-    const lesson = this.lesson(),
-      state = this.getState();
-    if (!state.completed.includes(lesson.id)) state.completed.push(lesson.id);
-    this.save();
-    this.render();
-    toast(`第 ${BEGINNER_LESSONS.indexOf(lesson) + 1} 課完成`);
   }
 }
 </script><script>const CONCEPT_SOURCES = {
@@ -8601,7 +8584,7 @@ class ConceptClassroom {
     document.body.classList.add('beginner-view');
     byId('conceptsSurface').hidden = false;
     byId('conceptsSurface').innerHTML = `
-      <header class="beginner-heading"><div class="learning-switch" aria-label="學習內容"><span aria-current="page">學觀念</span><button id="conceptBack">跟著做</button></div><div class="course-progress"><label for="conceptProgress" id="conceptProgressLabel"></label><progress id="conceptProgress" max="${CONCEPT_TOPICS.length}"></progress></div></header>
+      <header class="beginner-heading"><div class="learning-switch" aria-label="學習內容"><span aria-current="page">學觀念</span><button id="conceptBack">跟著做</button></div></header>
       <div class="concept-layout"><aside class="concept-directory" aria-label="觀念主題目錄"><button id="conceptMenuToggle" class="text-button" aria-expanded="${this.menuOpen}" aria-controls="conceptDirectoryBody">${icon('list')}課程目錄${icon('chevron-down')}</button><div id="conceptDirectoryBody" hidden><div class="directory-filters"><label>搜尋觀念<input type="search" id="conceptSearch" placeholder="名稱、英文或題號" value="${escapeHtml(this.query)}"></label><label>章節<select id="conceptFilter"><option value="all">全部章節</option>${[...new Set(CONCEPT_TOPICS.map((t) => t.group))].map((g) => `<option value="${g}">${g}</option>`).join('')}<option value="review">待複習</option></select></label></div><div id="conceptTopicList"></div></div></aside><article id="conceptArticle" class="concept-article"></article></div>`;
     byId('conceptFilter').value = this.filter;
     byId('conceptSearch').oninput = (e) => {
@@ -8651,7 +8634,7 @@ class ConceptClassroom {
                   .filter((t) => t.group === group)
                   .map(
                     (t) =>
-                      `<button data-concept-topic="${t.id}" ${t.id === state.last ? 'aria-current="page"' : ''}><span class="lesson-number">${icon(state.understood.includes(t.id) ? 'check' : 'circle')}</span><span>${t.title}${state.review.includes(t.id) ? '<small>待複習</small>' : ''}</span></button>`,
+                      `<button data-concept-topic="${t.id}" ${t.id === state.last ? 'aria-current="page"' : ''}><span class="lesson-number">${icon('circle')}</span><span>${t.title}${state.review.includes(t.id) ? '<small>待複習</small>' : ''}</span></button>`,
                   )
                   .join('')}</div></details>`,
             )
@@ -8668,9 +8651,6 @@ class ConceptClassroom {
         byId('conceptFilter').value = 'all';
         this.renderList();
       };
-    byId('conceptProgress').value = state.understood.length;
-    byId('conceptProgressLabel').textContent =
-      `已讀 ${state.understood.length} / ${CONCEPT_TOPICS.length}`;
     icons();
   }
   open(id) {
@@ -8686,15 +8666,6 @@ class ConceptClassroom {
   related(topic = this.topic()) {
     return topic.ids.map((id) => QUESTION_MAP.get(`doc-${id}`)).filter(Boolean);
   }
-  markRead(read = true) {
-    const state = this.getState(),
-      id = this.topic().id;
-    state.understood = read
-      ? [...new Set([...state.understood, id])]
-      : state.understood.filter((value) => value !== id);
-    this.save();
-    this.renderList();
-  }
   renderArticle() {
     ++this.demoToken;
     const topic = this.topic(),
@@ -8702,14 +8673,14 @@ class ConceptClassroom {
       index = CONCEPT_TOPICS.indexOf(topic),
       demo = CONCEPT_DEMO_MAP.get(topic.demo);
     byId('conceptArticle').innerHTML = `
-      <header class="concept-topic-heading"><div><span class="eyebrow">${topic.group} · ${index + 1} / ${CONCEPT_TOPICS.length}</span><h3 id="conceptTitle" tabindex="-1">${topic.title}</h3></div><button id="conceptReview" class="icon-button ${state.review.includes(topic.id) ? 'bookmarked' : ''}" aria-pressed="${state.review.includes(topic.id)}" title="加入待複習" aria-label="加入待複習">${icon('bookmark')}</button></header>
+      <header class="concept-topic-heading"><div><span class="eyebrow">${topic.group}</span><h3 id="conceptTitle" tabindex="-1">${topic.title}</h3></div><button id="conceptReview" class="icon-button ${state.review.includes(topic.id) ? 'bookmarked' : ''}" aria-pressed="${state.review.includes(topic.id)}" title="加入待複習" aria-label="加入待複習">${icon('bookmark')}</button></header>
       <section class="concept-definition"><p>${topic.one}</p></section>
       ${demo ? `<section class="concept-experiment" aria-label="觀念圖解"><div class="section-title"><h4>${demo.demo === 'process' ? '流程' : '比較圖解'}</h4><button id="conceptDemoReset" class="icon-button small" title="重設圖解" aria-label="重設圖解">${icon('rotate-ccw')}</button></div><div id="conceptDemo"></div></section>` : ''}
       <div class="concept-example"><span>例子</span><p>${topic.example}</p></div>
       <details class="quiet-details concept-more"><summary>進一步了解</summary><p>${topic.detail}</p><aside class="lesson-mistake">${icon('lightbulb')}<div><h4>容易混淆</h4><p>${topic.mistake}</p></div></aside><div class="concept-next-actions"><button id="conceptToLesson" class="text-button">${icon('mouse-pointer-2')}相關操作</button><a href="${topic.ref}" target="_blank" rel="noopener">參考資料</a></div><details class="concept-doc-reference"><summary>對應文件題目 · ${topic.ids.length} 題</summary><ul>${this.related()
         .map((q) => `<li>Q${q.id} · ${escapeHtml(q.question)}</li>`)
         .join('')}</ul></details></details>
-      <footer class="lesson-footer"><button id="conceptPrevious" class="icon-button" title="上一個觀念" aria-label="上一個觀念" ${index ? '' : 'disabled'}>${icon('arrow-left')}</button><label class="concept-read"><input id="conceptRead" type="checkbox" ${state.understood.includes(topic.id) ? 'checked' : ''}>已讀</label><button id="conceptNext" class="primary">${index === CONCEPT_TOPICS.length - 1 ? '完成閱讀' : '讀完，下一個'}${icon(index === CONCEPT_TOPICS.length - 1 ? 'check' : 'arrow-right')}</button></footer>`;
+      <footer class="lesson-footer"><button id="conceptPrevious" class="icon-button" title="上一個觀念" aria-label="上一個觀念" ${index ? '' : 'disabled'}>${icon('arrow-left')}</button><button id="conceptNext" class="primary" ${index === CONCEPT_TOPICS.length - 1 ? 'disabled' : ''}>下一個${icon('arrow-right')}</button></footer>`;
     byId('conceptReview').onclick = () => {
       state.review = state.review.includes(topic.id)
         ? state.review.filter((id) => id !== topic.id)
@@ -8718,16 +8689,8 @@ class ConceptClassroom {
       this.renderList();
       this.updateReviewButton();
     };
-    byId('conceptRead').onchange = (e) => this.markRead(e.target.checked);
     byId('conceptPrevious').onclick = () => this.open(CONCEPT_TOPICS[index - 1]?.id);
-    byId('conceptNext').onclick = () => {
-      this.markRead();
-      if (index < CONCEPT_TOPICS.length - 1) this.open(CONCEPT_TOPICS[index + 1].id);
-      else {
-        byId('conceptRead').checked = true;
-        toast('已完成閱讀');
-      }
-    };
+    byId('conceptNext').onclick = () => this.open(CONCEPT_TOPICS[index + 1]?.id);
     byId('conceptToLesson').onclick = () => {
       showView('beginner');
       if (currentView === 'beginner') beginner.open(topic.lesson);
@@ -11305,8 +11268,8 @@ function renderDashboard() {
   byId('dashboardSurface').innerHTML = `
     <header class="simple-heading"><h2>Photoshop 學習室</h2>${session && !session.completed ? `<button id="continueExam" class="secondary">${icon('play')}繼續上次測驗</button>` : ''}</header>
     <div class="home-paths">
-      <section class="home-path featured"><div class="path-copy"><span class="path-symbol">${icon('book-open')}</span><div><h3>觀念課程</h3><p>涵蓋 ${CONCEPT_DOCUMENT_COUNT} 道觀念題</p></div></div><img src="${PLANT_ASSET}" alt="學習素材：植物照片"><button class="primary" id="openConcepts">${data.concepts?.understood.length ? '繼續學習' : '進入課程'}${icon('arrow-right')}</button></section>
-      <section class="home-path"><div class="path-copy"><span class="path-symbol">${icon('mouse-pointer-2')}</span><div><h3>操作教室</h3><p>${data.beginner?.completed.length || 0} / ${BEGINNER_LESSONS.length} 堂操作課</p></div></div><button class="secondary" id="openBeginner">進入教室${icon('arrow-right')}</button></section>
+      <section class="home-path featured"><div class="path-copy"><span class="path-symbol">${icon('book-open')}</span><div><h3>觀念課程</h3><p>涵蓋 ${CONCEPT_DOCUMENT_COUNT} 道觀念題</p></div></div><img src="${PLANT_ASSET}" alt="學習素材：植物照片"><button class="primary" id="openConcepts">進入課程${icon('arrow-right')}</button></section>
+      <section class="home-path"><div class="path-copy"><span class="path-symbol">${icon('mouse-pointer-2')}</span><div><h3>操作教室</h3><p>工具與畫布操作</p></div></div><button class="secondary" id="openBeginner">進入教室${icon('arrow-right')}</button></section>
       <section class="home-path"><div class="path-copy"><span class="path-symbol">${icon('clipboard-check')}</span><div><h3>模擬測驗</h3><p>選擇題 · 實作 · 模擬考</p></div></div><button class="secondary" id="openPractice">開始測驗${icon('arrow-right')}</button></section>
     </div>
     <footer class="simple-footer"><button class="text-button" id="openLibrary">${icon('library')}題庫</button><button class="text-button" id="editPlan">${icon('settings-2')}學習設定</button><details><summary>關於題目</summary><p>ACP.docx＋自編補充；非官方試題。模擬考題數、時間為平台自訂。</p><a href="https://certifiedprofessional.adobe.com/photoshop" target="_blank" rel="noopener">Adobe 考試目標</a></details></footer>`;
@@ -11407,13 +11370,11 @@ function editPlan() {
 function renderRecords() {
   hideSurfaces();
   byId('recordsSurface').hidden = false;
-  const summary = aggregate(),
-    allRows = data.results.flatMap((r) => r.rows),
+  const allRows = data.results.flatMap((r) => r.rows),
     formal = data.results.filter((r) => r.mode === 'formal'),
     ready = readiness();
   byId('recordsSurface').innerHTML = `
     <header class="simple-heading"><h2>成績</h2></header>
-    <div class="result-summary"><div><strong>${summary.total}</strong><span>累計答題</span></div><div><strong>${summary.rate === null ? '—' : summary.rate + '%'}</strong><span>正確率</span></div><div><strong>${data.results.length}</strong><span>完成測驗</span></div></div>
     <h3 class="record-group-title">測驗紀錄</h3>${
       data.results.length
         ? `<div class="table-scroll"><table class="records-table"><thead><tr><th>日期</th><th>模式</th><th>題數</th><th>成績</th><th>時間</th><th></th></tr></thead><tbody>${[
@@ -11581,7 +11542,7 @@ function renderChapters() {
         )
         .join('') ||
       '<p>先辨識題目用途，再確認工具與交付規格。需要保留編輯能力時，優先保留分層工作檔。</p>'
-    }<div class="review-actions"><button data-chapter-exam="${escapeHtml(section)}" class="primary" ${pool.length ? '' : 'disabled'}>章節小考</button><button data-lesson-done="${escapeHtml(section)}" class="secondary">${data.lessons.includes(section) ? '已完成閱讀' : '標記完成閱讀'}</button></div></div></details>`;
+    }<div class="review-actions"><button data-chapter-exam="${escapeHtml(section)}" class="primary" ${pool.length ? '' : 'disabled'}>章節小考</button></div></div></details>`;
   }).join('');
   document.querySelectorAll('[data-chapter-exam]').forEach(
     (b) =>
@@ -11589,14 +11550,6 @@ function renderChapters() {
         byId('chapterFilter').value = b.dataset.chapterExam;
         setMode('chapter');
         requestFinish(() => startExam('choice', null, 'chapter'));
-      }),
-  );
-  document.querySelectorAll('[data-lesson-done]').forEach(
-    (b) =>
-      (b.onclick = () => {
-        if (!data.lessons.includes(b.dataset.lessonDone)) data.lessons.push(b.dataset.lessonDone);
-        persistData();
-        b.textContent = '已完成閱讀';
       }),
   );
 }
