@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="ACP 題庫與 Photoshop 模擬實作練習">
-  <title>PS MASTER | Photoshop ACP 學習平台</title>
+  <title>Photoshop 學習室</title>
   <style>:root {
   color-scheme: dark;
   --bg: #202122;
@@ -3814,10 +3814,24 @@ body:is([data-screen='choice'], [data-screen='order'], [data-screen='live']) .mo
   flex: 1;
   min-width: 0;
 }
-.path-number {
-  color: var(--muted);
-  font-size: 12px;
-  padding-top: 5px;
+.path-symbol {
+  color: #afcbbd;
+  width: 30px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  flex: none;
+}
+.path-symbol svg {
+  width: 25px;
+  height: 25px;
+  stroke-width: 1.4;
+}
+.home-path:nth-child(2) .path-symbol {
+  color: #a4c9e5;
+}
+.home-path:nth-child(3) .path-symbol {
+  color: #d4c8a0;
 }
 .path-copy h3 {
   font-size: 22px;
@@ -4268,8 +4282,10 @@ body:is([data-screen='choice'], [data-screen='order'])
 }
 @media (max-width: 640px) {
   .app-header {
-    padding: 12px 16px 0;
+    padding: 0 12px;
     gap: 8px;
+    min-height: 64px;
+    flex-wrap: nowrap;
   }
   .brand h1 {
     font-size: 16px;
@@ -4283,13 +4299,23 @@ body:is([data-screen='choice'], [data-screen='order'])
     font-size: 17px;
   }
   .main-tabs {
-    height: 46px;
+    height: 64px;
+    width: auto;
+    flex: 1;
+    order: 2;
+  }
+  .mobile-settings {
+    order: 3;
+    margin-left: 0;
+  }
+  .shell {
+    min-height: calc(100vh - 64px);
   }
   .main-tabs button {
     min-width: 0;
     flex: 1;
-    padding: 0 6px;
-    min-height: 46px;
+    padding: 0 4px;
+    min-height: 64px;
     font-size: 13px;
     gap: 6px;
   }
@@ -4335,7 +4361,7 @@ body:is([data-screen='choice'], [data-screen='order'])
     height: 88px;
   }
   .home-path button {
-    margin-left: 26px;
+    margin-left: 42px;
     min-height: 40px;
   }
   .simple-footer {
@@ -4444,8 +4470,8 @@ body:is([data-screen='choice'], [data-screen='order'])
 </head>
 <body>
   <header class="app-header">
-    <div class="brand"><span class="ps-mark">Ps</span><div><h1>PS MASTER</h1><span class="brand-sub">Photoshop ACP 學習平台</span></div></div>
-    <nav class="main-tabs" aria-label="練習模式">
+    <div class="brand"><span class="ps-mark" role="img" aria-label="Photoshop">Ps</span></div>
+    <nav class="main-tabs" aria-label="主導覽">
       <button data-view="dashboard" class="active"><i data-lucide="layout-dashboard"></i><span>首頁</span></button>
       <button data-view="concepts"><i data-lucide="book-open"></i><span>學習</span></button>
       <button data-view="practice"><i data-lucide="mouse-pointer-2"></i><span>練習</span></button>
@@ -10549,11 +10575,11 @@ function renderDashboard() {
   hideSurfaces();
   byId('dashboardSurface').hidden = false;
   byId('dashboardSurface').innerHTML = `
-    <header class="simple-heading"><h2>Photoshop 學習</h2>${session && !session.completed ? `<button id="continueExam" class="secondary">${icon('play')}繼續上次測驗</button>` : ''}</header>
+    <header class="simple-heading"><h2>Photoshop 學習室</h2>${session && !session.completed ? `<button id="continueExam" class="secondary">${icon('play')}繼續上次測驗</button>` : ''}</header>
     <div class="home-paths">
-      <section class="home-path featured"><div class="path-copy"><span class="path-number">01</span><div><h3>學觀念</h3><p>${data.concepts?.understood.length || 0} / ${CONCEPT_TOPICS.length} 個觀念</p></div></div><img src="${PLANT_ASSET}" alt="學習素材：植物照片"><button class="primary" id="openConcepts">${icon('book-open')}${data.concepts?.understood.length ? '繼續學習' : '開始學習'}${icon('arrow-right')}</button></section>
-      <section class="home-path"><div class="path-copy"><span class="path-number">02</span><div><h3>跟著做</h3><p>${data.beginner?.completed.length || 0} / ${BEGINNER_LESSONS.length} 堂操作課</p></div></div><button class="secondary" id="openBeginner">${icon('mouse-pointer-2')}開始操作${icon('arrow-right')}</button></section>
-      <section class="home-path"><div class="path-copy"><span class="path-number">03</span><div><h3>測驗</h3><p>選擇題 · 實作 · 模擬考</p></div></div><button class="secondary" id="openPractice">${icon('list-checks')}開始練習${icon('arrow-right')}</button></section>
+      <section class="home-path featured"><div class="path-copy"><span class="path-symbol">${icon('book-open')}</span><div><h3>觀念課程</h3><p>${data.concepts?.understood.length || 0} / ${CONCEPT_TOPICS.length} 個觀念</p></div></div><img src="${PLANT_ASSET}" alt="學習素材：植物照片"><button class="primary" id="openConcepts">${data.concepts?.understood.length ? '繼續學習' : '進入課程'}${icon('arrow-right')}</button></section>
+      <section class="home-path"><div class="path-copy"><span class="path-symbol">${icon('mouse-pointer-2')}</span><div><h3>操作教室</h3><p>${data.beginner?.completed.length || 0} / ${BEGINNER_LESSONS.length} 堂操作課</p></div></div><button class="secondary" id="openBeginner">進入教室${icon('arrow-right')}</button></section>
+      <section class="home-path"><div class="path-copy"><span class="path-symbol">${icon('clipboard-check')}</span><div><h3>模擬測驗</h3><p>選擇題 · 實作 · 模擬考</p></div></div><button class="secondary" id="openPractice">開始測驗${icon('arrow-right')}</button></section>
     </div>
     <footer class="simple-footer"><button class="text-button" id="openLibrary">${icon('library')}題庫</button><button class="text-button" id="editPlan">${icon('settings-2')}學習設定</button><details><summary>關於題目</summary><p>ACP.docx＋自編補充；非官方試題。模擬考題數、時間為平台自訂。</p><a href="https://certifiedprofessional.adobe.com/photoshop" target="_blank" rel="noopener">Adobe 考試目標</a></details></footer>`;
   if (byId('continueExam')) byId('continueExam').onclick = () => renderSession();
