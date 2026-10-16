@@ -3712,6 +3712,734 @@ select {
     width: 100%;
   }
 }
+
+/* Keep each screen focused; secondary tools open on demand. */
+.shell,
+.beginner-view .shell {
+  grid-template-columns: minmax(0, 1fr);
+}
+.app-header {
+  padding-inline: 28px;
+  gap: 18px;
+}
+.main-tabs {
+  margin-left: auto;
+  gap: 8px;
+}
+.main-tabs button {
+  min-width: 82px;
+  font-size: 14px;
+  transition: none;
+}
+.main-tabs button span {
+  display: inline;
+}
+.mobile-settings {
+  display: none;
+}
+body:is([data-screen='choice'], [data-screen='order'], [data-screen='live']) .mobile-settings {
+  display: inline-flex;
+}
+.exam-sidebar {
+  display: none;
+}
+.exam-sidebar.open,
+.beginner-view .exam-sidebar.open {
+  display: flex;
+  position: fixed;
+  z-index: 101;
+  inset: 0 0 0 auto;
+  width: min(360px, 100%);
+  overflow-y: auto;
+  padding-bottom: 20px;
+  border-left: 1px solid var(--line);
+  box-shadow: -12px 0 40px #0005;
+}
+.settings-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  border: 0;
+  border-radius: 0;
+  background: #0008;
+  width: 100%;
+  height: 100%;
+}
+.sidebar-title {
+  padding: 18px;
+}
+.sidebar-section summary {
+  cursor: pointer;
+  padding-block: 8px;
+}
+.sidebar-form,
+.session-stats,
+.sidebar-section,
+.sidebar-bottom {
+  padding-inline: 20px;
+}
+.dashboard-surface,
+.practice-surface {
+  max-width: 960px;
+  margin: auto;
+  padding: 48px 32px 32px;
+}
+.simple-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.simple-heading h2 {
+  font-size: 26px;
+  line-height: 1.5;
+}
+.home-path {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 124px;
+  padding: 26px 4px;
+  border-top: 1px solid var(--line);
+}
+.home-path.featured {
+  min-height: 194px;
+  border-top-color: #667569;
+}
+.path-copy {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex: 1;
+  min-width: 0;
+}
+.path-number {
+  color: var(--muted);
+  font-size: 12px;
+  padding-top: 5px;
+}
+.path-copy h3 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.path-copy p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 9px;
+  line-height: 1.5;
+}
+.home-path img {
+  width: 150px;
+  height: 136px;
+  object-fit: contain;
+}
+.home-path button {
+  flex: none;
+  min-height: 44px;
+}
+.simple-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  align-items: flex-start;
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.simple-footer details {
+  margin-left: auto;
+  padding-top: 8px;
+  max-width: 320px;
+  line-height: 1.8;
+}
+.simple-footer summary,
+.quiet-details summary {
+  cursor: pointer;
+  color: var(--muted);
+}
+.text-button {
+  background: transparent;
+  border: 0;
+  padding: 8px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.text-button:hover {
+  color: var(--text);
+  background: transparent;
+}
+.practice-path {
+  width: 100%;
+  min-height: 112px;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  text-align: left;
+  padding: 24px 6px;
+  justify-content: flex-start;
+  gap: 22px;
+}
+.practice-path:hover {
+  background: #ffffff04;
+}
+.practice-path > span:nth-child(2) {
+  flex: 1;
+}
+.practice-path b {
+  font-size: 20px;
+  display: block;
+  font-weight: 600;
+}
+.practice-path small {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.path-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: #b5c9bd;
+}
+.path-icon svg {
+  width: 26px;
+  height: 26px;
+}
+.extra-practice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-block: 20px;
+}
+.quiet-details {
+  border-top: 1px solid var(--line);
+  padding-block: 18px;
+  line-height: 1.8;
+}
+.quiet-details > summary {
+  font-size: 13px;
+}
+.quiet-details[open] > summary {
+  color: var(--text);
+  margin-bottom: 20px;
+}
+.beginner-surface {
+  max-width: 960px;
+  margin: auto;
+  padding: 28px 32px 0;
+}
+.beginner-heading {
+  gap: 20px;
+  padding-bottom: 20px;
+}
+.learning-switch {
+  display: flex;
+  border-bottom: 1px solid var(--line);
+  align-items: stretch;
+  flex: none;
+}
+.learning-switch > :is(button, span) {
+  min-height: 42px;
+  padding: 10px 20px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.learning-switch > [aria-current] {
+  border-bottom: 2px solid var(--accent);
+  color: var(--text);
+}
+.course-progress {
+  width: 138px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.concept-layout,
+.beginner-layout {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+.concept-directory,
+.course-outline {
+  border: 0;
+  padding: 14px 0;
+}
+#conceptMenuToggle {
+  display: inline-flex;
+  gap: 8px;
+}
+.directory-filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+.directory-filters label {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+#conceptTopicList,
+#conceptTopicList.expanded {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px 20px;
+  margin-top: 12px;
+}
+.concept-list-count {
+  grid-column: 1 / -1;
+}
+#conceptTopicList > button {
+  font-size: 13px;
+  padding: 10px 6px;
+}
+#conceptTopicList small {
+  display: none;
+}
+.concept-article,
+.lesson-article {
+  padding: 10px 0 28px;
+  max-width: none;
+}
+.concept-topic-heading {
+  padding-bottom: 8px;
+}
+.concept-topic-heading h3,
+.lesson-heading h3 {
+  font-size: 25px;
+  margin: 8px 0 0;
+  line-height: 1.55;
+}
+.concept-definition {
+  border: 0;
+  padding: 0 0 24px;
+}
+.concept-definition > p {
+  font-size: 17px;
+  line-height: 1.85;
+  margin: 0;
+  color: #d6dad8;
+}
+.concept-experiment {
+  background: transparent;
+  border: 0;
+  padding: 0 0 20px;
+}
+.concept-experiment .section-title {
+  margin-bottom: 8px;
+}
+.concept-experiment .section-title h4 {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 400;
+}
+.concept-range {
+  margin-block: 12px;
+}
+.demo-note {
+  font-size: 12px;
+}
+.concept-experiment canvas {
+  max-width: 100%;
+}
+.concept-experiment .concept-photo-stage {
+  height: 210px;
+}
+.concept-experiment .concept-photo-stage img {
+  max-height: 200px;
+}
+.checkpoint {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+  margin: 0;
+}
+.checkpoint > summary {
+  color: #a0d8ff;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+.checkpoint[open] > summary {
+  margin-bottom: 20px;
+}
+.checkpoint .lesson-check {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+.checkpoint .lesson-check > p:first-child {
+  font-size: 16px;
+  line-height: 1.8;
+}
+.checkpoint .lesson-answer-feedback {
+  margin-block: 18px;
+}
+.checkpoint .quiet-details {
+  margin-top: 20px;
+  padding-bottom: 0;
+}
+.lesson-footer {
+  margin-top: 22px;
+  padding-top: 0;
+  border: 0;
+}
+.course-outline > h3 {
+  display: none;
+}
+.course-outline .course-toggle {
+  display: flex;
+  width: auto;
+  gap: 8px;
+  padding: 8px 0;
+  border: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+.course-outline:not(.expanded) > :is(h4, ol) {
+  display: none;
+}
+.course-outline.expanded {
+  display: block;
+}
+.course-outline.expanded > ol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 20px;
+}
+.course-outline.expanded h4 {
+  margin-top: 16px;
+}
+.lesson-heading {
+  margin-bottom: 16px;
+  gap: 14px;
+}
+.lesson-heading > div > p {
+  display: none;
+}
+.lesson-modes {
+  margin-top: 2px;
+}
+.lesson-intro {
+  font-size: 17px;
+  line-height: 1.85;
+}
+.lesson-reading > figure {
+  margin-block: 22px;
+}
+.lesson-reading > .lesson-photo img {
+  max-height: 260px;
+}
+.lesson-completion {
+  margin-top: 20px;
+  padding-top: 16px;
+}
+.lesson-completion > div {
+  display: none;
+}
+.lesson-ideas {
+  margin-block: 20px;
+}
+.lesson-reading .quiet-details > p {
+  line-height: 1.9;
+}
+.beginner-surface:has(.practicing) {
+  max-width: none;
+}
+.practicing .course-outline {
+  display: none;
+}
+.task-band {
+  padding: 28px 32px 18px;
+  gap: 20px;
+}
+body:is([data-screen='choice'], [data-screen='order'])
+  :is(.task-band, .question-surface, .feedback, .hint-box) {
+  max-width: 960px;
+  margin-inline: auto;
+}
+.task-meta {
+  font-size: 12px;
+  gap: 16px;
+  color: var(--muted);
+}
+.task-band h2 {
+  font-size: 21px;
+  line-height: 1.7;
+}
+#taskGoal:empty {
+  display: none;
+}
+.task-actions {
+  gap: 8px;
+}
+.task-more {
+  position: relative;
+}
+.task-more > summary {
+  list-style: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: var(--muted);
+}
+.task-more > summary::-webkit-details-marker {
+  display: none;
+}
+.task-more > summary svg {
+  width: 18px;
+  height: 18px;
+}
+.task-more > div {
+  position: absolute;
+  z-index: 6;
+  top: 42px;
+  left: 0;
+  padding: 10px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  display: flex;
+  gap: 10px;
+}
+.task-timer {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+.dashboard-surface,
+.library-surface,
+.question-surface,
+.results-surface {
+  animation: none;
+}
+.question-footer {
+  color: var(--muted);
+  font-size: 12px;
+}
+.records-surface {
+  max-width: 1040px;
+  margin: auto;
+}
+.records-surface .result-summary {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.record-group-title {
+  font-size: 16px;
+}
+@media (max-width: 780px) {
+  .app-header {
+    padding-inline: 18px;
+  }
+  .main-tabs {
+    gap: 0;
+  }
+  .main-tabs button {
+    min-width: 64px;
+    padding-inline: 10px;
+  }
+  .beginner-heading:has(.concept-heading-actions) {
+    flex-wrap: nowrap;
+  }
+  .beginner-surface {
+    padding-inline: 24px;
+  }
+  .home-path {
+    gap: 16px;
+  }
+  .home-path img {
+    width: 110px;
+    height: 110px;
+  }
+}
+@media (max-width: 640px) {
+  .app-header {
+    padding: 12px 16px 0;
+    gap: 8px;
+  }
+  .brand h1 {
+    font-size: 16px;
+  }
+  .brand-sub {
+    display: none;
+  }
+  .ps-mark {
+    width: 31px;
+    height: 31px;
+    font-size: 17px;
+  }
+  .main-tabs {
+    height: 46px;
+  }
+  .main-tabs button {
+    min-width: 0;
+    flex: 1;
+    padding: 0 6px;
+    min-height: 46px;
+    font-size: 13px;
+    gap: 6px;
+  }
+  .main-tabs button span {
+    display: inline;
+    font-size: 13px;
+  }
+  .main-tabs svg {
+    display: none;
+  }
+  .dashboard-surface,
+  .practice-surface {
+    padding: 26px 20px;
+  }
+  .simple-heading {
+    margin-bottom: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .simple-heading h2 {
+    font-size: 23px;
+  }
+  .home-path,
+  .home-path.featured {
+    min-height: 0;
+    padding: 24px 0;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .path-copy {
+    gap: 12px;
+    flex-basis: calc(100% - 108px);
+  }
+  .path-copy h3 {
+    font-size: 21px;
+  }
+  .path-copy p {
+    font-size: 12px;
+    margin-top: 7px;
+  }
+  .home-path img {
+    width: 88px;
+    height: 88px;
+  }
+  .home-path button {
+    margin-left: 26px;
+    min-height: 40px;
+  }
+  .simple-footer {
+    gap: 10px 20px;
+    padding-top: 16px;
+  }
+  .simple-footer details {
+    margin-left: 0;
+  }
+  .practice-path {
+    min-height: 105px;
+    gap: 16px;
+  }
+  .practice-path b {
+    font-size: 18px;
+  }
+  .practice-path small {
+    font-size: 12px;
+  }
+  .beginner-surface {
+    padding: 20px 20px 0;
+  }
+  .beginner-heading {
+    gap: 12px;
+    padding-bottom: 16px;
+    flex-wrap: nowrap;
+  }
+  .learning-switch > :is(button, span) {
+    padding-inline: 12px;
+    font-size: 14px;
+  }
+  .course-progress {
+    width: 95px;
+    font-size: 10px;
+  }
+  .directory-filters {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  #conceptTopicList,
+  #conceptTopicList.expanded,
+  .course-outline.expanded > ol {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .concept-topic-heading h3,
+  .lesson-heading h3 {
+    font-size: 21px;
+    line-height: 1.6;
+  }
+  .concept-definition > p,
+  .lesson-intro {
+    font-size: 16px;
+  }
+  .concept-experiment {
+    padding: 0 0 20px;
+  }
+  .concept-range {
+    grid-template-columns: 82px minmax(0, 1fr) 28px;
+    gap: 8px;
+    font-size: 12px;
+  }
+  .concept-experiment .concept-photo-stage {
+    height: 172px;
+  }
+  .concept-experiment .concept-photo-stage img {
+    max-height: 160px;
+  }
+  .concept-article,
+  .lesson-article {
+    padding-top: 8px;
+  }
+  .lesson-heading {
+    display: block;
+  }
+  .lesson-modes {
+    display: inline-flex;
+    margin-top: 16px;
+  }
+  .task-band {
+    padding: 24px 20px 16px;
+  }
+  .task-band h2 {
+    font-size: 18px;
+  }
+  .task-actions {
+    margin-top: 16px;
+    gap: 8px;
+  }
+  .task-actions button {
+    font-size: 12px;
+    min-height: 38px;
+  }
+  .question-surface {
+    padding-inline: 20px;
+  }
+  .records-surface .result-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .records-surface .result-summary strong {
+    font-size: 24px;
+  }
+  .records-surface .result-summary span {
+    font-size: 11px;
+  }
+}
 </style>
 </head>
 <body>
@@ -3719,18 +4447,16 @@ select {
     <div class="brand"><span class="ps-mark">Ps</span><div><h1>PS MASTER</h1><span class="brand-sub">Photoshop ACP 學習平台</span></div></div>
     <nav class="main-tabs" aria-label="練習模式">
       <button data-view="dashboard" class="active"><i data-lucide="layout-dashboard"></i><span>首頁</span></button>
-      <button data-view="beginner"><i data-lucide="sprout"></i><span>零基礎</span></button>
-      <button data-view="live"><i data-lucide="mouse-pointer-2"></i><span>模擬實作</span></button>
-      <button data-view="choice"><i data-lucide="list-checks"></i><span>觀念測驗</span></button>
-      <button data-view="order"><i data-lucide="list-ordered"></i><span>步驟練習</span></button>
-      <button data-view="library"><i data-lucide="library"></i><span>學習中心</span></button>
-      <button data-view="records"><i data-lucide="chart-no-axes-column"></i><span>分析</span></button>
+      <button data-view="concepts"><i data-lucide="book-open"></i><span>學習</span></button>
+      <button data-view="practice"><i data-lucide="mouse-pointer-2"></i><span>練習</span></button>
+      <button data-view="records"><i data-lucide="chart-no-axes-column"></i><span>成績</span></button>
     </nav>
     <button class="icon-button mobile-settings" id="toggleSettings" title="測驗設定" aria-label="測驗設定"><i data-lucide="sliders-horizontal"></i></button>
   </header>
+  <button id="settingsBackdrop" class="settings-backdrop" aria-label="關閉測驗設定" hidden></button>
   <div class="shell">
-    <aside class="exam-sidebar" id="settingsPanel">
-      <div class="sidebar-title">測驗設定 <span class="label quiet">離線題庫</span></div>
+    <aside class="exam-sidebar" id="settingsPanel" role="dialog" aria-modal="true" aria-label="測驗設定">
+      <div class="sidebar-title">測驗設定 <button id="closeSettings" class="icon-button" title="關閉" aria-label="關閉測驗設定"><i data-lucide="x"></i></button></div>
       <div class="sidebar-form">
         <label for="examMode">測驗模式</label><select id="examMode"><option value="learn">新手學習</option><option value="chapter">章節練習</option><option value="formal">正式模擬考</option><option value="timed">限時挑戰</option><option value="wrong">錯題強化</option><option value="figure">看圖辨識</option><option value="live">實作模擬</option><option value="smart">智慧混合</option></select>
         <label for="sourceFilter">題目來源</label><select id="sourceFilter"><option value="all">文件＋補充練習</option><option value="document">僅 ACP.docx</option><option value="extra">僅補充練習</option></select>
@@ -3742,18 +4468,19 @@ select {
         <button class="primary full" id="startExam"><i data-lucide="shuffle"></i>開始測驗</button>
       </div>
       <div class="session-stats"><div><span>進度</span><b id="progressText">0 / 0</b></div><progress id="examProgress" max="100" value="0"></progress><div><span>目前得分</span><b id="currentScore">0</b></div><div><span>時間</span><b id="timer">00:00</b></div></div>
-      <div class="sidebar-section"><h2>題庫</h2><div id="bankSummary"></div></div>
-      <div class="sidebar-section"><h2>本次題目</h2><ol class="question-map" id="questionMap"></ol></div>
+      <details class="sidebar-section"><summary>題庫資料</summary><div id="bankSummary"></div></details>
+      <details class="sidebar-section"><summary>本次題目</summary><ol class="question-map" id="questionMap"></ol></details>
       <div class="sidebar-bottom"><button id="finishExam" class="secondary full"><i data-lucide="flag"></i>結束並看成績</button><span class="storage-status" id="storageStatus">學習紀錄保存在這台瀏覽器</span></div>
     </aside>
     <main>
       <section class="dashboard-surface" id="dashboardSurface" hidden></section>
+      <section class="practice-surface" id="practiceSurface" hidden></section>
       <section class="beginner-surface" id="beginnerSurface" aria-label="零基礎入門課程" hidden></section>
       <section class="concepts-surface beginner-surface" id="conceptsSurface" aria-label="觀念教室" hidden></section>
       <section class="library-surface" id="librarySurface" hidden></section>
       <section class="task-band" id="taskBand" hidden>
         <div class="task-copy"><div class="task-meta" id="taskMeta"></div><h2 id="taskTitle"></h2><p id="taskGoal"></p></div>
-        <div class="task-actions"><button id="previousTask" class="icon-button" title="上一題" aria-label="上一題"><i data-lucide="arrow-left"></i></button><button id="markTask" class="icon-button" title="標記待檢查" aria-label="標記待檢查"><i data-lucide="flag"></i></button><button id="bookmark" class="icon-button" title="收藏題目" aria-label="收藏題目"><i data-lucide="bookmark"></i></button><button id="hint" class="secondary"><i data-lucide="lightbulb"></i>提示</button><button id="submitTask" class="primary"><i data-lucide="check"></i>提交作答</button><button id="nextTask" class="secondary">下一題<i data-lucide="arrow-right"></i></button></div>
+        <div class="task-actions"><button id="previousTask" class="icon-button" title="上一題" aria-label="上一題"><i data-lucide="arrow-left"></i></button><details class="task-more"><summary title="更多題目操作" aria-label="更多題目操作"><i data-lucide="ellipsis"></i></summary><div><button id="markTask" class="icon-button" title="標記待檢查" aria-label="標記待檢查"><i data-lucide="flag"></i></button><button id="bookmark" class="icon-button" title="收藏題目" aria-label="收藏題目"><i data-lucide="bookmark"></i></button></div></details><span id="taskTimer" class="task-timer" role="timer" aria-label="剩餘時間" hidden></span><button id="hint" class="icon-button" title="提示" aria-label="提示"><i data-lucide="lightbulb"></i></button><button id="submitTask" class="primary"><i data-lucide="check"></i>提交作答</button><button id="nextTask" class="secondary">下一題<i data-lucide="arrow-right"></i></button></div>
       </section>
       <div id="hintBox" class="hint-box" hidden></div>
       <div id="feedback" class="feedback" role="status" hidden></div>
@@ -7434,6 +8161,7 @@ class BeginnerCourse {
   }
   open(id) {
     if (!BEGINNER_MAP.has(id)) return;
+    this.outlineOpen = false;
     this.getState().lesson = id;
     this.mode = 'read';
     this.message = '';
@@ -7451,7 +8179,7 @@ class BeginnerCourse {
     byId('beginnerSurface').hidden = false;
     byId('editor').hidden = this.mode !== 'practice' || !lesson.lab;
     byId('beginnerSurface').innerHTML = `
-      <header class="beginner-heading"><div><h2>零基礎入門</h2></div><div class="concept-heading-actions"><button id="beginnerConcepts" class="secondary">${icon('lightbulb')}觀念教室</button><div class="course-progress"><label for="beginnerProgress">已完成 ${state.completed.length} / ${BEGINNER_LESSONS.length} 課</label><progress id="beginnerProgress" value="${state.completed.length}" max="${BEGINNER_LESSONS.length}"></progress></div></div></header>
+      <header class="beginner-heading"><div class="learning-switch" aria-label="學習內容"><button id="beginnerConcepts">學觀念</button><span aria-current="page">跟著做</span></div><div class="course-progress"><label for="beginnerProgress">${state.completed.length} / ${BEGINNER_LESSONS.length} 課</label><progress id="beginnerProgress" value="${state.completed.length}" max="${BEGINNER_LESSONS.length}"></progress></div></header>
       <div class="beginner-layout ${this.mode === 'practice' ? 'practicing' : ''}"><aside class="course-outline ${this.outlineOpen ? 'expanded' : ''}" aria-label="入門課程目錄"><h3>學習路線</h3><button class="course-toggle" id="beginnerToggleOutline" aria-expanded="${this.outlineOpen}">${icon('list')}課程目錄 · 第 ${index + 1} 課${icon(this.outlineOpen ? 'chevron-up' : 'chevron-down')}</button>${['先看懂', '動手做', '完成作品'].map((phase) => `<h4>${phase}</h4><ol>${BEGINNER_LESSONS.map((l, i) => (l.phase === phase ? `<li><button data-beginner-lesson="${l.id}" class="${l.id === lesson.id ? 'active' : ''}" ${l.id === lesson.id ? 'aria-current="step"' : ''}><span class="lesson-number">${state.completed.includes(l.id) ? icon('check') : String(i + 1).padStart(2, '0')}</span><span>${l.title}<small>約 ${l.minutes} 分鐘${state.completed.includes(l.id) ? ' · 已完成' : ''}</small></span></button></li>` : '')).join('')}</ol>`).join('')}</aside>
       <article class="lesson-article"><div class="lesson-heading"><div><span class="eyebrow">第 ${index + 1} 課 / ${BEGINNER_LESSONS.length} · ${lesson.phase}</span><h3 id="beginnerLessonTitle" tabindex="-1">${lesson.title}</h3><p>${lesson.goal}</p></div><div class="lesson-modes" role="group" aria-label="課程內容"><button data-lesson-mode="read" aria-pressed="${this.mode === 'read'}">${icon('book-open')}先看懂</button>${lesson.lab ? `<button data-lesson-mode="practice" aria-pressed="${this.mode === 'practice'}">${icon('mouse-pointer-2')}跟著做</button>` : ''}</div></div>
       ${this.mode === 'read' ? this.reading(lesson) : '<div id="beginnerPractice"></div>'}
@@ -7494,11 +8222,12 @@ class BeginnerCourse {
   reading(lesson) {
     const state = this.getState(),
       ready = this.ready();
-    return `<div class="lesson-reading"><p class="lesson-intro">${lesson.intro}</p>${this.visual(lesson)}
+    return `<div class="lesson-reading"><p class="lesson-intro">${lesson.remember}</p>${this.visual(lesson)}
+      <details class="quiet-details"><summary>例子與說明</summary><p>${lesson.intro}</p>
       <dl class="lesson-ideas">${lesson.ideas.map(([term, meaning]) => `<div><dt>${term}</dt><dd>${meaning}</dd></div>`).join('')}</dl>
       <aside class="lesson-mistake">${icon('lightbulb')}<div><h4>常見誤會</h4><p>${lesson.mistake}</p></div></aside>
-      <div class="lesson-takeaway"><span>重點</span><p>${lesson.remember}</p></div>
-      <section class="lesson-check" aria-labelledby="beginnerCheckTitle"><h4 id="beginnerCheckTitle">理解確認</h4><p>${lesson.question}</p><div class="lesson-answers">${this.answerOrders
+      <p class="lesson-source"><a href="${BEGINNER_HELP[lesson.source]}" target="_blank" rel="noopener">Adobe 參考資料${icon('external-link')}</a></p></details>
+      <details class="checkpoint" id="beginnerCheck"><summary id="beginnerCheckTitle">做一題</summary><section class="lesson-check" aria-labelledby="beginnerCheckTitle"><p>${lesson.question}</p><div class="lesson-answers">${this.answerOrders
         .get(lesson.id)
         .map(
           (i, position) =>
@@ -7506,10 +8235,9 @@ class BeginnerCourse {
         )
         .join(
           '',
-        )}</div><p id="beginnerAnswerFeedback" class="lesson-answer-feedback" role="status">${this.answers[lesson.id] !== undefined ? lesson.answers[this.answers[lesson.id]][1] : state.understood.includes(lesson.id) ? '已完成確認。' : '不計分。'}</p></section>
+        )}</div><p id="beginnerAnswerFeedback" class="lesson-answer-feedback" role="status" ${this.answers[lesson.id] === undefined ? 'hidden' : ''}>${this.answers[lesson.id] !== undefined ? lesson.answers[this.answers[lesson.id]][1] : ''}</p></section>
       <div class="lesson-completion"><div><span>${state.understood.includes(lesson.id) ? '✓ 觀念已理解' : '○ 先完成觀念確認'}</span>${lesson.lab ? `<span>${this.practiceDone() ? '✓ 跟著做已完成' : '○ 再完成跟著做'}</span>` : ''}</div>${lesson.lab && !this.practiceDone() ? `<button id="beginnerStartPractice" class="primary">${icon('mouse-pointer-2')}開始跟著做</button>` : ''}<button id="beginnerComplete" class="${ready ? 'primary' : 'secondary'}" ${ready ? '' : 'disabled'}>${icon('check')}${state.completed.includes(lesson.id) ? '已完成這一課' : '完成這一課'}</button></div>
-      ${state.completed.length === BEGINNER_LESSONS.length ? `<div class="course-finished"><h4>入門課已完成。</h4><button id="beginnerTryQuiz" class="secondary">${icon('list-checks')}基礎觀念練習</button></div>` : ''}
-      <p class="lesson-source">自編教學 · <a href="${BEGINNER_HELP[lesson.source]}" target="_blank" rel="noopener">Adobe 參考資料${icon('external-link')}</a></p></div>`;
+      </details>${state.completed.length === BEGINNER_LESSONS.length ? `<div class="course-finished"><h4>入門課已完成。</h4><button id="beginnerTryQuiz" class="secondary">${icon('list-checks')}基礎觀念練習</button></div>` : ''}</div>`;
   }
   visual(lesson) {
     if (lesson.visual === 'workspace') {
@@ -7552,6 +8280,7 @@ class BeginnerCourse {
             }
             const scroll = window.scrollY;
             this.render();
+            byId('beginnerCheck').open = true;
             window.scrollTo(0, scroll);
             byId('beginnerAnswerFeedback').scrollIntoView({ block: 'nearest' });
           }),
@@ -8326,8 +9055,8 @@ class ConceptClassroom {
     document.body.classList.add('beginner-view');
     byId('conceptsSurface').hidden = false;
     byId('conceptsSurface').innerHTML =
-      `<header class="beginner-heading"><div><h2>觀念教室</h2></div><div class="concept-heading-actions"><div class="course-progress"><label for="conceptProgress" id="conceptProgressLabel"></label><progress id="conceptProgress" max="${CONCEPT_TOPICS.length}"></progress></div><button id="conceptBack" class="secondary">${icon('mouse-pointer-2')}操作課</button></div></header>
-      <div class="concept-layout"><aside class="concept-directory" aria-label="觀念主題目錄"><label for="conceptSearch">搜尋名詞</label><input type="search" id="conceptSearch" placeholder="像素、遮色片、RGB" value="${escapeHtml(this.query)}"><label for="conceptFilter">範圍</label><select id="conceptFilter"><option value="all">全部觀念</option>${[...new Set(CONCEPT_TOPICS.map((t) => t.group))].map((g) => `<option value="${g}">${g}</option>`).join('')}<option value="review">待複習</option></select><button id="conceptMenuToggle" class="secondary" aria-expanded="${this.menuOpen}">${icon('list')}目錄${icon('chevron-down')}</button><div id="conceptTopicList" class="${this.menuOpen ? 'expanded' : ''}"></div></aside><article id="conceptArticle" class="concept-article"></article></div>`;
+      `<header class="beginner-heading"><div class="learning-switch" aria-label="學習內容"><span aria-current="page">學觀念</span><button id="conceptBack">跟著做</button></div><div class="course-progress"><label for="conceptProgress" id="conceptProgressLabel"></label><progress id="conceptProgress" max="${CONCEPT_TOPICS.length}"></progress></div></header>
+      <div class="concept-layout"><aside class="concept-directory" aria-label="觀念主題目錄"><button id="conceptMenuToggle" class="text-button" aria-expanded="${this.menuOpen}" aria-controls="conceptDirectoryBody">${icon('list')}課程目錄${icon('chevron-down')}</button><div id="conceptDirectoryBody" hidden><div class="directory-filters"><label>搜尋名詞<input type="search" id="conceptSearch" placeholder="像素、遮色片、RGB" value="${escapeHtml(this.query)}"></label><label>範圍<select id="conceptFilter"><option value="all">全部觀念</option>${[...new Set(CONCEPT_TOPICS.map((t) => t.group))].map((g) => `<option value="${g}">${g}</option>`).join('')}<option value="review">待複習</option></select></label></div><div id="conceptTopicList"></div></div></aside><article id="conceptArticle" class="concept-article"></article></div>`;
     byId('conceptFilter').value = this.filter;
     byId('conceptSearch').oninput = (event) => {
       this.query = event.target.value;
@@ -8358,6 +9087,7 @@ class ConceptClassroom {
           `${t.title} ${t.terms} ${t.one}`.normalize('NFKC').toLowerCase().includes(query)),
     );
     byId('conceptTopicList').classList.toggle('expanded', this.menuOpen);
+    byId('conceptDirectoryBody').hidden = !this.menuOpen;
     byId('conceptMenuToggle').setAttribute('aria-expanded', String(this.menuOpen));
     byId('conceptTopicList').innerHTML =
       `<p class="concept-list-count" role="status">${topics.length} 個觀念${this.filter === 'review' ? '待複習' : ''}</p>${topics.length ? topics.map((t) => `<button data-concept-topic="${t.id}" ${t.id === state.last ? 'aria-current="page"' : ''}><span class="lesson-number">${state.understood.includes(t.id) ? icon('check') : String(CONCEPT_TOPICS.indexOf(t) + 1).padStart(2, '0')}</span><span>${t.title}<small>${t.group}${state.review.includes(t.id) ? ' · 待複習' : ''}</small></span></button>`).join('') : '<p class="empty-state">這個範圍沒有符合的主題。</p><button id="conceptClearFilter" class="secondary">清除篩選</button>'}`;
@@ -8399,14 +9129,14 @@ class ConceptClassroom {
         .filter((q) => q.type === 'choice' && q.reviewStatus === 'reviewed')
         .slice(0, 3);
     byId('conceptArticle').innerHTML =
-      `<header class="concept-topic-heading"><div><span class="eyebrow">${topic.group} · ${index + 1} / ${CONCEPT_TOPICS.length}</span><h3 id="conceptTitle" tabindex="-1">${topic.title}</h3><p>${topic.terms}</p></div><button id="conceptReview" class="icon-button ${state.review.includes(topic.id) ? 'bookmarked' : ''}" aria-pressed="${state.review.includes(topic.id)}" title="${state.review.includes(topic.id) ? '移出待複習' : '加入待複習'}" aria-label="${state.review.includes(topic.id) ? '移出待複習' : '加入待複習'}">${icon('bookmark')}</button></header>
-      <section class="concept-definition"><span>觀念</span><p>${topic.one}</p></section>
-      <section class="concept-analogy"><h4>${icon('lightbulb')}例子</h4><p>${topic.analogy}</p></section>
+      `<header class="concept-topic-heading"><div><span class="eyebrow">${index + 1} / ${CONCEPT_TOPICS.length} · ${topic.group}</span><h3 id="conceptTitle" tabindex="-1">${topic.title}</h3></div><button id="conceptReview" class="icon-button ${state.review.includes(topic.id) ? 'bookmarked' : ''}" aria-pressed="${state.review.includes(topic.id)}" title="${state.review.includes(topic.id) ? '移出待複習' : '加入待複習'}" aria-label="${state.review.includes(topic.id) ? '移出待複習' : '加入待複習'}">${icon('bookmark')}</button></header>
+      <section class="concept-definition"><p>${topic.one}</p></section>
       <section class="concept-experiment" aria-label="觀念圖解"><div class="section-title"><h4>${topic.demo === 'process' ? '流程' : '比較圖解'}</h4><button id="conceptDemoReset" class="icon-button small" title="重設圖解" aria-label="重設圖解">${icon('rotate-ccw')}</button></div><div id="conceptDemo"></div></section>
+      <details class="quiet-details concept-more"><summary>例子與比較</summary><section class="concept-analogy"><h4>例子</h4><p>${topic.analogy}</p></section>
       <dl class="concept-reasons"><div><dt>原因</dt><dd>${topic.why}</dd></div><div><dt>用途</dt><dd>${topic.when}</dd></div></dl>
       <section class="concept-comparison"><h4>差異</h4><dl>${topic.compare.map(([name, text]) => `<div><dt>${name}</dt><dd>${text}</dd></div>`).join('')}</dl></section>
-      <aside class="lesson-mistake">${icon('triangle-alert')}<div><h4>常見誤會</h4><p>${topic.mistake}</p></div></aside>
-      <section class="lesson-check"><h4>理解確認</h4><p>${topic.question}</p><div class="lesson-answers">${this.orders
+      <aside class="lesson-mistake">${icon('triangle-alert')}<div><h4>常見誤會</h4><p>${topic.mistake}</p></div></aside><p class="lesson-source">${topic.terms}<br><a href="${CONCEPT_SOURCES[topic.source]}" target="_blank" rel="noopener">Adobe 參考資料${icon('external-link')}</a></p></details>
+      <details class="checkpoint" id="conceptCheck"><summary>做一題</summary><section class="lesson-check"><p>${topic.question}</p><div class="lesson-answers">${this.orders
         .get(topic.id)
         .map(
           (i, position) =>
@@ -8414,10 +9144,8 @@ class ConceptClassroom {
         )
         .join(
           '',
-        )}</div><p id="conceptAnswerFeedback" class="lesson-answer-feedback" role="status">${this.answers[topic.id] !== undefined ? topic.answers[this.answers[topic.id]][1] : state.understood.includes(topic.id) ? '已完成確認。' : '不計分。'}</p></section>
-      <div class="concept-next-actions"><button id="conceptToLesson" class="secondary">${icon('mouse-pointer-2')}相關操作</button>${practice.length ? `<button id="conceptPractice" class="secondary">${icon('list-checks')}練習 ${practice.length} 題</button>` : ''}</div>
-      <details class="concept-doc-reference"><summary>ACP.docx 相關題目</summary><ul>${related.map((q) => `<li>Q${q.id} · ${escapeHtml(q.question)}</li>`).join('')}</ul></details>
-      <p class="lesson-source">自編教學 · <a href="${CONCEPT_SOURCES[topic.source]}" target="_blank" rel="noopener">Adobe 參考資料${icon('external-link')}</a></p>
+        )}</div><p id="conceptAnswerFeedback" class="lesson-answer-feedback" role="status" ${this.answers[topic.id] === undefined ? 'hidden' : ''}>${this.answers[topic.id] !== undefined ? topic.answers[this.answers[topic.id]][1] : ''}</p></section>
+      <details class="quiet-details"><summary>延伸練習</summary><div class="concept-next-actions"><button id="conceptToLesson" class="secondary">${icon('mouse-pointer-2')}相關操作</button>${practice.length ? `<button id="conceptPractice" class="secondary">${icon('list-checks')}練習 ${practice.length} 題</button>` : ''}</div><details class="concept-doc-reference"><summary>ACP.docx 相關題目</summary><ul>${related.map((q) => `<li>Q${q.id} · ${escapeHtml(q.question)}</li>`).join('')}</ul></details></details></details>
       <footer class="lesson-footer"><button id="conceptPrevious" class="icon-button" title="上一個觀念" aria-label="上一個觀念" ${index ? '' : 'disabled'}>${icon('arrow-left')}</button><button id="conceptNext" class="secondary" ${index === CONCEPT_TOPICS.length - 1 ? 'disabled' : ''}>下一個${icon('arrow-right')}</button></footer>`;
     byId('conceptArticle')
       .querySelectorAll('[data-concept-answer]')
@@ -8440,6 +9168,7 @@ class ConceptClassroom {
                 button.setAttribute('aria-pressed', String(selected));
               });
             byId('conceptAnswerFeedback').textContent = topic.answers[answer][1];
+            byId('conceptAnswerFeedback').hidden = false;
             this.renderList();
             this.updateReviewButton();
           }),
@@ -9141,7 +9870,7 @@ function startExam(kind, explicitQuestions = null, modeOverride = null) {
       byId('questionSurface').hidden = false;
       byId('questionSurface').innerHTML =
         `<div class="empty-state"><h2>目前沒有可用題目</h2><p>請調整來源、章節或範圍，再開始練習。</p><button id="emptySettings" class="secondary">${icon('sliders-horizontal')}調整設定</button></div>`;
-      byId('emptySettings').onclick = () => byId('settingsPanel').classList.add('open');
+      byId('emptySettings').onclick = () => setSettings(true);
       icons();
     }
     return;
@@ -9178,7 +9907,7 @@ function startExam(kind, explicitQuestions = null, modeOverride = null) {
   currentView = kind === 'live' ? 'live' : kind === 'order' ? 'order' : 'choice';
   activeSince = Date.now();
   saveSession();
-  byId('settingsPanel').classList.remove('open');
+  setSettings(false);
   renderSession();
   if (count < requested) toast(`此範圍有 ${pool.length} 題，已開始 ${count} 題不重複測驗`);
 }
@@ -9201,6 +9930,8 @@ function setMode(mode) {
   else if (byId('bankFilter').value === 'wrong') byId('bankFilter').value = 'all';
 }
 function hideSurfaces() {
+  setSettings(false);
+  document.body.dataset.screen = currentView;
   document.body.classList.remove('beginner-view');
   document.querySelectorAll('.lesson-focus').forEach((el) => el.classList.remove('lesson-focus'));
   for (const id of [
@@ -9210,6 +9941,7 @@ function hideSurfaces() {
     'resultsSurface',
     'recordsSurface',
     'dashboardSurface',
+    'practiceSurface',
     'librarySurface',
     'beginnerSurface',
     'conceptsSurface',
@@ -9219,15 +9951,15 @@ function hideSurfaces() {
     byId(id).hidden = true;
 }
 function updateTabs() {
+  document.body.dataset.screen = currentView;
+  const tab = ['beginner', 'concepts'].includes(currentView)
+    ? 'concepts'
+    : ['live', 'choice', 'order', 'library'].includes(currentView)
+      ? 'practice'
+      : currentView;
   document
     .querySelectorAll('[data-view]')
-    .forEach((b) =>
-      b.classList.toggle(
-        'active',
-        b.dataset.view === currentView ||
-          (currentView === 'concepts' && b.dataset.view === 'beginner'),
-      ),
-    );
+    .forEach((b) => b.classList.toggle('active', b.dataset.view === tab));
 }
 function showView(view) {
   if (
@@ -9248,6 +9980,7 @@ function showView(view) {
   if (view === 'dashboard') renderDashboard();
   else if (view === 'beginner') beginner.render();
   else if (view === 'concepts') concepts.render();
+  else if (view === 'practice') renderPractice();
   else if (view === 'library') renderLibrary();
   else if (view === 'records') renderRecords();
   else {
@@ -9313,7 +10046,7 @@ function renderSession() {
   const row = currentRow(),
     q = row.q;
   byId('taskMeta').innerHTML =
-    `<span class="label">${MODE_NAMES[session.mode]} · ${session.index + 1} / ${session.rows.length}</span><span class="label ${q.source === 'extra' ? 'extra' : 'source'}">${q.source === 'extra' ? '補充練習' : `ACP.docx · Q${q.id}`}</span><span class="label">${escapeHtml(q.section.replace(/^[^、]+、/, ''))}</span><span class="label">${{ easy: '基礎', medium: '中等', hard: '進階情境' }[q.difficulty]}</span>${q.reviewStatus === 'imported' ? '<span class="label important">文件轉入・選項待覆核</span>' : ''}`;
+    `<span>${session.index + 1} / ${session.rows.length}</span><span class="muted">${q.source === 'extra' ? '補充練習' : `ACP.docx · Q${q.id}`}</span>${q.reviewStatus === 'imported' ? '<span class="label important">選項待覆核</span>' : ''}`;
   byId('taskTitle').textContent = q.question.replace(/［(修正|補充)］/g, '').trim();
   byId('taskGoal').textContent = q.goal || '';
   byId('bookmark').classList.toggle('bookmarked', data.bookmarks.includes(q.key));
@@ -9328,6 +10061,7 @@ function renderSession() {
   byId('submitTask').hidden = isFormal();
   byId('hint').hidden = isFormal();
   byId('hint').disabled = row.submitted;
+  byId('taskTimer').hidden = !session.deadline;
   if (q.type === 'live') {
     byId('editor').hidden = false;
     const taskKey = session.id + ':' + q.key;
@@ -9670,6 +10404,8 @@ function tick() {
   }
   const remaining = session.deadline ? session.deadline - Date.now() : Date.now() - session.started;
   byId('timer').textContent = formatDuration(Math.max(0, remaining));
+  byId('taskTimer').textContent = byId('timer').textContent;
+  byId('taskTimer').classList.toggle('timer-warning', !!session.deadline && remaining < 60000);
   byId('timer').classList.toggle('timer-warning', !!session.deadline && remaining < 60000);
   if (session.deadline && remaining <= 0) finishExam(true);
 }
@@ -9812,98 +10548,64 @@ function readiness() {
 function renderDashboard() {
   hideSurfaces();
   byId('dashboardSurface').hidden = false;
-  const summary = aggregate(),
-    today = data.results.filter((r) => dayKey(r.finished) === dayKey()),
-    todayCount = today.reduce((sum, r) => sum + r.rows.filter((x) => x.answer !== null).length, 0),
-    dates = new Set(
-      data.results
-        .filter((r) => Date.now() - r.finished < 7 * 86400000)
-        .map((r) => dayKey(r.finished)),
-    ),
-    ready = readiness(),
-    due = Object.entries(data.stats).filter(
-      ([_, s]) => s.wrong > 0 && s.nextReview <= Date.now() && s.streak < 3,
-    ).length,
-    highest = summary.formal.length ? Math.max(...summary.formal.map((r) => r.rate)) : null,
-    last = summary.formal.at(-1);
-  const stage =
-    summary.total === 0
-      ? '尚未開始'
-      : summary.total < 50
-        ? '基礎學習'
-        : summary.rate >= 80
-          ? '進階複習'
-          : '練習中';
-  byId('dashboardSurface').innerHTML =
-    `<div class="surface-heading"><div><span class="eyebrow">${new Intl.DateTimeFormat('zh-TW', { timeZone: 'Asia/Taipei', dateStyle: 'full' }).format(new Date())}</span><h2>你的 Photoshop 學習工作區</h2><p class="muted">${stage} · 今日目標 ${data.plan.daily} 題</p></div><div class="heading-actions"><button class="secondary" id="continueExam" ${session && !session.completed ? '' : 'disabled'}>${icon('play')}繼續上次練習</button><button class="primary" id="startFormal">${icon('clipboard-check')}正式模擬考</button></div></div>
-    <section class="beginner-entry"><div>${icon('sprout')}<div><h3>Photoshop 入門</h3><span class="muted">操作 ${data.beginner?.completed.length || 0} / ${BEGINNER_LESSONS.length} 課 · 觀念 ${data.concepts?.understood.length || 0} / ${CONCEPT_TOPICS.length}</span></div></div><div class="beginner-entry-actions"><button class="secondary" id="openConcepts">${icon('lightbulb')}先學觀念</button><button class="primary" id="openBeginner">${icon('book-open')}${data.beginner?.completed.length ? '繼續入門課' : '從零開始學'}</button></div></section>
-    <div class="dashboard-stats">${[
-      ['list-checks', '累計答題', summary.total],
-      ['target', '累計正確率', summary.rate === null ? '—' : summary.rate + '%'],
-      ['clipboard-check', '正式模擬考', summary.formal.length],
-      ['trophy', '最高成績', highest === null ? '—' : highest + '%'],
-      ['chart-line', '最近成績', last ? last.rate + '%' : '—'],
-      ['clock', '累計測驗時間', formatDuration(summary.duration)],
-      ['calendar-days', '近 7 天學習', dates.size + ' 天'],
-      ['rotate-ccw', '待複習錯題', summary.wrong],
-    ]
-      .map(
-        ([ic, label, value]) =>
-          `<div class="dashboard-stat">${icon(ic)}<strong>${value}</strong><span>${label}</span></div>`,
-      )
-      .join('')}</div>
-    <div class="dashboard-grid"><section class="daily-section"><div class="section-title"><h3>今日任務</h3><button class="icon-button" id="editPlan" title="設定學習計畫" aria-label="設定學習計畫">${icon('settings-2')}</button></div><div class="daily-progress"><progress max="${data.plan.daily}" value="${Math.min(todayCount, data.plan.daily)}"></progress><span>${todayCount} / ${data.plan.daily} 題</span></div><div class="daily-task"><div><b>${todayCount >= data.plan.daily ? '已完成' : '今日快速練習'}</b><span>${data.plan.daily} 題已覆核觀念</span></div><button id="dailyPractice" class="icon-button" title="開始今日練習" aria-label="開始今日練習">${icon('arrow-right')}</button></div><div class="daily-task"><div><b>間隔複習</b><span>${due} 道錯題到期</span></div><button id="dailyWrong" class="icon-button" ${due ? '' : 'disabled'} title="複習到期錯題" aria-label="複習到期錯題">${icon('arrow-right')}</button></div><div class="daily-task"><div><b>實作任務</b><span>一個可以動手完成的操作</span></div><button id="dailyLive" class="icon-button" title="開始實作任務" aria-label="開始實作任務">${icon('arrow-right')}</button></div></section><section class="readiness-section"><div class="section-title"><h3>備考準備度</h3><span class="label">平台自訂</span></div><div class="readiness-number">${ready.value === null ? '—' : ready.value + '%'}</div><p class="muted">${ready.text}</p>${data.plan.examDate ? `<p class="plan-date">目標日期 ${escapeHtml(data.plan.examDate)} · 剩餘 ${Math.max(0, Math.ceil((new Date(data.plan.examDate + 'T23:59:59+08:00') - Date.now()) / 86400000))} 天</p>` : ''}<button id="openAnalysis" class="secondary">${icon('chart-line')}查看學習分析</button></section></div>
-    <div class="section-title"><h3>選擇練習方式</h3><span class="muted">${DOC_BANK.length} 道文件題目 · ${LIVE_TASKS.length} 個操作任務</span></div><div class="mode-grid">${Object.entries(
-      MODE_NAMES,
-    )
-      .map(
-        ([mode, name]) =>
-          `<button class="mode-item" data-launch-mode="${mode}">${icon({ learn: 'book-open', chapter: 'library', formal: 'clipboard-check', timed: 'timer', wrong: 'rotate-ccw', figure: 'scan-eye', live: 'mouse-pointer-2', smart: 'waypoints' }[mode])}<span><b>${name}</b><small>${{ learn: '10 題，即時解析', chapter: '按主題與難度練習', formal: '50 題，50 分鐘，交卷後解析', timed: '倒數挑戰，自動交卷', wrong: '從尚未掌握的錯題出題', figure: '辨識實際模擬介面截圖', live: '操作圖層、畫布和圖片', smart: '按弱點與練習次數分配' }[mode]}</small></span>${icon('chevron-right')}</button>`,
-      )
-      .join('')}</div>
-    <div class="section-title"><h3>學習里程碑</h3></div><div class="achievement-list">${[
-      ['完成第一份測驗', data.results.length >= 1],
-      ['累計答對 100 題', summary.correct >= 100],
-      ['近 7 天每天學習', dates.size === 7],
-      ['完成 3 次正式模擬考', summary.formal.length >= 3],
-      ['完成一次實作任務', data.results.some((r) => r.kind === 'live' && r.correct > 0)],
-    ]
-      .map(
-        ([name, earned]) =>
-          `<div class="achievement ${earned ? 'earned' : ''}">${icon(earned ? 'badge-check' : 'circle-dashed')}<span>${name}</span><small>${earned ? '已完成' : '尚未完成'}</small></div>`,
-      )
-      .join('')}</div>
-    <footer class="source-footer">題目來源：ACP.docx＋自編補充；非官方原題。參考 <a href="https://certifiedprofessional.adobe.com/photoshop" target="_blank" rel="noopener">Adobe 2025 Photoshop 考試目標</a>，核對日期 2026-10-14。模擬考題數、時間與指標均為平台自訂。</footer>`;
-  byId('continueExam').onclick = () => renderSession();
-  byId('openBeginner').onclick = () => showView('beginner');
+  byId('dashboardSurface').innerHTML = `
+    <header class="simple-heading"><h2>Photoshop 學習</h2>${session && !session.completed ? `<button id="continueExam" class="secondary">${icon('play')}繼續上次測驗</button>` : ''}</header>
+    <div class="home-paths">
+      <section class="home-path featured"><div class="path-copy"><span class="path-number">01</span><div><h3>學觀念</h3><p>${data.concepts?.understood.length || 0} / ${CONCEPT_TOPICS.length} 個觀念</p></div></div><img src="${PLANT_ASSET}" alt="學習素材：植物照片"><button class="primary" id="openConcepts">${icon('book-open')}${data.concepts?.understood.length ? '繼續學習' : '開始學習'}${icon('arrow-right')}</button></section>
+      <section class="home-path"><div class="path-copy"><span class="path-number">02</span><div><h3>跟著做</h3><p>${data.beginner?.completed.length || 0} / ${BEGINNER_LESSONS.length} 堂操作課</p></div></div><button class="secondary" id="openBeginner">${icon('mouse-pointer-2')}開始操作${icon('arrow-right')}</button></section>
+      <section class="home-path"><div class="path-copy"><span class="path-number">03</span><div><h3>測驗</h3><p>選擇題 · 實作 · 模擬考</p></div></div><button class="secondary" id="openPractice">${icon('list-checks')}開始練習${icon('arrow-right')}</button></section>
+    </div>
+    <footer class="simple-footer"><button class="text-button" id="openLibrary">${icon('library')}題庫</button><button class="text-button" id="editPlan">${icon('settings-2')}學習設定</button><details><summary>關於題目</summary><p>ACP.docx＋自編補充；非官方試題。模擬考題數、時間為平台自訂。</p><a href="https://certifiedprofessional.adobe.com/photoshop" target="_blank" rel="noopener">Adobe 考試目標</a></details></footer>`;
+  if (byId('continueExam')) byId('continueExam').onclick = () => renderSession();
   byId('openConcepts').onclick = () => showView('concepts');
-  byId('startFormal').onclick = () => launchMode('formal');
+  byId('openBeginner').onclick = () => showView('beginner');
+  byId('openPractice').onclick = () => showView('practice');
+  byId('openLibrary').onclick = () => showView('library');
   byId('editPlan').onclick = editPlan;
-  byId('dailyPractice').onclick = () => {
-    setMode('smart');
-    byId('questionCount').value = data.plan.daily;
-    requestFinish(() => startExam('choice', null, 'smart'));
-  };
-  byId('dailyWrong').onclick = () => {
-    const pool = QUESTIONS.filter(
-      (q) =>
-        q.type === 'choice' &&
-        data.stats[q.key]?.nextReview <= Date.now() &&
-        data.stats[q.key]?.wrong > 0 &&
-        data.stats[q.key]?.streak < 3,
-    );
-    byId('questionCount').value = 3;
-    requestFinish(() => startExam('choice', pool, 'wrong'));
-  };
-  byId('dailyLive').onclick = () => {
-    byId('questionCount').value = 1;
-    requestFinish(() => startExam('live', LIVE_TASKS, 'live'));
-  };
-  byId('openAnalysis').onclick = () => showView('records');
-  document
+  icons();
+}
+function renderPractice() {
+  byId('practiceSurface').hidden = false;
+  const modes = [
+    ['learn', '選擇題', '10 題 · 答後解析', 'list-checks'],
+    ['live', '模擬實作', '5 題 · 動手操作', 'mouse-pointer-2'],
+    ['formal', '模擬考', '50 題 · 50 分鐘', 'clipboard-check'],
+  ];
+  byId('practiceSurface').innerHTML = `
+    <header class="simple-heading"><h2>練習</h2><button id="practiceSettings" class="icon-button" title="自訂測驗" aria-label="自訂測驗">${icon('sliders-horizontal')}</button></header>
+    <div class="practice-paths">${modes.map(([mode, name, meta, ic]) => `<button class="practice-path" data-launch-mode="${mode}"><span class="path-icon">${icon(ic)}</span><span><b>${name}</b><small>${meta}</small></span>${icon('arrow-right')}</button>`).join('')}</div>
+    <details class="quiet-details"><summary>更多練習</summary><div class="extra-practice">
+    ${[
+      ['chapter', '章節練習'],
+      ['wrong', '我的錯題'],
+      ['figure', '看圖辨識'],
+      ['timed', '限時挑戰'],
+      ['smart', '智慧混合'],
+    ]
+      .map(
+        ([mode, name]) => `<button class="secondary" data-launch-mode="${mode}">${name}</button>`,
+      )
+      .join('')}
+    <button id="practiceOrder" class="secondary">${icon('list-ordered')}步驟排序</button><button id="practiceLibrary" class="secondary">${icon('library')}完整題庫</button></div></details>`;
+  byId('practiceSurface')
     .querySelectorAll('[data-launch-mode]')
     .forEach((b) => (b.onclick = () => launchMode(b.dataset.launchMode)));
+  byId('practiceSettings').onclick = () => setSettings(true);
+  byId('practiceOrder').onclick = () => showView('order');
+  byId('practiceLibrary').onclick = () => showView('library');
   icons();
+}
+let settingsFocus = null;
+function setSettings(open) {
+  const wasOpen = byId('settingsPanel').classList.contains('open');
+  if (open) settingsFocus = document.activeElement;
+  byId('settingsPanel').classList.toggle('open', open);
+  byId('settingsBackdrop').hidden = !open;
+  byId('toggleSettings').setAttribute('aria-expanded', String(open));
+  document.querySelector('main').inert = open;
+  document.querySelector('.app-header').inert = open;
+  if (open) byId('closeSettings').focus();
+  else if (wasOpen && settingsFocus?.isConnected) settingsFocus.focus();
 }
 function launchMode(mode) {
   setMode(mode);
@@ -9955,10 +10657,12 @@ function renderRecords() {
     allRows = data.results.flatMap((r) => r.rows),
     formal = data.results.filter((r) => r.mode === 'formal'),
     ready = readiness();
-  byId('recordsSurface').innerHTML =
-    `<div class="surface-heading"><div><span class="eyebrow">真實作答資料</span><h2>成績與學習分析</h2></div><button id="analysisHome" class="secondary">${icon('layout-dashboard')}首頁</button></div><div class="result-summary"><div><strong>${summary.total}</strong><span>累計答題</span></div><div><strong>${summary.rate === null ? '—' : summary.rate + '%'}</strong><span>累計正確率</span></div><div><strong>${data.results.length}</strong><span>完成測驗</span></div><div><strong>${ready.value === null ? '—' : ready.value + '%'}</strong><span>自訂準備度</span></div></div><div class="records-toolbar"><div><button id="backupData" class="secondary">${icon('download')}JSON 備份</button><button id="importData" class="secondary">${icon('upload')}還原備份</button></div><div><button id="exportAllCSV" class="secondary">CSV 成績</button><button id="clearRecords" class="secondary">${icon('trash-2')}清除紀錄</button></div></div><div class="section-title"><h3>正式模擬考趨勢</h3><select id="trendRange" aria-label="趨勢期間"><option value="7">近 7 天</option><option value="30" selected>近 30 天</option><option value="90">近 90 天</option><option value="0">全部</option></select></div><div id="trendChart" class="trend-chart"></div><h3 class="record-group-title">章節能力</h3>${allRows.length ? chapterBars(allRows) : '<p class="empty-state">完成測驗後，這裡會顯示各章的真實表現。</p>'}<h3 class="record-group-title">歷史紀錄</h3>${
+  byId('recordsSurface').innerHTML = `
+    <header class="simple-heading"><h2>成績</h2></header>
+    <div class="result-summary"><div><strong>${summary.total}</strong><span>累計答題</span></div><div><strong>${summary.rate === null ? '—' : summary.rate + '%'}</strong><span>正確率</span></div><div><strong>${data.results.length}</strong><span>完成測驗</span></div></div>
+    <h3 class="record-group-title">測驗紀錄</h3>${
       data.results.length
-        ? `<div class="table-scroll"><table class="records-table"><thead><tr><th>日期</th><th>模式</th><th>題數</th><th>正確率</th><th>時間</th><th>報告</th></tr></thead><tbody>${[
+        ? `<div class="table-scroll"><table class="records-table"><thead><tr><th>日期</th><th>模式</th><th>題數</th><th>成績</th><th>時間</th><th></th></tr></thead><tbody>${[
             ...data.results,
           ]
             .reverse()
@@ -9967,16 +10671,28 @@ function renderRecords() {
                 `<tr><td>${dateTime(r.finished)}</td><td>${MODE_NAMES[r.mode]}</td><td>${r.total}</td><td>${r.rate}%</td><td>${formatDuration(r.duration)}</td><td><button data-result="${r.id}">查看</button></td></tr>`,
             )
             .join('')}</tbody></table></div>`
-        : '<p class="empty-state">完成第一份測驗後，這裡將顯示你的成績。</p>'
-    }<div class="section-title"><h3>比較兩次測驗</h3></div>${data.results.length >= 2 ? `<div class="comparison-inputs"><select id="compareA" aria-label="第一份測驗">${data.results.map((r, i) => `<option value="${r.id}" ${i === data.results.length - 2 ? 'selected' : ''}>${dateTime(r.finished)} · ${MODE_NAMES[r.mode]} · ${r.total} 題</option>`).join('')}</select><select id="compareB" aria-label="第二份測驗">${data.results.map((r, i) => `<option value="${r.id}" ${i === data.results.length - 1 ? 'selected' : ''}>${dateTime(r.finished)} · ${MODE_NAMES[r.mode]} · ${r.total} 題</option>`).join('')}</select></div><div id="comparison" class="comparison"></div>` : '<p class="muted">至少完成兩次測驗後可比較。</p>'}<p class="source-footer">資料保存在這台瀏覽器；清除瀏覽器資料可能刪除紀錄，建議定期匯出備份。</p>`;
-  byId('analysisHome').onclick = () => showView('dashboard');
+        : '<p class="empty-state">尚無測驗紀錄。</p>'
+    }
+    <details id="recordAnalysis" class="quiet-details"><summary>詳細分析</summary>
+      <div class="section-title"><h3>模擬考趨勢</h3><select id="trendRange" aria-label="趨勢期間"><option value="7">近 7 天</option><option value="30" selected>近 30 天</option><option value="90">近 90 天</option><option value="0">全部</option></select></div><div id="trendChart" class="trend-chart"></div>
+      <h3 class="record-group-title">章節能力</h3>${allRows.length ? chapterBars(allRows) : '<p class="muted">尚無作答資料。</p>'}
+      <h3 class="record-group-title">比較兩次測驗</h3>${
+        data.results.length >= 2
+          ? `<div class="comparison-inputs"><select id="compareA" aria-label="第一份測驗">${data.results.map((r, i) => `<option value="${r.id}" ${i === data.results.length - 2 ? 'selected' : ''}>${dateTime(r.finished)} · ${MODE_NAMES[r.mode]} · ${r.total} 題</option>`).join('')}</select><select id="compareB" aria-label="第二份測驗">${data.results.map((r, i) => `<option value="${r.id}" ${i === data.results.length - 1 ? 'selected' : ''}>${dateTime(r.finished)} · ${MODE_NAMES[r.mode]} · ${r.total} 題</option>`).join('')}</select></div><div id="comparison" class="comparison"></div>`
+          : '<p class="muted">至少完成兩次測驗後可比較。</p>'
+      }
+      <p class="source-footer">自訂準備度 ${ready.value === null ? '—' : ready.value + '%'}。 ${ready.text}</p>
+    </details>
+    <details class="quiet-details"><summary>備份與資料管理</summary><div class="records-toolbar"><div><button id="backupData" class="secondary">${icon('download')}備份</button><button id="importData" class="secondary">${icon('upload')}還原備份</button></div><div><button id="exportAllCSV" class="secondary">匯出成績</button><button id="clearRecords" class="secondary">${icon('trash-2')}清除紀錄</button></div></div><p class="muted">紀錄保存在這台瀏覽器。</p></details>`;
   byId('backupData').onclick = exportBackup;
   byId('importData').onclick = importBackup;
   byId('exportAllCSV').onclick = () => exportCSV(data.results);
   byId('clearRecords').onclick = clearData;
   byId('trendRange').onchange = () => drawTrend(formal, Number(byId('trendRange').value));
-  drawTrend(formal, 30);
-  document
+  byId('recordAnalysis').ontoggle = () => {
+    if (byId('recordAnalysis').open) drawTrend(formal, Number(byId('trendRange').value));
+  };
+  byId('recordsSurface')
     .querySelectorAll('[data-result]')
     .forEach(
       (b) => (b.onclick = () => renderResult(data.results.find((r) => r.id === b.dataset.result))),
@@ -10549,6 +11265,7 @@ async function boot() {
   if (
     ![
       'dashboard',
+      'practice',
       'beginner',
       'concepts',
       'library',
@@ -10564,7 +11281,31 @@ async function boot() {
     .forEach((b) => (b.onclick = () => showView(b.dataset.view)));
   byId('startExam').onclick = () => requestFinish(() => startExam());
   byId('examMode').onchange = (e) => setMode(e.target.value);
-  byId('toggleSettings').onclick = () => byId('settingsPanel').classList.toggle('open');
+  byId('toggleSettings').onclick = () =>
+    setSettings(!byId('settingsPanel').classList.contains('open'));
+  byId('closeSettings').onclick = () => setSettings(false);
+  byId('settingsBackdrop').onclick = () => setSettings(false);
+  document.addEventListener('keydown', (event) => {
+    if (!byId('settingsPanel').classList.contains('open')) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      setSettings(false);
+    }
+    if (event.key === 'Tab') {
+      const controls = [
+        ...byId('settingsPanel').querySelectorAll('button,input,select,summary'),
+      ].filter((el) => !el.disabled && el.getClientRects().length);
+      const first = controls[0],
+        last = controls.at(-1);
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
   byId('submitTask').onclick = submitAnswer;
   byId('previousTask').onclick = () => goTo(session.index - 1);
   byId('nextTask').onclick = () => {
